@@ -32,7 +32,7 @@ export function BlogCard({ post }: BlogCardProps) {
             </div>
           )}
         </div>
-        <h3 className="line-clamp-2 font-semibold text-lg leading-tight transition-colors group-hover:text-primary">
+        <h3 className="line-clamp-2 h-[45px] font-semibold text-lg leading-tight transition-colors group-hover:text-primary">
           {post.title}
         </h3>
       </CardHeader>
