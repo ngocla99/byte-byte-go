@@ -3,25 +3,9 @@ import tailwindcss from '@tailwindcss/vite';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import react from '@vitejs/plugin-react';
 import { defineConfig } from 'vite';
-import { VitePWA } from 'vite-plugin-pwa';
 
 export default defineConfig({
-  plugins: [
-    tailwindcss(),
-    tanstackRouter({}),
-    react(),
-    VitePWA({
-      registerType: 'autoUpdate',
-      manifest: {
-        name: 'byte-byte-go',
-        short_name: 'byte-byte-go',
-        description: 'byte-byte-go - PWA Application',
-        theme_color: '#0c0c0c',
-      },
-      pwaAssets: { disabled: false, config: true },
-      devOptions: { enabled: true },
-    }),
-  ],
+  plugins: [tailwindcss(), tanstackRouter({}), react()],
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
