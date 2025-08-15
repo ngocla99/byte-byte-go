@@ -1,5 +1,5 @@
 {
-  "name": "my-better-t-app",
+  "name": "byte-byte-go",
   "private": true,
   "workspaces": [
     "apps/*",
