@@ -1,4 +1,5 @@
 import { compareDesc, format, isValid, parse } from 'date-fns';
+import { CATEGORY_KEYWORDS } from './constants';
 
 export type BlogPost = {
   id: string;
@@ -24,19 +25,6 @@ const MONTH_START = 2;
 const MONTH_END = 4;
 const DAY_START = 4;
 const DAY_END = 6;
-
-const CATEGORY_KEYWORDS = {
-  Architecture: ['microservice', 'architecture'],
-  Database: ['database', 'sql'],
-  API: ['api', 'rest', 'graphql'],
-  Caching: ['cache', 'redis'],
-  DevOps: ['kubernetes', 'docker', 'infrastructure'],
-  Security: ['auth', 'security', 'jwt', 'authentication'],
-  Performance: ['scale', 'scaling', 'performance', 'optimization'],
-  Networking: ['network', 'tcp', 'http', 'networking'],
-  Career: ['career', 'engineer', 'resume', 'job'],
-  'Case Study': ['netflix', 'video', 'case study'],
-};
 
 // Extract all blog posts from the public/blogs directory structure
 export function getAllBlogPosts(): Promise<BlogPost[]> {
