@@ -26,7 +26,8 @@
         "noUnknownAtRules": "off"
       },
       "style": {
-        "useBlockStatements": "off"
+        "useBlockStatements": "off",
+        "noMagicNumbers": "off"
       }
     }
   },
