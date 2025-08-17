@@ -9,6 +9,7 @@ export type BlogPost = {
   slug: string;
   path: string;
   category?: string;
+  image?: string;
 };
 
 // Automatically discover blog files using Vite's import.meta.glob
