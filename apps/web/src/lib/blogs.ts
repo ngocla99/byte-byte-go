@@ -15,6 +15,27 @@ export function getAllBlogPosts(): Promise<BlogPost[]> {
 
 // Define the blog files manually since we're in a static context
 // In a real app, you might use a build-time script to generate this
+const BLOG_FILENAME_REGEX = /^(\d{6})\s+(.+)\.html$/;
+const YEAR_START = 0;
+const YEAR_END = 2;
+const MONTH_START = 2;
+const MONTH_END = 4;
+const DAY_START = 4;
+const DAY_END = 6;
+
+const CATEGORY_KEYWORDS = {
+  Architecture: ['microservice', 'architecture'],
+  Database: ['database', 'sql'],
+  API: ['api', 'rest', 'graphql'],
+  Caching: ['cache', 'redis'],
+  DevOps: ['kubernetes', 'docker', 'infrastructure'],
+  Security: ['auth', 'security', 'jwt'],
+  Performance: ['scale', 'scaling', 'performance'],
+  Networking: ['network', 'tcp', 'http'],
+  Career: ['career', 'engineer', 'resume'],
+  'Case Study': ['netflix', 'video'],
+};
+
 const blogFiles = [
   // 2025
   '2025/250116 From Monolith to Microservices - Key Transition Patterns.html',
@@ -128,13 +149,13 @@ function getBlogPosts(): BlogPost[] {
 
   for (const filePath of blogFiles) {
     const fileName = filePath.split('/')[1]; // Get filename without year folder
-    const match = fileName.match(/^(\d{6})\s+(.+)\.html$/);
+    const match = fileName.match(BLOG_FILENAME_REGEX);
 
     if (match) {
       const [, dateStr, title] = match;
-      const year = dateStr.substring(0, 2);
-      const month = dateStr.substring(2, 4);
-      const day = dateStr.substring(4, 6);
+      const year = dateStr.substring(YEAR_START, YEAR_END);
+      const month = dateStr.substring(MONTH_START, MONTH_END);
+      const day = dateStr.substring(DAY_START, DAY_END);
 
       // Convert YY to full year (assuming 2000s)
       const fullYear =
@@ -169,62 +190,10 @@ function getBlogPosts(): BlogPost[] {
 function getCategoryFromTitle(title: string): string {
   const lowerTitle = title.toLowerCase();
 
-  if (
-    lowerTitle.includes('microservice') ||
-    lowerTitle.includes('architecture')
-  ) {
-    return 'Architecture';
-  }
-  if (lowerTitle.includes('database') || lowerTitle.includes('sql')) {
-    return 'Database';
-  }
-  if (
-    lowerTitle.includes('api') ||
-    lowerTitle.includes('rest') ||
-    lowerTitle.includes('graphql')
-  ) {
-    return 'API';
-  }
-  if (lowerTitle.includes('cache') || lowerTitle.includes('redis')) {
-    return 'Caching';
-  }
-  if (
-    lowerTitle.includes('kubernetes') ||
-    lowerTitle.includes('docker') ||
-    lowerTitle.includes('infrastructure')
-  ) {
-    return 'DevOps';
-  }
-  if (
-    lowerTitle.includes('auth') ||
-    lowerTitle.includes('security') ||
-    lowerTitle.includes('jwt')
-  ) {
-    return 'Security';
-  }
-  if (
-    lowerTitle.includes('scale') ||
-    lowerTitle.includes('scaling') ||
-    lowerTitle.includes('performance')
-  ) {
-    return 'Performance';
-  }
-  if (
-    lowerTitle.includes('network') ||
-    lowerTitle.includes('tcp') ||
-    lowerTitle.includes('http')
-  ) {
-    return 'Networking';
-  }
-  if (
-    lowerTitle.includes('career') ||
-    lowerTitle.includes('engineer') ||
-    lowerTitle.includes('resume')
-  ) {
-    return 'Career';
-  }
-  if (lowerTitle.includes('netflix') || lowerTitle.includes('video')) {
-    return 'Case Study';
+  for (const [category, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
+    if (keywords.some((keyword) => lowerTitle.includes(keyword))) {
+      return category;
+    }
   }
 
   return 'General';
