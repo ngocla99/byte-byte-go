@@ -1,6 +1,6 @@
 import { Calendar, Tag } from 'lucide-react';
+import { formatDate } from '@/lib/date';
 import type { BlogPost } from '../lib/blogs';
-import { formatDate } from '../lib/blogs';
 import { Card, CardContent, CardHeader } from './ui/card';
 
 type BlogCardProps = {
