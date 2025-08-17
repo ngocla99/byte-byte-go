@@ -14,7 +14,7 @@ type BlogListProps = {
   posts: BlogPost[];
 };
 
-function BlogHeader({ postCount }: { postCount: number }) {
+function BlogHeader() {
   return (
     <div className="space-y-4 text-center">
       <div className="mb-4 flex items-center justify-center gap-3">
@@ -22,13 +22,6 @@ function BlogHeader({ postCount }: { postCount: number }) {
         <h1 className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text font-bold text-4xl text-transparent">
           Byte Byte Go
         </h1>
-      </div>
-      <p className="mx-auto max-w-2xl text-lg text-muted-foreground">
-        Explore our collection of technical articles covering system design,
-        architecture, databases, and more.
-      </p>
-      <div className="text-muted-foreground text-sm">
-        <span className="font-medium">{postCount}</span> articles available
       </div>
     </div>
   );
@@ -84,6 +77,9 @@ function SearchAndFilters({
           <div className="flex items-center gap-2">
             <Filter className="h-5 w-5 text-muted-foreground" />
             <span className="font-medium text-sm">Filter by Category</span>
+            <div className="text-muted-foreground text-sm">
+              {posts.length} articles available
+            </div>
           </div>
           {hasActiveFilters && (
             <Button
@@ -226,7 +222,7 @@ export function BlogList({ posts }: BlogListProps) {
 
   return (
     <div className="space-y-6">
-      <BlogHeader postCount={posts.length} />
+      <BlogHeader />
 
       <SearchAndFilters
         categories={categories}
