@@ -32,9 +32,11 @@ export function BlogCard({ post }: BlogCardProps) {
     >
       <div
         aria-label={post.title}
-        className="h-48 w-full rounded-t-lg bg-center bg-cover"
+        className="h-48 w-full rounded-t-lg bg-center bg-cover bg-white"
         role="img"
-        style={{ backgroundImage: `url(${imageUrl})` }}
+        style={{
+          backgroundImage: `url(${imageUrl})`,
+        }}
       />
       <CardHeader className="pb-3">
         <div className="mb-2 flex items-center justify-between">
