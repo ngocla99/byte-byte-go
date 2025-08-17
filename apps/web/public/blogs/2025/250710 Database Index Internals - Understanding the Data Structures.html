@@ -1,0 +1,976 @@
+<div style="font-size:16px;line-height:26px;max-width:728px;width:100%;margin:0 auto">
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div role="region" aria-label="Post header" style="font-size:16px;line-height:26px">
+            <h1
+                style="color:rgb(54,55,55);font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:0;line-height:36px;font-size:32px">
+                <a href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=post-email-title&amp;utm_campaign=email-post-title&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E"
+                    style="color:rgb(54,55,55);text-decoration:none" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dpost-email-title%26utm_campaign%3Demail-post-title%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw2BQKRGiMTkDmWM_ggiIcnT">Database
+                    Index Internals: Understanding the Data Structures</a></h1>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="margin:1em 0;height:20px">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(54,55,55);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <a style="list-style:none;color:rgb(54,55,55);margin:0;font-size:11px;line-height:20px;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px;text-decoration:none"
+                                                                    href="https://substack.com/@bytebytego399569"
+                                                                    target="_blank"
+                                                                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw0lJelgRro-lhtYPb3Ug4s_"><span
+                                                                        class="il">ByteByteGo</span></a></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <time datetime="2025-07-10T15:40:55.483Z">Jul 10</time>
+                                                            </div>
+                                                        </td>
+                                                        <td width="4" style="min-width:4px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                ∙</div>
+                                                                        </td>
+                                                                        <td width="4" style="min-width:4px"></td>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(94,73,217);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                Paid</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:middle"><a
+                                                href="https://substack.com/@bytebytego399569" target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw0lJelgRro-lhtYPb3Ug4s_"><img
+                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZmQv6ryHLPODEU-MRm_gB3J7X9MhNgz44JNEUx73kdndB1yaCLhCHn7jRNhkoOjKMwNswdJ40ld3W7YGkhbw_7596bZNZORSy16V57PD-ab365CuwmR1X4_tJl6aMaFLntsGRC44zznLhj1S6xohbWqS-DzRc13imK57EzGvyVLWxzbunMP-EJ8l4T5OebebN01iK7ztesZkJhz9zsoiKPoiavly7H8ZmKgBtDqIRJG8gAyMTgOx7W8s4nSyOGVRda-ejDTSMFkiIfGrJljxEffI28TQ_W13bbQB_roXd0iH3a2g=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!U1Ej!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9941c68-e5b7-4b93-be75-df7cc4ffef02_504x540.png"
+                                                    style="box-sizing:border-box;border-radius:500000px;max-width:550px;border:none;vertical-align:middle;width:40px;height:40px;min-width:40px;min-height:40px;object-fit:cover;margin:0px;display:inline"
+                                                    width="40" height="40" class="CToWUd" data-bit="iit"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+                <tbody>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MTc1NDc1NDEyOSwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.qqgpf0EKlPGEaCdDEvqKctBy1WRLaLgqRY4RAhoj0F4&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MTc1NDc1NDEyOSwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.qqgpf0EKlPGEaCdDEvqKctBy1WRLaLgqRY4RAhoj0F4%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw3v8PwozjyliMcaPw972ez1"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_Naa3IR2w7JOvkJocW1x0I7SB1MCOI7AhJhmrkINO54_Qy_aUBLmcCLPa03ollVVBpy0zT7Bw-Y9o6wWm2zzC0IYsCr1Eev06rHZl1Ph0YPBoVK_U_YZg8DFZpGzRHEYrT0WhlX5-G5BsO2Sl92fJ5YbqVa86jds9S5XpDjFfs8K7bmg9oRGpwEDYJ5Surj9lFG6YB2Ly5PDQsHyZLvK2Cd-fbcwn6Q__wZaPFAVsMWu_7u9L2RHjtfVz2oG_dpZRPiBxXqm-envr4XP4bhmt6KX6oX-sREJ5rpQuhrfwvEgadNFuqruhs2pFP4ECoFFhApshEyf=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!PeVs!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw3JetxJ7_TUfXU_nVwXxSw_"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYAYVv5mN9UtJsvSLb-xFPHzWaYLHSFVu2TrTC3xkiIjqg_6ZDF-WfBrxHBIldncD1xHD30GjXqNAaSS-FyefzWmOxOAOomWsvgsWDMH9jqA3soSsi-Xu1YGFLVLfVElEq40Wd_e2w62K312P8rd1KVjDbCn7ELfFcFM43VxDTC6SZJxw4Z3IQ9JmTTojcVfAiBoML3OKbvO0ot0caFaorLumMxM4xif1daLkJi8mfirIsI8Owi_HwBezVBhx98sKlR0m35bzx7Ry2tSvChM0eFJuI5OPV6u7-PmkBVJl_7ZdfbC-qutnOOw5_rHKwuxmRo6C9uyn2f=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!x1tS!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;utm_campaign=email-share&amp;action=share&amp;triggerShare=true&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dsubstack%26utm_medium%3Demail%26utm_content%3Dshare%26utm_campaign%3Demail-share%26action%3Dshare%26triggerShare%3Dtrue%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw0l5AShf0TxRFQDyWtxtymh"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYGgiOdwcXqjwvbIK05QeSx_z9wMb6rtDgfJNoFGLrlAtK6js1-rxyA9BEMO9uwtvq7qGYXOFl78geknpyDK26-4r6J8AAbL5oyKRYNEtbk9krwhrp8at-IXbedHuCsXOPJdTELxPUpWdgNazr4U6RIUazDDCX76el6zpNcuFvbC1IErZVDSBfmmuD3pG8gMBdLvG8f_rQi4AsjJhuqiShD55xdmwC-mkZsIr3QkcSnGKwJieIT27pR351LQ5ncXgKWyr6F0xIvEIFbZGhp64ybaRwu2BWVBmdjrkU7JZOcjeZdouzf3Lx7voCOC3Fj6MmkCxlN-A=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!_L14!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideShare2%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJOek0zTnpJNE5Dd2lhV0YwSWpveE56VXlNVFl5TVRJNUxDSmxlSEFpT2pFM05UUTNOVFF4TWprc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuLUNURGtNQVZVaVpnM0VtNDdGeGZzM1NjVnc4TVA4U3F2YXAwVGI3ZVQyRSIsInAiOjE2NzM3NzI4NCwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MjA2NzczODEyOSwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.jy4-IBfOSpgAMNBloEEXrENi_NYTZXQZcq7HMZwhJIs?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJOek0zTnpJNE5Dd2lhV0YwSWpveE56VXlNVFl5TVRJNUxDSmxlSEFpT2pFM05UUTNOVFF4TWprc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuLUNURGtNQVZVaVpnM0VtNDdGeGZzM1NjVnc4TVA4U3F2YXAwVGI3ZVQyRSIsInAiOjE2NzM3NzI4NCwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MjA2NzczODEyOSwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.jy4-IBfOSpgAMNBloEEXrENi_NYTZXQZcq7HMZwhJIs?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw3yUhUCPNIC0pMVEmgmaTHi"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZXy1tPajN68nZIshfi6vMh85o58rF3qzcn4U6naeGz_YlPlHQsy7cdPjKOG3NxIIRcrfLnURHEGZ6GPxCwxd8jZ3C70hBeZ9Xk84WSsCWCVtEPzzqTrxHF7OyTxRtvCnB4bguOblgw3jjpO9PLHneuTVHY5ijwaaiSUlyMdoFvJDd5enfJAPO8_DI07qCc12odfNCsVxuKsjQvA3Sev0WQXZyohLQxtlnN7Ph6DnCiNpRi4SSyuARPsmixgYBaSIxSe81BVisZxSoGmuOHSZESaTtnEDEoA3Ts0YyqqeFk6UUg2zG1cqJ34riyO-xHRqZveUIcknxJ_w=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!5EGt!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://open.substack.com/pub/bytebytego/p/database-index-internals-understanding?utm_source=email&amp;redirect=app-store&amp;utm_campaign=email-read-in-app"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://open.substack.com/pub/bytebytego/p/database-index-internals-understanding?utm_source%3Demail%26redirect%3Dapp-store%26utm_campaign%3Demail-read-in-app&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw3gnpc_ryWdvaZ8gMN3UuRq">
+                                                                                <div
+                                                                                    style="font-size:16px;line-height:26px;display:inline-block;vertical-align:middle;max-width:0;min-height:18px">
+                                                                                </div><span
+                                                                                    style="vertical-align:middle;margin-right:4px">READ
+                                                                                    IN APP</span><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZ9tNhxwL0b7Kf3zMfABWwC15YUaPHzjiMMMLQjmmtvGcBzVH_Giv_D0Nkh5Y1fksnGDxFNgFNzkA6gTa0aDoT_WMgoblcOVugLEQZKejKe03uGTOdETBcO1Q9vkwPlmgzvKWavgsUR995n9VxuGh1OWk8niWTJ3To8K_n-pM4PKj-5pUSpaWaUBtJU6p1ICNKLC2vMScw2v7lkbSY99P7IAmGy3hoWZVOdQv55Bmih9YNuJ9VTbSzIzmk5vqt_XU1m_7K8vhaZ4SFngcDBCpNZRzYqoaAbmD3mgfC_SitlJ4wWXV6zjwEta9PpsqPzwccxv1c1i3YY4kUakg=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!ET-_!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideArrowUpRight%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="min-width:18px;min-height:18px;border:none;vertical-align:middle;margin-right:0;margin-left:0;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit">
+                                                                            </a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div dir="auto"
+            style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0">Creating an
+                index is easy. Nearly every developer has created or used an index at some point, whether directly or
+                indirectly. But knowing what to index is only one part of the equation. The more difficult question is
+                understanding how the index works underneath.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Indexing isn’t a
+                surface-level optimization. It’s a problem of data structures. The way an index organizes, stores, and
+                retrieves data directly shapes the performance of read and write operations. Different data structures
+                behave differently.&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Some may excel at range scans.&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Some are optimized for exact-match lookups.&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Others are purpose-built for full-text search or geospatial queries.&nbsp;</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">These decisions affect
+                everything from query planning to I/O patterns to the amount of memory consumed under load.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When a query slows down or
+                a system starts struggling with disk I/O, the index structure often sits at the heart of the issue. A
+                poorly chosen index format can lead to inefficient access paths, unnecessary bloat, or slow inserts.
+                Conversely, a well-aligned structure can turn a brute-force scan into a surgical lookup.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we will
+                cover the core internal data structures that power database indexes. Each section will walk through how
+                the structure works, what problems it solves, where it performs best, and what limitations it
+                carries.&nbsp;</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/335eecfc-a09d-433e-b324-6a4cfd355b5c?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/335eecfc-a09d-433e-b324-6a4cfd355b5c?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw0lNydMFjLKNgHYqt_s59wb"><img
+                                            alt="" width="550" height="641.4148351648352"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nb69KzYRGids81eTJ-ubLOS1wl49aYor2qs1xsGQbiKFBMD0bdHVm2drI2wCiadUJO3pIuITbmvHzCQRpefxXd54MiETOok69YuJpOQOJ3X04-5PUoex27-uakUeNPUHiGgpnR2MgUhD8Ecuab_M8MGm7mGk_yCHGnbVXA9-nYDjqnXEtsIX8hgNIj4vHk_ZAcFoEJpOO0iLS1lLNd315LcNSOczuf-XIeeMXffAhxYcBGXXFVvrxitGIRlSHBJF16Py8DHbEPfU3x5AuXtOEE_S-peMRusTUQfA-LbWcmnXVD2RNPQ6Uvxe9F8Y1ZxXWapZPsL=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!d75n!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F63055e37-b9bd-4272-af1f-cd6541df89e7_2250x2624.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                The Role of Index Structures in Query Execution</h2>
+            <div style="font-size:16px;line-height:26px;display:none"></div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">At its core, every index
+                structure serves the same purpose: to map a value to the location where the corresponding data lives.
+                Whether that location is a row ID, a page reference, or a primary key depends on the engine, but the
+                idea is always the same: find data faster by avoiding a full scan.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This mapping needs to work
+                at scale.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A good index structure must
+                support quick lookups, fast inserts, and reliable deletes. It should maintain performance as the dataset
+                grows, even into the millions or billions of rows. To achieve this, databases rely on specific data
+                structures that balance four main factors:&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        How much space does the index use?&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        How fast does it read?&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        How much overhead does it add to writes?</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        How well does it handle concurrency?</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">No single structure wins
+                across all dimensions. Some, like B+ Trees, offer predictable read and write performance with strong
+                range query support. Others, like hash indexes, optimize for equality lookups but fail when order or
+                range is involved. Bitmap indexes excel at filtering large datasets with low-cardinality columns but
+                perform poorly with frequent updates.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">These trade-offs shape how
+                the database executes queries. Let’s look at different data structures in more detail.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                B-Tree and B+ Tree Indexes</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Most relational databases
+                rely on one structure above all others for indexing: the B-Tree or the B+ Tree. Both of them have some
+                differences.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A B-Tree is a
+                self-balancing tree in which data is stored in both internal and leaf nodes. This means keys and their
+                associated data can be found anywhere in the tree.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The tree remains shallow
+                even with large datasets because it spreads data across wide branches, rather than deep hierarchies.
+                This ensures that lookup time grows logarithmically with the number of records. As keys are inserted or
+                deleted, the tree rebalances itself by splitting or merging nodes to keep the structure even.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below that
+                shows a B-Tree:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/1d7272a8-6eac-42b6-a08b-e0aa5e03dfec?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/1d7272a8-6eac-42b6-a08b-e0aa5e03dfec?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw3KvmZpQJcxJn7EXJsNfCOZ"><img
+                                            alt="" width="550" height="424.5879120879121"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NadcAeVQ9je3dUiZav-oFQM1TeD82MYZ1X3FAtnsMaXVI8_DCImt1j6H06Pw7C3rzWwMUMbGSHeQ4FlzcjsV9tt68sk8hJKJ97rA_zvhSHqx0zYUHoNlPT_6EiyzC9VKaCcjDhUmRHRfARxjwxl6M6xRjGBeBUYGV1qaWApKAIwp2D8FKXLV9R1-WODWyQPHfIe5RQucLvVAEZvDsZcYOLaqALEdOYV4agqcb2gkEud3LT3Vav7wtlWMNrw9q4k8BrckLpuaP5IKeDGNdC75cUwXSl90u9INo1c8ihmIpi3mRE9AZTXC-sb2XHEgVpw9OFA3kIM=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!xbJ4!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fbc6af9b9-0cf0-4031-b034-09d26aa3fbc6_2586x1996.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The B+ Tree is a refinement
+                of the B-Tree and is what most database engines implement.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">It has one important
+                difference: all actual data pointers live in the leaf nodes, while internal nodes contain only keys used
+                for navigation. This design makes range scans and ordered traversals far more efficient, since leaf
+                nodes are typically linked in sequence. Consider a query like below:</p>
+            <pre
+                style="background:#eeeeee;padding:16px;margin:32px 0;border-radius:8px;box-sizing:border-box"><code style="white-space:pre-wrap;font-size:16px;line-height:20px;font-weight:500">SELECT * FROM orders WHERE order_date BETWEEN '2023-01-01' AND '2023-01-31';</code></pre>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">B+ Trees can make such
+                queries extremely efficient. Once the engine finds the starting point, it can follow the leaf chain
+                without climbing back up the tree.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Each node in a B+ Tree
+                contains:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A sorted list of keys</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Pointers to child nodes (for internal nodes) or row locations (for leaves)</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Because each node can hold
+                many keys and pointers, the fan-out is high. This keeps the height of the tree low, typically three or
+                four levels, even for millions of rows. A lookup from root to leaf involves only a few disk page reads.
+            </p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The B+ Tree maintains
+                logarithmic time complexity for lookups, inserts, and deletes. This is because the number of operations
+                grows with the height of the tree, and the height grows slowly due to the high fan-out. A lookup
+                compares the search key against keys in each node, then follows the pointer to the next relevant node,
+                continuing until it reaches a leaf.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When inserting a new key:
+            </p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The engine finds the appropriate leaf node.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If there’s space, the key is added in order.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If the node is full, it splits into two nodes, and the middle key is promoted to the parent.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below that
+                shows how the B+ Tree forms as a series of insertions take place.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/e9171342-72b9-4a18-ae22-88534521bbe3?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/e9171342-72b9-4a18-ae22-88534521bbe3?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw0btN3SXyAY7XU8peW_zjT8"><img
+                                            alt="" width="550" height="390.2129120879121"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NbjVfKMisJBYyZ3W_97-rnCi4zF2srJwwmtvG4TgRkiEa7daVMGOquS9IDV9iZs4daQ19pz2WuZFvYpkdRZiDPh4vcJA_fbHM7mA_5X9jGQ7MtNl1UcgXiRP-nwZ2gvc63Qfq5VowTmU3c1gNDIvXfOoG-C1oSkyJKX8DolJeuyCJjjH8wyI0BiM2wz-oU_f_UnImPh-vVO3NiHGT-mU4Mp13K2GIKEkBFmdDgnGWtjve9Ex0zgKI0WWCbzc2sxEu6M6d98UB89HbA5upJdnIR3K5lC-EAAjq3FBbjEgKGbx0UsdAEC7I1PUj_V1rJBjB7Sc1AW=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!GZqA!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F1b91f3e9-01e2-4a8a-9272-38365defc0e7_3258x2312.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Deletions work similarly in
+                reverse. If a node becomes too empty, it may borrow from a sibling or merge with it. This rebalancing
+                ensures that the tree remains efficient even as the data changes.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Performance Patterns and Pitfalls</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">B+ Trees are excellent for
+                both equality and range-based queries. They support fast lookups on indexed columns and enable efficient
+                scans across sorted ranges. This makes them well-suited for use cases like filtering by primary key,
+                scanning by date, or paginating ordered results.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">However, they perform
+                poorly when the indexed column has low selectivity. For example, indexing a boolean column like
+                is_active offers little benefit because the index points to a large portion of the table. In such cases,
+                the engine may choose a full table scan over using the index.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Insert performance is also
+                sensitive to key distribution. Sequential keys like auto-incrementing IDs perform well because new
+                entries <span class="il">go</span> to the rightmost leaf.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Hash Indexes</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A hash index uses a hash
+                function to map key values to fixed-size buckets. Each bucket stores a pointer, or a list of pointers,
+                to the row(s) associated with that hashed key.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When a new key is inserted,
+                the hash function computes a numeric value based on that key. This value determines which bucket the
+                key-value pair is placed into. When a query searches for a specific value, the same hash function
+                computes the bucket location again and retrieves tata directly from that slot.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/903f9d55-dbde-47dc-8de8-4620c3fa375a?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/903f9d55-dbde-47dc-8de8-4620c3fa375a?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449094000&amp;usg=AOvVaw1qPpx6C6gCb3gGGs9yh5ts"><img
+                                            alt="" width="550" height="316.17445054945057"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Na2Wgr27egZpLEmNlnuipSZG8tB_kXr1DCZ2fDCe33DxVFs4EtKTpiAb3s6hUOAjlMimo_-MbOaLsWH3MNFcKyewXtMvwHOtMXpyEZKC7l4dIcjlD5stJaSDWgtqXuEJB-ycIhJjlZtKgACabliVFD4u4YVmmIKeH-xb9y_4raNJYciKSbc28eTYuaae19MjjOzCSLHHLFdTgZI8ivO7WPh3x2152Wxif_g3_RVMl2Bx6cG48kY31r8bWwg-WW-csp6lIu8fyKL_Cs40ypiH0mNwyLW-67bAXwcOWdp2iCBt-GttzI_CIWmJeqSInKQjIMa3e6o=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!L990!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0e131acb-5f1a-4cdb-aae3-fbc1220e7549_2602x1496.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Hash indexes handle
+                collisions (when two keys map to the same bucket) using either chaining (a linked list of values per
+                bucket) or open addressing (probing nearby buckets until a free or matching slot is found). The choice
+                of strategy affects performance under high load or uneven key distribution.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The performance
+                characteristics of a hash index are as follows:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Lookup performance is very fast for exact matches. The engine calculates the hash, checks the
+                        bucket, and retrieves the row.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Insert performance is also efficient, as new keys are simply hashed and placed in the
+                        appropriate bucket.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Delete operations remove entries based on the same hash lookup.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Search time remains stable as data grows, assuming the hash function distributes keys evenly.
+                    </p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">However, the structure does
+                not preserve any ordering of keys. In such cases, the engine must fall back to a full table scan or
+                another index.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Hash indexes are best
+                suited for the following cases:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        In-memory tables in which latency is critical.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Temporary data structures with known access patterns.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        High-cardinality exact-match queries, such as searching by session token or API key.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Hash-based partitioning or sharding, where the goal is to distribute data evenly across nodes or
+                        files.</p>
+                </li>
+            </ul>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Limitations of the Hash Index</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Hash indexes are also prone
+                to load imbalance if the hash function is weak or if the data is skewed. Also, they consume more memory
+                than tree-based indexes for equivalent functionality, especially when the number of buckets grows to
+                avoid collisions.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Poor hash function design
+                can lead to clustering, where too many keys fall into the same bucket, degrading performance and
+                reducing lookup consistency. Resizing or rehashing the structure during growth phases can also lead to
+                spikes in write amplification.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Bitmap Indexes</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A bitmap index takes a
+                different approach to indexing by representing data presence using bitmaps rather than tree or hash
+                structures. For each distinct value in a column, the index maintains a bit vector: a sequence of bits
+                where each bit corresponds to a row in the table. If the row has that value, the bit is set to 1;
+                otherwise, it remains 0. This structure allows the database to evaluate complex filters quickly using
+                bitwise logic, often with performance that tree-based indexes cannot match.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Imagine a gender column
+                with two possible values: 'active' and 'inactive'. A bitmap index for this column would create two
+                separate bitmaps: one for each value. If the table has 10,000 rows, each bitmap would be 10,000 bits
+                long. A query filtering for 'active' can access the corresponding bitmap directly and identify all
+                matching rows in a single scan.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/9302ce13-f75f-43ae-80f5-99c8e47a3529?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/9302ce13-f75f-43ae-80f5-99c8e47a3529?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3nfgx9z5wesyINl4HRHk6f"><img
+                                            alt="" width="550" height="331.28434065934067"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZcAGMDVTNek4lslsieFZTFCsv3MxOSd_rHbYoWZIm1bjhizmjbAxoEIvN1qNeanY089_irOGweN5wUmZFaElRCTQAl2bEPkgI0SUgNSxza9nzaj1itBl5xB0YUuj5EvupZV7AlDdxbRn4RQtHlWOcYrmTmF6a9ZZgv8qcxcLHILmbxAu4C0H3sqAPhG4avy9yiG2IoIiiWmyQTeeQQuw75zmIsUvnUJpaTh5gpp_PkoAsRcMRo9wHLCWftMcanFjurH9aBsEdC1k1MkQNwJuIvV7KowNuV_Zke44Uqgk0jie6Jqwn6G8j5eErSocCUoOQc9qyM=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!LDjW!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8c50188e-8f87-4381-b608-056109d1269f_3312x1996.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The bitmaps align with row
+                positions, allowing the engine to combine them efficiently using AND, OR, and NOT operations.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consider the following
+                query:</p>
+            <pre style="background:#eeeeee;padding:16px;margin:32px 0;border-radius:8px;box-sizing:border-box"><code style="white-space:pre-wrap;font-size:16px;line-height:20px;font-weight:500">SELECT COUNT(*) FROM users
+WHERE gender = 'F' AND status = 'active';</code></pre>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">It can be resolved by
+                performing a bitwise AND on the two relevant bitmaps, identifying matches without touching the base
+                table.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Bitmap indexes are ideal
+                for:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Columns with low cardinality, such as gender, status, or region.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Workloads where data is mostly static and read-focused.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Analytical platforms and data warehouses that benefit from multi-column filtering.</p>
+                </li>
+            </ul>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Limitations of Bitmap Indexes</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Bitmap indexes shine in
+                read-heavy, analytic environments where query performance depends on filtering across multiple columns.
+                Because bitmaps are compact and bitwise operations are fast, queries can resolve complex conditions with
+                minimal I/O. However, they struggle in transactional workloads. Updates, inserts, or deletes require
+                modifying multiple bitmaps, which becomes costly at scale.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Write-heavy environments
+                introduce overhead because every bitvector must be adjusted whenever a change is made. This slows down
+                operations and can cause contention in concurrent workloads.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Bitmap indexes are not a
+                fit for high-cardinality columns, such as user_id or email. The number of bitmaps would grow linearly
+                with the number of distinct values, leading to excessive memory usage.&nbsp;</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Inverted Indexes</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">An inverted index flips the
+                typical indexing model. Instead of mapping rows to values, it maps specific terms to the documents or
+                rows where those terms appear. This design is optimized for full-text search and excels at querying
+                large volumes of unstructured or semi-structured text.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/6ed487ec-3765-47de-a1fa-0410b47c0d13?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/6ed487ec-3765-47de-a1fa-0410b47c0d13?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3H8ZD0fOWnjtzQl_Yj2jfc"><img
+                                            alt="" width="550" height="338.0837912087912"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Naatorb8AF9W2hrHCaU2es2Dzi-ZAdID7luNUJwGVbkvkXETTNpyaQc93JEQRAgvRApMfX_8LXHk-R3sxv_h_xnEC13ep5N2DB1KRJInmlFg9QtnstqfR-v-3D9-0kOYYjYk1oFtl2Rv2tNeW1N-3Usnh7p-ch4i_Ezxgbp-VAbbcMTvg7ec-Tc_lJDpn1arnuLzqijh1bfHrfnFzQ4zgvtBb3H3YuwPW0aChdV990h8s8uS4DLWwi_OM2_Qaoi3jVDMgj-fcSraTnVn02FqrQ33pz0r2RbwrG-BEbSNoPATIKlc9J0Wo5ICaKx-YKdX2Y4XHUD=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!3vH-!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe511c9c1-4914-4919-bea7-bd6b97fb5374_2602x1600.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The process starts with
+                tokenization. The database or search engine breaks input text into individual terms, or tokens, usually
+                by splitting on whitespace and punctuation, then applying filters like case normalization.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">For each token, it records
+                a list of documents (or rows) that contain that term. As an example, the term “database” might map to:
+            </p>
+            <pre
+                style="background:#eeeeee;padding:16px;margin:32px 0;border-radius:8px;box-sizing:border-box"><code style="white-space:pre-wrap;font-size:16px;line-height:20px;font-weight:500">"database" → [doc_1, doc_4, doc_19]</code></pre>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Updates and deletions
+                require modifying the lists. Adding a document involves tokenizing it and updating each relevant list.
+                Removing a document means purging it from all lists where it appears. This process is efficient but not
+                instantaneous, so many systems handle it in batches or via background processes.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Inverted indexes are built
+                into many systems:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        MySQL supports full-text indexes using its FULLTEXT keyword.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        PostgreSQL offers full-text search using “tsvector” and “tsquery”, with support for
+                        dictionaries, stopwords, and ranking.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Elasticsearch is built entirely around inverted indexes and supports full-text search,
+                        filtering, and aggregations at scale.</p>
+                </li>
+            </ul>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Limitations of Inverted Indexes</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Inverted indexes are highly
+                specialized. They are not a replacement for traditional indexes and are not suitable for structured
+                queries like equality lookups or range filters on numeric columns.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">They also demand careful
+                handling of:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Stemming, to group words like "run" and "running".</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Stopwords, which remove common terms like "the" or "and".</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Language support, especially in multilingual datasets.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Without proper
+                configuration, these details can skew relevance scores or omit valid matches.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Summary</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we’ve
+                looked at database index internals and the data structures that power them in detail.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here are the key learning
+                points in brief:</p>
+            <ul style="margin-top:0;padding:0;margin-bottom:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Index structures define how databases locate data efficiently without scanning entire tables.
+                        Different structures are optimized for different access patterns.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A B+ Tree is the default indexing structure in most relational databases. It stores all values
+                        in leaf nodes and supports fast lookups, range queries, and ordered scans. It also maintains
+                        logarithmic search time through balanced branching and efficient node splitting and merging
+                        during inserts and deletes.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        B+ Trees perform well on selective queries but degrade when used on unselective predicates.
+                        Inserts can suffer when random keys like UUIDs cause frequent page splits.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Hash indexes use a hash function to map keys to buckets and offer near-constant time performance
+                        for exact-match lookups.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Hash indexes are unsuitable for range queries or sorting, and they can suffer from poor
+                        distribution if the hash function is weak or the data is skewed.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Bitmap indexes use a bit vector per distinct column value, enabling fast filtering using bitwise
+                        operations on low-cardinality columns.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Bitmap indexes are ideal for analytic workloads in data warehouses but introduce high write
+                        overhead and are unsuitable for transactional systems or high-cardinality fields.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Inverted indexes map terms to documents and are used in full-text search systems. They tokenize
+                        input text and build posting lists for fast term-based retrieval.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        These indexes are common in systems like Elasticsearch and full-text features in PostgreSQL and
+                        MySQL, but they are not appropriate for structured numeric or range queries.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Each index structure introduces trade-offs in read performance, write cost, memory usage, and
+                        query flexibility. Choosing the right one depends on access patterns and workload
+                        characteristics.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        style="margin:32px 0 0;width:100%;box-sizing:border-box;border-top:1px solid #e6e6e6;font-size:16px;line-height:26px">
+    </div>
+    <div style="font-size:16px;line-height:26px">
+        <div style="margin:32px 0;font-size:16px;line-height:26px">
+            <div dir="auto"
+                style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0"><span>This
+                        post is only for premium members of&nbsp;</span><a
+                        href="https://substack.com/redirect/845a0efa-e445-46ca-acaf-035f995c8292?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                        rel="" style="color:rgb(54,55,55);text-decoration:underline" target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/845a0efa-e445-46ca-acaf-035f995c8292?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw1d85_xsWDK-WarDl9We-fR">the
+                        <span class="il">ByteByteGo</span> newsletter</a><span>.&nbsp;This email is intended for a
+                        single recipient, but occasional forwarding is totally fine.</span></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>Know someone who
+                        would benefit from the newsletter? Consider gifting a subscription.</em></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNakUyTWpFeU9Td2laWGh3SWpveE56VTBOelUwTVRJNUxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLndJUU1Va2RHMDRuMUE3Zmd4aWphdUY2dFB1UTNpX3FqSEZxTkszSUZNY2MiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sR4puhc0FtEgxkN6JZKbfAwpOXtJFxhcZBZ-YB6TXqo?&amp;gift=true"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNakUyTWpFeU9Td2laWGh3SWpveE56VTBOelUwTVRJNUxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLndJUU1Va2RHMDRuMUE3Zmd4aWphdUY2dFB1UTNpX3FqSEZxTkszSUZNY2MiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sR4puhc0FtEgxkN6JZKbfAwpOXtJFxhcZBZ-YB6TXqo?%26gift%3Dtrue&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3_NKKTRMG33Mt4R-kqq08K"><span
+                            style="color:#ffffff;text-decoration:none">Give a gift subscription</span></a></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>For group
+                        subscriptions</em><span>,&nbsp;click here:</span></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-bottom:0;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNakUyTWpFeU9Td2laWGh3SWpveE56VTBOelUwTVRJNUxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLndJUU1Va2RHMDRuMUE3Zmd4aWphdUY2dFB1UTNpX3FqSEZxTkszSUZNY2MiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sR4puhc0FtEgxkN6JZKbfAwpOXtJFxhcZBZ-YB6TXqo?group=true&amp;coupon=254241e3"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNakUyTWpFeU9Td2laWGh3SWpveE56VTBOelUwTVRJNUxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLndJUU1Va2RHMDRuMUE3Zmd4aWphdUY2dFB1UTNpX3FqSEZxTkszSUZNY2MiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sR4puhc0FtEgxkN6JZKbfAwpOXtJFxhcZBZ-YB6TXqo?group%3Dtrue%26coupon%3D254241e3&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3XJEVme6MsG_-K-Pp8Q4H5"><span
+                            style="color:#ffffff;text-decoration:none">Get 20% off a group subscription</span></a></p>
+            </div>
+        </div>
+    </div>
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+        style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+        <tbody>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0"
+                                        style="margin:0 auto">
+                                        <tbody>
+                                            <tr>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MTc1NDc1NDEyOSwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.qqgpf0EKlPGEaCdDEvqKctBy1WRLaLgqRY4RAhoj0F4&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MTc1NDc1NDEyOSwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.qqgpf0EKlPGEaCdDEvqKctBy1WRLaLgqRY4RAhoj0F4%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw0J9BngipnE3P057V4Q07K4"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_Naa3IR2w7JOvkJocW1x0I7SB1MCOI7AhJhmrkINO54_Qy_aUBLmcCLPa03ollVVBpy0zT7Bw-Y9o6wWm2zzC0IYsCr1Eev06rHZl1Ph0YPBoVK_U_YZg8DFZpGzRHEYrT0WhlX5-G5BsO2Sl92fJ5YbqVa86jds9S5XpDjFfs8K7bmg9oRGpwEDYJ5Surj9lFG6YB2Ly5PDQsHyZLvK2Cd-fbcwn6Q__wZaPFAVsMWu_7u9L2RHjtfVz2oG_dpZRPiBxXqm-envr4XP4bhmt6KX6oX-sREJ5rpQuhrfwvEgadNFuqruhs2pFP4ECoFFhApshEyf=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!PeVs!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Like</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=167377284&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D167377284%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NzM3NzI4NCwiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjE3NTQ3NTQxMjksImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.-CTDkMAVUiZg3Em47Fxfs3ScVw8MP8Sqvap0Tb7eT2E%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3LvU2kVhGB7OT6agT1NMkp"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYAYVv5mN9UtJsvSLb-xFPHzWaYLHSFVu2TrTC3xkiIjqg_6ZDF-WfBrxHBIldncD1xHD30GjXqNAaSS-FyefzWmOxOAOomWsvgsWDMH9jqA3soSsi-Xu1YGFLVLfVElEq40Wd_e2w62K312P8rd1KVjDbCn7ELfFcFM43VxDTC6SZJxw4Z3IQ9JmTTojcVfAiBoML3OKbvO0ot0caFaorLumMxM4xif1daLkJi8mfirIsI8Owi_HwBezVBhx98sKlR0m35bzx7Ry2tSvChM0eFJuI5OPV6u7-PmkBVJl_7ZdfbC-qutnOOw5_rHKwuxmRo6C9uyn2f=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!x1tS!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Comment</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJOek0zTnpJNE5Dd2lhV0YwSWpveE56VXlNVFl5TVRJNUxDSmxlSEFpT2pFM05UUTNOVFF4TWprc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuLUNURGtNQVZVaVpnM0VtNDdGeGZzM1NjVnc4TVA4U3F2YXAwVGI3ZVQyRSIsInAiOjE2NzM3NzI4NCwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MjA2NzczODEyOSwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.jy4-IBfOSpgAMNBloEEXrENi_NYTZXQZcq7HMZwhJIs?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLWluZGV4LWludGVybmFscy11bmRlcnN0YW5kaW5nP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJOek0zTnpJNE5Dd2lhV0YwSWpveE56VXlNVFl5TVRJNUxDSmxlSEFpT2pFM05UUTNOVFF4TWprc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuLUNURGtNQVZVaVpnM0VtNDdGeGZzM1NjVnc4TVA4U3F2YXAwVGI3ZVQyRSIsInAiOjE2NzM3NzI4NCwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTIxNjIxMjksImV4cCI6MjA2NzczODEyOSwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.jy4-IBfOSpgAMNBloEEXrENi_NYTZXQZcq7HMZwhJIs?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3ahBwzkuAWxxzSQgSQMBZL"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZXy1tPajN68nZIshfi6vMh85o58rF3qzcn4U6naeGz_YlPlHQsy7cdPjKOG3NxIIRcrfLnURHEGZ6GPxCwxd8jZ3C70hBeZ9Xk84WSsCWCVtEPzzqTrxHF7OyTxRtvCnB4bguOblgw3jjpO9PLHneuTVHY5ijwaaiSUlyMdoFvJDd5enfJAPO8_DI07qCc12odfNCsVxuKsjQvA3Sev0WQXZyohLQxtlnN7Ph6DnCiNpRi4SSyuARPsmixgYBaSIxSe81BVisZxSoGmuOHSZESaTtnEDEoA3Ts0YyqqeFk6UUg2zG1cqJ34riyO-xHRqZveUIcknxJ_w=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!5EGt!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Restack</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td align="right">
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="color:rgb(119,119,119);text-align:center;font-size:16px;line-height:26px;padding:24px0">
+        <div style="font-size:16px;line-height:26px;padding-bottom:24px">
+            <p
+                style="list-style:none;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;font-size:12px;line-height:16px;margin:0;color:rgb(119,119,119);text-decoration:unset">
+                © 2025 <span><span class="il">ByteByteGo</span></span><br>548 Market Street PMB 72296, San Francisco, CA
+                94104 <br><a
+                    href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTnpNM056STROQ3dpYVdGMElqb3hOelV5TVRZeU1USTVMQ0psZUhBaU9qRTNPRE0yT1RneE1qa3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLnA1VVJKaDBJdV9PczZVcHBRSjRrMXptQVZhc01tMDJHdUQ5SmZrd1NqcEEiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sC186HTYS0cqMVddlgDaO4nfmW1c5DvpYWbb_I0WbdM?"
+                    style="text-decoration:underline;color:rgb(119,119,119)" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTnpNM056STROQ3dpYVdGMElqb3hOelV5TVRZeU1USTVMQ0psZUhBaU9qRTNPRE0yT1RneE1qa3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLnA1VVJKaDBJdV9PczZVcHBRSjRrMXptQVZhc01tMDJHdUQ5SmZrd1NqcEEiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.sC186HTYS0cqMVddlgDaO4nfmW1c5DvpYWbb_I0WbdM?&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw30fN3TuQJ1q0jCsCzYANwq"><span
+                        style="color:rgb(119,119,119);text-decoration:underline">Unsubscribe</span></a></p>
+        </div>
+        <p
+            style="padding:0 24px;font-size:12px;line-height:20px;margin:0;color:rgb(119,119,119);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;margin-top:0">
+            <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9._E2NeZp7WqInEmc76Yc3JItdFWaglZqCYPwHOOgNR5w?"
+                style="color:rgb(119,119,119);text-decoration:none;display:inline-block;margin:0 4px" target="_blank"
+                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjczNzcyODQsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUyMTYyMTI5LCJleHAiOjIwNjc3MzgxMjksImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9._E2NeZp7WqInEmc76Yc3JItdFWaglZqCYPwHOOgNR5w?&amp;source=gmail&amp;ust=1755481449095000&amp;usg=AOvVaw3jmVDwRnxwb-SF5qx0OLpC"><img
+                    src="https://ci3.googleusercontent.com/meips/ADKq_NbFAQ2axZVs2VEk7Yi8WCLZvMYmcpvk2rCKzqvVe6SBmxnJzJIrp6tEVXFkKHt8BnIe8JsH-8cIDjgLcFz8Tyh8RJA84Dz3GzAd4URmIUJncOhhPdSwo25cF-VMUWur9-bqW8Cr5xSHQl_FMt0fWEJraWJwKHVmIc1X_I1ovQ3YqxJkbCBzPjXYH9cDcuOtcoB9bc-sQFAsCv0utg90FslBVoAyuzpGJaFlUCzduTMBArr2QtqDin6EXRnyjg=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!LkrL!,w_270,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Femail%2Fpublish-button%402x.png"
+                    width="135" alt="Start writing" height="40"
+                    style="max-width:550px;border:none!important;vertical-align:middle" class="CToWUd"
+                    data-bit="iit"></a></p>
+    </div>
+</div>

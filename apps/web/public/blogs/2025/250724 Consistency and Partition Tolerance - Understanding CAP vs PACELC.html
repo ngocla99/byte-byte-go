@@ -1,0 +1,960 @@
+<div style="font-size:16px;line-height:26px;max-width:728px;width:100%;margin:0 auto">
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div role="region" aria-label="Post header" style="font-size:16px;line-height:26px">
+            <h1
+                style="color:rgb(54,55,55);font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:0;line-height:36px;font-size:32px">
+                <a href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=post-email-title&amp;utm_campaign=email-post-title&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI"
+                    style="color:rgb(54,55,55);text-decoration:none" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dpost-email-title%26utm_campaign%3Demail-post-title%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw2mISjFllWiDMPjBjpzJ4Bj">Consistency
+                    and Partition Tolerance: Understanding CAP vs PACELC</a></h1>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="margin:1em 0;height:20px">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(54,55,55);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <a style="list-style:none;color:rgb(54,55,55);margin:0;font-size:11px;line-height:20px;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px;text-decoration:none"
+                                                                    href="https://substack.com/@bytebytego399569"
+                                                                    target="_blank"
+                                                                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw2L98y_ZW0NDU2u-uLcmTuH"><span
+                                                                        class="il">ByteByteGo</span></a></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <time datetime="2025-07-24T15:40:56.525Z">Jul 24</time>
+                                                            </div>
+                                                        </td>
+                                                        <td width="4" style="min-width:4px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                ∙</div>
+                                                                        </td>
+                                                                        <td width="4" style="min-width:4px"></td>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(94,73,217);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                Paid</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:middle"><a
+                                                href="https://substack.com/@bytebytego399569" target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw2L98y_ZW0NDU2u-uLcmTuH"><img
+                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZmQv6ryHLPODEU-MRm_gB3J7X9MhNgz44JNEUx73kdndB1yaCLhCHn7jRNhkoOjKMwNswdJ40ld3W7YGkhbw_7596bZNZORSy16V57PD-ab365CuwmR1X4_tJl6aMaFLntsGRC44zznLhj1S6xohbWqS-DzRc13imK57EzGvyVLWxzbunMP-EJ8l4T5OebebN01iK7ztesZkJhz9zsoiKPoiavly7H8ZmKgBtDqIRJG8gAyMTgOx7W8s4nSyOGVRda-ejDTSMFkiIfGrJljxEffI28TQ_W13bbQB_roXd0iH3a2g=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!U1Ej!,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9941c68-e5b7-4b93-be75-df7cc4ffef02_504x540.png"
+                                                    style="box-sizing:border-box;border-radius:500000px;max-width:550px;border:none;vertical-align:middle;width:40px;height:40px;min-width:40px;min-height:40px;object-fit:cover;margin:0px;display:inline"
+                                                    width="40" height="40" class="CToWUd" data-bit="iit"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+                <tbody>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MTc1NTk2Mzc0NiwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.RKh15LloZPpYxl_-IKjHctaDjD6rOv6jxRuwQt-0Y2g&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MTc1NTk2Mzc0NiwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.RKh15LloZPpYxl_-IKjHctaDjD6rOv6jxRuwQt-0Y2g%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw0fPRaRjwj2FnP1sIPHJ2Ch"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_Naa3IR2w7JOvkJocW1x0I7SB1MCOI7AhJhmrkINO54_Qy_aUBLmcCLPa03ollVVBpy0zT7Bw-Y9o6wWm2zzC0IYsCr1Eev06rHZl1Ph0YPBoVK_U_YZg8DFZpGzRHEYrT0WhlX5-G5BsO2Sl92fJ5YbqVa86jds9S5XpDjFfs8K7bmg9oRGpwEDYJ5Surj9lFG6YB2Ly5PDQsHyZLvK2Cd-fbcwn6Q__wZaPFAVsMWu_7u9L2RHjtfVz2oG_dpZRPiBxXqm-envr4XP4bhmt6KX6oX-sREJ5rpQuhrfwvEgadNFuqruhs2pFP4ECoFFhApshEyf=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!PeVs!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw0Q82woltKsbSx65XsTd_UB"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYAYVv5mN9UtJsvSLb-xFPHzWaYLHSFVu2TrTC3xkiIjqg_6ZDF-WfBrxHBIldncD1xHD30GjXqNAaSS-FyefzWmOxOAOomWsvgsWDMH9jqA3soSsi-Xu1YGFLVLfVElEq40Wd_e2w62K312P8rd1KVjDbCn7ELfFcFM43VxDTC6SZJxw4Z3IQ9JmTTojcVfAiBoML3OKbvO0ot0caFaorLumMxM4xif1daLkJi8mfirIsI8Owi_HwBezVBhx98sKlR0m35bzx7Ry2tSvChM0eFJuI5OPV6u7-PmkBVJl_7ZdfbC-qutnOOw5_rHKwuxmRo6C9uyn2f=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!x1tS!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;utm_campaign=email-share&amp;action=share&amp;triggerShare=true&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dsubstack%26utm_medium%3Demail%26utm_content%3Dshare%26utm_campaign%3Demail-share%26action%3Dshare%26triggerShare%3Dtrue%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw13v0T76WI-3i2r0PH_PkJ5"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYGgiOdwcXqjwvbIK05QeSx_z9wMb6rtDgfJNoFGLrlAtK6js1-rxyA9BEMO9uwtvq7qGYXOFl78geknpyDK26-4r6J8AAbL5oyKRYNEtbk9krwhrp8at-IXbedHuCsXOPJdTELxPUpWdgNazr4U6RIUazDDCX76el6zpNcuFvbC1IErZVDSBfmmuD3pG8gMBdLvG8f_rQi4AsjJhuqiShD55xdmwC-mkZsIr3QkcSnGKwJieIT27pR351LQ5ncXgKWyr6F0xIvEIFbZGhp64ybaRwu2BWVBmdjrkU7JZOcjeZdouzf3Lx7voCOC3Fj6MmkCxlN-A=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!_L14!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideShare2%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2NvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJPRFE1T0RjMk1pd2lhV0YwSWpveE56VXpNemN4TnpRMkxDSmxlSEFpT2pFM05UVTVOak0zTkRZc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuRkh0OG1lRi1RNlp4Q0RmWDA2Y1htcXNkeVJxcEVDM2xOU0N5LVp5bGVxSSIsInAiOjE2ODQ5ODc2MiwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MjA2ODk0Nzc0NiwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.z2Q-TlXLRRjP78Fo6T-DMRjOP-HYtSYWoltSoj1Hcoc?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2NvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJPRFE1T0RjMk1pd2lhV0YwSWpveE56VXpNemN4TnpRMkxDSmxlSEFpT2pFM05UVTVOak0zTkRZc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuRkh0OG1lRi1RNlp4Q0RmWDA2Y1htcXNkeVJxcEVDM2xOU0N5LVp5bGVxSSIsInAiOjE2ODQ5ODc2MiwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MjA2ODk0Nzc0NiwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.z2Q-TlXLRRjP78Fo6T-DMRjOP-HYtSYWoltSoj1Hcoc?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw2GBTn7ssFWtXkDnfSTCkAu"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZXy1tPajN68nZIshfi6vMh85o58rF3qzcn4U6naeGz_YlPlHQsy7cdPjKOG3NxIIRcrfLnURHEGZ6GPxCwxd8jZ3C70hBeZ9Xk84WSsCWCVtEPzzqTrxHF7OyTxRtvCnB4bguOblgw3jjpO9PLHneuTVHY5ijwaaiSUlyMdoFvJDd5enfJAPO8_DI07qCc12odfNCsVxuKsjQvA3Sev0WQXZyohLQxtlnN7Ph6DnCiNpRi4SSyuARPsmixgYBaSIxSe81BVisZxSoGmuOHSZESaTtnEDEoA3Ts0YyqqeFk6UUg2zG1cqJ34riyO-xHRqZveUIcknxJ_w=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!5EGt!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://open.substack.com/pub/bytebytego/p/consistency-and-partition-tolerance?utm_source=email&amp;redirect=app-store&amp;utm_campaign=email-read-in-app"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://open.substack.com/pub/bytebytego/p/consistency-and-partition-tolerance?utm_source%3Demail%26redirect%3Dapp-store%26utm_campaign%3Demail-read-in-app&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw2qqh7rLlyk_PTTTanSjJCA">
+                                                                                <div
+                                                                                    style="font-size:16px;line-height:26px;display:inline-block;vertical-align:middle;max-width:0;min-height:18px">
+                                                                                </div><span
+                                                                                    style="vertical-align:middle;margin-right:4px">READ
+                                                                                    IN APP</span><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZ9tNhxwL0b7Kf3zMfABWwC15YUaPHzjiMMMLQjmmtvGcBzVH_Giv_D0Nkh5Y1fksnGDxFNgFNzkA6gTa0aDoT_WMgoblcOVugLEQZKejKe03uGTOdETBcO1Q9vkwPlmgzvKWavgsUR995n9VxuGh1OWk8niWTJ3To8K_n-pM4PKj-5pUSpaWaUBtJU6p1ICNKLC2vMScw2v7lkbSY99P7IAmGy3hoWZVOdQv55Bmih9YNuJ9VTbSzIzmk5vqt_XU1m_7K8vhaZ4SFngcDBCpNZRzYqoaAbmD3mgfC_SitlJ4wWXV6zjwEta9PpsqPzwccxv1c1i3YY4kUakg=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!ET-_!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideArrowUpRight%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="min-width:18px;min-height:18px;border:none;vertical-align:middle;margin-right:0;margin-left:0;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit">
+                                                                            </a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div dir="auto"
+            style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0">Modern
+                databases don’t run on a single box anymore. They span regions, replicate data across nodes, and serve
+                millions of queries in parallel.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">However, every time a
+                database tries to be fast, available, and correct at once, something has to give. As systems scale, the
+                promise of fault tolerance collides with the need for correctness. For example, a checkout service can’t
+                afford to double-charge a user just because a node dropped off the network. But halting the system every
+                time a replica lags can break the illusion of availability. Latency, replica lag, and network partitions
+                are not edge cases.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Distributed databases have
+                to manage these trade-offs constantly. For example,</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A write request might succeed in one region but not another.&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A read might return stale data unless explicitly told to wait.&nbsp;</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some systems optimize for
+                uptime and accept inconsistencies. Others block until replicas agree, sacrificing speed to maintain
+                correctness.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Two models help make sense
+                of this: the CAP theorem and the PACELC theorem. CAP explains why databases must choose between staying
+                available and staying consistent in the presence of network partitions. PACELC extends that reasoning to
+                the normal case: even without failure, databases still trade latency for consistency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we will
+                look at these two models as they apply to real-world database design and understand the various
+                trade-offs involved.&nbsp;</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/1cb4a0ca-a2b3-46f2-9736-b2b999ea4a39?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/1cb4a0ca-a2b3-46f2-9736-b2b999ea4a39?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448067000&amp;usg=AOvVaw0RYJqtGh-uoFwBlL534Mzh"><img
+                                            alt="" width="550" height="641.4148351648352"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nb7ASbwHd7i5Oio1AToAFv-cFlMqduHYGmILJqHevFJ_YHJZXNO_IohHDUCsxUoDmaoH5nwE7vozNBA89EQHZGBkwsGZyYlV43bSzrA3OxwuWJwLoQwfRbm0T0MFm0FMGiPLHB2jdRyiZsbWqL75dNOuWX65uMBUy6amCGzi_jWh1G2LbKJLmZ5AoiL-Krv37jaz_wbclEFt9RsJlwt6LPnUFHBKB_8r_-_80OzAbRKapsptzaM2swI78NGIbrtNMP87dnJAZroEKP5EP7gj-FP1V49FB37Ms_ZzL3jZrUdYWg7zyX6xlEOoE6DRgasoLqYsHgm=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!nxxY!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fe8df406b-65b8-4294-ba33-0b3de91d9a4f_2250x2624.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Consistency and Partition Tolerance</h2>
+            <div style="font-size:16px;line-height:26px;display:none"></div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Distributed systems often
+                fail because of unclear expectations around what data should look like during failure. Two properties
+                lie at the center of this conversation:&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Consistency&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Partition Tolerance</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consistency, in the context
+                of distributed systems, refers to a strong and precise guarantee that every read must return the most
+                recent successful write or fail. This is often also called linearizability. It ensures operations appear
+                to execute in a single, globally agreed-upon order. For example, if a user sends a message and then
+                immediately refreshes the screen, a consistent system guarantees that the message shows up on the next
+                read.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is not the same as
+                eventual consistency, which only promises that replicas will converge to the same value. It is also
+                different from application-level consistency, such as enforcing valid state transitions. In this
+                context, consistency is about time and visibility. It ensures that once a write is acknowledged, all
+                subsequent reads reflect that write, no matter which node serves the request.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Partition Tolerance means
+                the system continues to operate despite broken communication between nodes. These failures happen more
+                often than they should, due to dropped packets, network congestion, zone outages, or misconfigured
+                firewalls. Any system that runs across multiple machines or locations must assume partitions will occur,
+                and the architecture must be prepared to handle them.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A partition-tolerant system
+                keeps working when parts of the network stop talking to each other. However, there is a trade-off. Such
+                a system needs to give up either availability or consistency during that partition.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is where things start
+                to get problematic. If two replicas cannot communicate but both continue serving traffic, one of them
+                may return stale or conflicting data. If they stop serving traffic until they can coordinate, the system
+                becomes unavailable. This is not an implementation flaw but a consequence of physical limits. Messages
+                have to cross real wires, and sometimes they get delayed, dropped, or misrouted entirely.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems resolve this
+                trade-off differently.&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Some choose availability, allowing updates in both partitions and resolving conflicts later.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Others choose consistency, blocking requests when they cannot confirm quorum.&nbsp;</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The right choice depends on
+                the use case. For example, a financial ledger may favor consistency, whereas a product recommendation
+                engine prioritizes availability.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                The CAP Theorem</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In 2000, Eric Brewer
+                presented the idea that in any distributed system, it is impossible to guarantee consistency,
+                availability, and partition tolerance simultaneously. This idea came to be known as the CAP Theorem.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">To understand what the
+                theorem says, it helps to first define the three terms clearly and precisely:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        As mentioned, consistency means every read receives the result of the most recent successful
+                        write. This is the same strong consistency discussed earlier: a read should never return stale
+                        data if a newer value has been acknowledged.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Availability means every request to a non-failing node receives a response, even if it cannot be
+                        guaranteed to reflect the most recent write. In other words, the system does not hang, error
+                        out, or time out, as long as the request reaches a healthy node.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Partition Tolerance means the system continues operating even when network messages between
+                        nodes are lost, delayed, or dropped. Since networks are unreliable by nature, every distributed
+                        system must assume that partitions will happen.</p>
+                </li>
+            </ul>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/2901355a-0e1b-42b0-848e-95a2ea0ae97d?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2901355a-0e1b-42b0-848e-95a2ea0ae97d?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw1tC034KOhI867iaB5u4AKz"><img
+                                            alt="" width="550" height="353.57142857142856"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nb0wQ06hC8XrlaZMRJso5RRo4ffubdhBsrTtpUnT9knOZAnBhZI9AWeeeIEQ9RQkG05VPahdvaQFlEDGiAJmxjT7f19etOiwkdBbHKDBWGz4d7eVdsR2dHRy1ThzRXeaeSnakzUCFau-_IcmkUTuIScdGeKIHvSu0S6t9XjLLEXvR6Oa2Mqq2w-4-P3TS9YK8hmZfmKJIcZhhk8NZFA_jtQB1DGDNbeeORaluegEowwbhXdLZY2zQ8JFes9qiAP7aocw9mKM52WgGsh35K_KW-O7oRDmli6zPppbNDokw0ejNjRKg2mTJOXlYxCUIe_qCHBUZKy=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!wzx5!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Feff8bb6c-6bf7-483b-a10a-13ea7d406808_1938x1246.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The CAP theorem makes a
+                focused claim: if a partition occurs, a distributed system must choose between consistency and
+                availability. Note that the theorem does not say that only two of the three properties can ever be
+                present. It mentions that during a network partition, which is often an inevitable condition in
+                real-world systems, the system must give up either consistency or availability.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This constraint results in
+                the following scenarios:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A CP system will prioritize consistency. If a node cannot verify that its peers have seen a
+                        write, it will refuse to serve requests or block writes until coordination is restored. This
+                        preserves data correctness but sacrifices availability during a partition.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        An AP system will prioritize availability. It continues to serve requests even when coordination
+                        with other nodes is not possible. This keeps the system responsive but risks serving stale data
+                        or accepting conflicting writes.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A common misunderstanding
+                is the idea that systems “pick any two” of the three properties. That framing misses the conditional
+                nature of the theorem. The trade-off only activates during a partition. In the absence of failure, a
+                well-designed system can be consistent and available. But the moment a partition hits, one guarantee
+                must yield.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below that
+                clarifies this scenario:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/833763b1-8340-4937-9a32-a67ed79853be?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/833763b1-8340-4937-9a32-a67ed79853be?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw1KcC2CHsdQlNBAExsVByBT"><img
+                                            alt="" width="550" height="322.59615384615387"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NbPsA5WgZp5pmzx3MSTzVmWMDNoDDPY3eIXtDhvhKdMzvi5FfO2lUPC_CBz3bIhKLs4VB_3NRkVQYQl10zcQ-UK1HH10JUphZzduVq0_lI8VZ369vF9WHyaGKxiGblmozLLSzc1e_vhN3AJrARktOcAyBMJm8nVQGgOVu8QQb0Pu6o5X9JPbWceG_0TU8rpMDqG5W74bhNJnvKn5xsYb036tfEboNk4FWBu_bxMfxPv8UcgU9aefWpXKFFyDZzJi1foL5YZdFOx4nSk4XWYN9GaIVfnNhlUXjpZo7yFvMDjgUpQWV-qZW8j15TQDsuUrr0V75Oh=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!xVaY!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcdcbd3ea-e746-47d9-a378-6e07cc8aa5db_3980x2334.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                CAP Theorem In Practice</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The real test of any
+                distributed system doesn’t happen on a clean day.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When messages stop flowing
+                between nodes, either due to a dropped link, an overloaded switch, or a misconfigured firewall, the
+                system enters uncertain territory. It can no longer guarantee that every part of the cluster sees the
+                same data. This is where the CAP theorem becomes more than theory. Design decisions show up as
+                user-facing behavior, and trade-offs start costing real money.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In a CP system, the
+                priority is clear: preserve consistency at all costs. When a partition occurs, nodes that cannot reach a
+                quorum will refuse to serve writes. Sometimes, they may block reads as well. In other words, the system
+                avoids making decisions it can’t guarantee are safe.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">For example, Zookeeper uses
+                majority-based consensus (via Zab, its coordination protocol). If a node can’t see the majority of the
+                ensemble, it halts operations. From the outside, this looks like downtime. But internally, it’s a
+                deliberate step to avoid split-brain scenarios where two sides accept conflicting updates.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In contrast, AP systems
+                lean into availability. If a client reaches a live node, that node accepts the write, even if it has no
+                idea what the other half of the system is doing. Once the partition heals, the system attempts to
+                reconcile conflicting updates. This might involve last-write-wins, custom conflict resolution logic, or
+                version vectors like vector clocks that track causality.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems like Amazon’s
+                Dynamo, which inspired many NoSQL databases, follow this model. They favor responsiveness and
+                durability, even if it means temporarily sacrificing consistency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This trade-off hits hardest
+                in user-facing systems. Consider a shopping cart that disappears mid-checkout, a message that gets
+                overwritten, or a financial transaction that shows different states on different devices.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">All of these are symptoms
+                of partition-related choices. Engineers must think carefully about consistency models, not just in terms
+                of CAP, but also along the spectrum: linearizability (strict ordering), sequential consistency
+                (agreed-upon order, not necessarily real-time), causal consistency (honors cause-effect relationships),
+                and eventual consistency (updates will converge eventually).</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">No model is inherently
+                superior. Each fits different application goals. Some examples are as follows:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        For a coordination service like Zookeeper, inconsistency can be catastrophic. CP is the only
+                        viable choice.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        For a recommendation feed or product listing service, a bit of temporary inconsistency is
+                        tolerable. AP or eventually consistent systems make sense.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        For many distributed databases, like Apache Cassandra, the system also exposes tunable
+                        consistency, letting developers choose the level of coordination per read or write.</p>
+                </li>
+            </ul>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                The PACELC Theorem</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The CAP theorem explains
+                how systems behave when there is a failure, but it leaves a gap. Most of the time, distributed systems
+                may not experience partitions. Networks work, and nodes stay in sync.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In such a situation, the
+                question arises: What trade-offs do systems make even when everything is healthy?</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is where the PACELC
+                theorem, proposed by Daniel Abadi, helps. It builds on CAP by adding an important dimension: the cost of
+                consistency during normal operation.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The model reads like a
+                decision tree.&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If a Partition occurs (P), then the system must choose between Availability (A) and Consistency
+                        (C).&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Else (E), when the system is healthy, it must choose between Latency (L) and Consistency (C).
+                    </p>
+                </li>
+            </ul>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/002d74ca-bc20-4840-abd6-51714adcc68e?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/002d74ca-bc20-4840-abd6-51714adcc68e?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw2G_x1ERx7_YZATecCshf6V"><img
+                                            alt="" width="550" height="317.68543956043953"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NbGEV7i3YOXYvr9xe_fupq4uiQON8I2vatBTlTrzudjWP5SCrGAu7c7EiSya5r0EOhHvklo1UwnpAeQ4KzSX2eX81a4KRZgOowX7lL4yBbEw5nY2npra2dnRBMg6IOn3G3dCRT31zq14zNjtxfb91_RtkfryEa582o-14WZn3sP3tqWSq4T1hshBGHUEN4Ex4JPAETS6UGKikZ38NAK-LF_PNAKDvFK2zMvhCrrV6F5-NhV4mAluzwDSK_zFMyYGQ0QrrQCZUQN41uA7rVww9l5obPjpjBM5aD_vlrSW-NOM9shQIxXZuoEvGcAkk3fFl1Qs6sg=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!y89e!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F162764f9-9d0c-47d9-998f-e48aaa09c691_2760x1594.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This small extension
+                captures a much broader reality. Systems that prioritize availability under partition also tend to
+                prioritize low latency under normal conditions. And systems that prefer consistency when the network is
+                broken usually make the same choice when the network is fine. PACELC brings these consistent preferences
+                into the spotlight.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here’s how it plays out in
+                real systems:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        DynamoDB and Apache Cassandra can be considered to fall under PA/EL. They prioritize
+                        availability when a partition occurs and optimize for low latency during normal operation. These
+                        systems use quorum reads and writes, but they allow tunable consistency and fast local
+                        responses. Conflict resolution and convergence are handled asynchronously.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Spanner, Google’s globally distributed SQL database, is a clear PC/EC system. It favors
+                        consistency during partitions and continues that commitment even when everything is running
+                        normally. Spanner uses tightly synchronized clocks (via TrueTime) and synchronous replication to
+                        ensure linearizability. The cost is latency. Every write involves coordination across regions
+                        and replica groups, even when there’s no failure.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Note that PACELC is not a
+                replacement for CAP. Instead, it tries to complete the picture and reminds architects that trade-offs
+                don’t <span class="il">go</span> away just because the system is healthy. Consistency and latency pull
+                against each other even in the best-case scenario.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Latency vs Consistency</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">As mentioned, even in a
+                normal operating mode, the system still faces a critical trade-off: should it return results quickly, or
+                should it ensure those results reflect the most recent state across replicas?</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In other words, a system
+                must choose between low latency (L) and strong consistency (C).</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trade-off comes from
+                how systems synchronize state across replicas. Strong consistency requires coordination. That means
+                waiting for a quorum of nodes to acknowledge a write before confirming success. It also means blocking
+                reads until enough replicas agree on the latest version. These coordination steps add latency, not
+                because of inefficient code, but because of the physics of distributed consensus.&nbsp;</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/f50a793c-a8d5-4fa7-9a17-9cc9a5821d91?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/f50a793c-a8d5-4fa7-9a17-9cc9a5821d91?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw2bjgEFTGt16_8PV30qN3qh"><img
+                                            alt="" width="550" height="317.68543956043953"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYvRnIHXGWP0J6RQGiPflDN-wExxxCEOV3eGcaQxZa5SYAS273nxOZ4ts3ttDyxoFim4U4BfDSLFvO-yJLeBuxGhKuzBYewdKtSNJVHdefTLGAAqK21PdLoOU97L6BsNqO9Pse2g5KLTSJeY8Mgpz6_YfG83u4UpEhnLfGEiZ8sVIJYgxpl9_cJYwq9fVBxhApwH6-gCLdhugvYfUzd76p7xWN4zEuGRN72BIBR0eeb0NGLkxMKbvqPfLL6gSg2q-etoWMQ5j3RxAoTfpUjkgcIPK4WuZNhZj6eNSI1znFeFcdLOFWnSwcO0yqwXesgviW0Wyxj=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!Na0s!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F8b049b6d-f198-4131-9cbb-144f35344808_1938x1120.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems like Google Spanner
+                <span class="il">go</span> all in on consistency. Every write uses Paxos for consensus, and every
+                replica agrees on commit order using tightly bound clocks provided by TrueTime. The result is globally
+                consistent reads and writes, but with higher and more variable latencies. For use cases like financial
+                transactions or distributed SQL workloads, this trade-off is acceptable.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/34aecbca-b5b8-4d5d-b2ed-4da0b802e730?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/34aecbca-b5b8-4d5d-b2ed-4da0b802e730?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw07-tJL8qpamdOXjDuEHmiu"><img
+                                            alt="" width="550" height="353.57142857142856"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nbc2JU_fsUelAbPuQIjF-iqE7uUDlpZF9PWaB3AdwnzQZ6frmRZlWf3DhDcJ990wOaxUKwh3MspNS-uCfEZa0Z3WMA_voc1yZIYVT_aRRBiyw-anXPfID6VzE3egyiuCYVTRXXV_Ng_atAAsCOUFAOKi9PutTTRbk8t8KnuL8xjtDPzNsr5Vau4Te_T2I58GOu2g03iJ2vEDgS43ZAM_72vdwK3wYTzTxcMIkjkYox3qbut6JQZ47_SiKaXcJHTXJn1rX6aqvtNqDWevjYAcOpYz0q0cFKeA28rFoi7WtIUSObAO71-0R7E3cSx8mGQdSQe-oNE=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!D2Jn!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc648b387-1773-4d60-921a-95cfbff52eb4_1938x1246.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">On the other side, some
+                systems allow tunable consistency. A developer can decide whether to wait for all replicas, a majority,
+                or just one before confirming a read or write. Fewer acknowledgments mean faster responses. For example,
+                a write with consistency level ONE will return as soon as the first replica stores it, regardless of
+                whether others have seen it. This reduces latency but sacrifices consistency. A follow-up read may not
+                see that write if it lands on a lagging replica.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This flexibility lets teams
+                make context-aware decisions. A product recommendation engine might favor speed, accepting that a user
+                could see a slightly outdated ranking. A payment processing service cannot afford such staleness.
+                Showing a zero balance when money has already been deducted is unacceptable.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Designing for the right
+                balance means understanding what latency guarantees the product needs. It means asking whether users
+                care more about speed or correctness.&nbsp;</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Designing Systems with CAP and PACELC</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The real value of CAP and
+                PACELC is in practical application. These models exist to help engineers make informed design choices
+                under pressure.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">It’s a good practice to
+                start with the first question: What matters most for this system?&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The answer shouldn’t be in
+                abstract terms, but for the actual product, users, and use cases.&nbsp;</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Is the data mission-critical or disposable?&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Can the system afford a brief delay, or must it always be up?&nbsp;</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Is it worse for users to see stale data or to wait a few seconds longer for the truth?</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">If consistency is
+                non-negotiable, then availability and latency will take a hit during partitions or peak load. In this
+                case, designing for quorum-based coordination and commit acknowledgments from multiple nodes can be
+                useful. Tools like Paxos, Raft, or Multi-Paxos can help. Use write-ahead logs and synchronous
+                replication to ensure no data is lost between replicas.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">If availability is
+                paramount, then allow writes to proceed in more relaxed conditions. It can be a good choice to use
+                eventual consistency models and accept divergence for short periods.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When latency is the main
+                concern, avoid synchronous coordination wherever possible. Techniques like local quorum reads,
+                read-your-writes caching, and asynchronous replication help serve data fast, even if it may not be
+                fresh.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below for a
+                comparison between synchronous and asynchronous replication.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/de05b176-e25d-4771-bccf-5bfc503ec141?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/de05b176-e25d-4771-bccf-5bfc503ec141?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw3KlDod56Z3Ii5OzRzbDrqO"><img
+                                            alt="" width="550" height="330.52884615384613"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NbknhB53jZ9iLHJxDkiYKcQfyLAhZwr3V6m6M8Ek3cZ9-m5Z5gOuZJWt0JB81Y22MKyl0uuOBw1wetGSPFYPBZ9m4NVgLELyVOCJWmsknOYIuTb4WJotudcTejv0jgiShOg9heV78Md0EAQGh1PeBhUVTplQBNF1943CqghfZcMAeQXqnz7h-khrZePbyR5sU0P95t6gS1j-4eg5bdIdH4FgASDUE6JMgcNaz9JBZRkKmippR7kKqvw_HNPLSIQZjseNV29ZB_JnVyZ69Otbr2UehLMAO3XaugY8mX6MQ1aROXJ-GYD6pMekpbDWjYqdWFClo7b=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!TE0L!,w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fac7d790c-dcca-4592-b0c0-3159458504f9_2000x1202.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Summary</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we have
+                taken a detailed look at consistency and partition tolerance in the context of the CAP and PACELC
+                theorems.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here are the key learning
+                points in brief:</p>
+            <ul style="margin-top:0;padding:0;margin-bottom:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Distributed systems must balance consistency, availability, and partition tolerance under
+                        real-world constraints, especially as they scale.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The CAP theorem states that during a network partition, a system must choose between consistency
+                        and availability.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Consistency means every read reflects the most recent successful write. Partition tolerance
+                        means the system keeps running despite network failures.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        CAP trade-offs are not theoretical. They manifest as rejected writes, stale reads, or blocked
+                        operations during partitions.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        CP systems prioritize correctness by rejecting operations when quorum is lost; AP systems favor
+                        uptime and reconcile later.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        PACELC extends CAP by adding a second dimension: even without failure, systems trade latency for
+                        consistency.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Strong consistency requires coordination across replicas, which adds latency even when the
+                        system is healthy.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Choosing between consistency, availability, and latency depends on the product’s tolerance for
+                        stale data, downtime, and delay.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The most robust architectures don’t avoid trade-offs, but document them clearly and let teams
+                        decide based on real requirements.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        style="margin:32px 0 0;width:100%;box-sizing:border-box;border-top:1px solid #e6e6e6;font-size:16px;line-height:26px">
+    </div>
+    <div style="font-size:16px;line-height:26px">
+        <div style="margin:32px 0;font-size:16px;line-height:26px">
+            <div dir="auto"
+                style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0"><span>This
+                        post is only for premium members of&nbsp;</span><a
+                        href="https://substack.com/redirect/c25b2ddd-1c4d-4c6a-bb1e-af54238a2301?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                        rel="" style="color:rgb(54,55,55);text-decoration:underline" target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/c25b2ddd-1c4d-4c6a-bb1e-af54238a2301?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw3mWWX-7yALSRuNLpb-S8BJ">the
+                        <span class="il">ByteByteGo</span> newsletter</a><span>.&nbsp;This email is intended for a
+                        single recipient, but occasional forwarding is totally fine.</span></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>Know someone who
+                        would benefit from the newsletter? Consider gifting a subscription.</em></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmNvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNek0zTVRjME5pd2laWGh3SWpveE56VTFPVFl6TnpRMkxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLmdSTXpEMkctU1VWMEtBcUV4cDVodW5QMVNSMjI0dUpiUDd1cDhqd3BvYTQiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.uLuFJ-umr9EPWyp0_sKzZZyWJZZa-g1TXze-0OVsHiM?&amp;gift=true"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmNvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNek0zTVRjME5pd2laWGh3SWpveE56VTFPVFl6TnpRMkxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLmdSTXpEMkctU1VWMEtBcUV4cDVodW5QMVNSMjI0dUpiUDd1cDhqd3BvYTQiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.uLuFJ-umr9EPWyp0_sKzZZyWJZZa-g1TXze-0OVsHiM?%26gift%3Dtrue&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw3IN3cfKYxG-BgNrT-fZc5G"><span
+                            style="color:#ffffff;text-decoration:none">Give a gift subscription</span></a></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>For group
+                        subscriptions</em><span>,&nbsp;click here:</span></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-bottom:0;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmNvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNek0zTVRjME5pd2laWGh3SWpveE56VTFPVFl6TnpRMkxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLmdSTXpEMkctU1VWMEtBcUV4cDVodW5QMVNSMjI0dUpiUDd1cDhqd3BvYTQiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.uLuFJ-umr9EPWyp0_sKzZZyWJZZa-g1TXze-0OVsHiM?group=true&amp;coupon=254241e3"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmNvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlJnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbWxoZENJNk1UYzFNek0zTVRjME5pd2laWGh3SWpveE56VTFPVFl6TnpRMkxDSnBjM01pT2lKd2RXSXRPREUzTVRNeUlpd2ljM1ZpSWpvaVkyaGxZMnR2ZFhRaWZRLmdSTXpEMkctU1VWMEtBcUV4cDVodW5QMVNSMjI0dUpiUDd1cDhqd3BvYTQiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.uLuFJ-umr9EPWyp0_sKzZZyWJZZa-g1TXze-0OVsHiM?group%3Dtrue%26coupon%3D254241e3&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw09dGrVr6e4HmFBISnsWiBv"><span
+                            style="color:#ffffff;text-decoration:none">Get 20% off a group subscription</span></a></p>
+            </div>
+        </div>
+    </div>
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+        style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+        <tbody>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0"
+                                        style="margin:0 auto">
+                                        <tbody>
+                                            <tr>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MTc1NTk2Mzc0NiwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.RKh15LloZPpYxl_-IKjHctaDjD6rOv6jxRuwQt-0Y2g&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MTc1NTk2Mzc0NiwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.RKh15LloZPpYxl_-IKjHctaDjD6rOv6jxRuwQt-0Y2g%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481448068000&amp;usg=AOvVaw3PTltG_PG5IGjQi3fBLspZ"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_Naa3IR2w7JOvkJocW1x0I7SB1MCOI7AhJhmrkINO54_Qy_aUBLmcCLPa03ollVVBpy0zT7Bw-Y9o6wWm2zzC0IYsCr1Eev06rHZl1Ph0YPBoVK_U_YZg8DFZpGzRHEYrT0WhlX5-G5BsO2Sl92fJ5YbqVa86jds9S5XpDjFfs8K7bmg9oRGpwEDYJ5Surj9lFG6YB2Ly5PDQsHyZLvK2Cd-fbcwn6Q__wZaPFAVsMWu_7u9L2RHjtfVz2oG_dpZRPiBxXqm-envr4XP4bhmt6KX6oX-sREJ5rpQuhrfwvEgadNFuqruhs2pFP4ECoFFhApshEyf=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!PeVs!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Like</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=168498762&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D168498762%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2ODQ5ODc2MiwiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjE3NTU5NjM3NDYsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.FHt8meF-Q6ZxCDfX06cXmqsdyRqpEC3lNSCy-ZyleqI%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481448069000&amp;usg=AOvVaw1lig1gf-uIuOZasoDtg48Q"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYAYVv5mN9UtJsvSLb-xFPHzWaYLHSFVu2TrTC3xkiIjqg_6ZDF-WfBrxHBIldncD1xHD30GjXqNAaSS-FyefzWmOxOAOomWsvgsWDMH9jqA3soSsi-Xu1YGFLVLfVElEq40Wd_e2w62K312P8rd1KVjDbCn7ELfFcFM43VxDTC6SZJxw4Z3IQ9JmTTojcVfAiBoML3OKbvO0ot0caFaorLumMxM4xif1daLkJi8mfirIsI8Owi_HwBezVBhx98sKlR0m35bzx7Ry2tSvChM0eFJuI5OPV6u7-PmkBVJl_7ZdfbC-qutnOOw5_rHKwuxmRo6C9uyn2f=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!x1tS!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Comment</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2NvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJPRFE1T0RjMk1pd2lhV0YwSWpveE56VXpNemN4TnpRMkxDSmxlSEFpT2pFM05UVTVOak0zTkRZc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuRkh0OG1lRi1RNlp4Q0RmWDA2Y1htcXNkeVJxcEVDM2xOU0N5LVp5bGVxSSIsInAiOjE2ODQ5ODc2MiwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MjA2ODk0Nzc0NiwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.z2Q-TlXLRRjP78Fo6T-DMRjOP-HYtSYWoltSoj1Hcoc?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2NvbnNpc3RlbmN5LWFuZC1wYXJ0aXRpb24tdG9sZXJhbmNlP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY2FtcGFpZ249ZW1haWwtcmVzdGFjay1jb21tZW50JmFjdGlvbj1yZXN0YWNrLWNvbW1lbnQmcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0luQnZjM1JmYVdRaU9qRTJPRFE1T0RjMk1pd2lhV0YwSWpveE56VXpNemN4TnpRMkxDSmxlSEFpT2pFM05UVTVOak0zTkRZc0ltbHpjeUk2SW5CMVlpMDRNVGN4TXpJaUxDSnpkV0lpT2lKd2IzTjBMWEpsWVdOMGFXOXVJbjAuRkh0OG1lRi1RNlp4Q0RmWDA2Y1htcXNkeVJxcEVDM2xOU0N5LVp5bGVxSSIsInAiOjE2ODQ5ODc2MiwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NTMzNzE3NDYsImV4cCI6MjA2ODk0Nzc0NiwiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.z2Q-TlXLRRjP78Fo6T-DMRjOP-HYtSYWoltSoj1Hcoc?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481448069000&amp;usg=AOvVaw09NOkYZ_DCN-qaFBQ8epp7"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZXy1tPajN68nZIshfi6vMh85o58rF3qzcn4U6naeGz_YlPlHQsy7cdPjKOG3NxIIRcrfLnURHEGZ6GPxCwxd8jZ3C70hBeZ9Xk84WSsCWCVtEPzzqTrxHF7OyTxRtvCnB4bguOblgw3jjpO9PLHneuTVHY5ijwaaiSUlyMdoFvJDd5enfJAPO8_DI07qCc12odfNCsVxuKsjQvA3Sev0WQXZyohLQxtlnN7Ph6DnCiNpRi4SSyuARPsmixgYBaSIxSe81BVisZxSoGmuOHSZESaTtnEDEoA3Ts0YyqqeFk6UUg2zG1cqJ34riyO-xHRqZveUIcknxJ_w=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!5EGt!,w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Restack</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td align="right">
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="color:rgb(119,119,119);text-align:center;font-size:16px;line-height:26px;padding:24px0">
+        <div style="font-size:16px;line-height:26px;padding-bottom:24px">
+            <p
+                style="list-style:none;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;font-size:12px;line-height:16px;margin:0;color:rgb(119,119,119);text-decoration:unset">
+                © 2025 <span><span class="il">ByteByteGo</span></span><br>548 Market Street PMB 72296, San Francisco, CA
+                94104 <br><a
+                    href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyT0RRNU9EYzJNaXdpYVdGMElqb3hOelV6TXpjeE56UTJMQ0psZUhBaU9qRTNPRFE1TURjM05EWXNJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLmliUGxWZVRvV3JfUnk0dnptNk1MTm05WDc1aTFfQ1llanhYUkdHbzRpRlEiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.g1HEzezgWn78j_jrnVrLwUIua7xiXxV_z686bjH6510?"
+                    style="text-decoration:underline;color:rgb(119,119,119)" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyT0RRNU9EYzJNaXdpYVdGMElqb3hOelV6TXpjeE56UTJMQ0psZUhBaU9qRTNPRFE1TURjM05EWXNJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLmliUGxWZVRvV3JfUnk0dnptNk1MTm05WDc1aTFfQ1llanhYUkdHbzRpRlEiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.g1HEzezgWn78j_jrnVrLwUIua7xiXxV_z686bjH6510?&amp;source=gmail&amp;ust=1755481448069000&amp;usg=AOvVaw2gZMFcsYWulqMMzw1FoXLk"><span
+                        style="color:rgb(119,119,119);text-decoration:underline">Unsubscribe</span></a></p>
+        </div>
+        <p
+            style="padding:0 24px;font-size:12px;line-height:20px;margin:0;color:rgb(119,119,119);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;margin-top:0">
+            <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.z8piS7a7PESNsGW0OF-k3Hi3Ps7lPWWPS8s6GUJ4-Pk?"
+                style="color:rgb(119,119,119);text-decoration:none;display:inline-block;margin:0 4px" target="_blank"
+                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjg0OTg3NjIsInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzUzMzcxNzQ2LCJleHAiOjIwNjg5NDc3NDYsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.z8piS7a7PESNsGW0OF-k3Hi3Ps7lPWWPS8s6GUJ4-Pk?&amp;source=gmail&amp;ust=1755481448069000&amp;usg=AOvVaw2ooOQuk1oMJc__qkkT363L"><img
+                    src="https://ci3.googleusercontent.com/meips/ADKq_NbFAQ2axZVs2VEk7Yi8WCLZvMYmcpvk2rCKzqvVe6SBmxnJzJIrp6tEVXFkKHt8BnIe8JsH-8cIDjgLcFz8Tyh8RJA84Dz3GzAd4URmIUJncOhhPdSwo25cF-VMUWur9-bqW8Cr5xSHQl_FMt0fWEJraWJwKHVmIc1X_I1ovQ3YqxJkbCBzPjXYH9cDcuOtcoB9bc-sQFAsCv0utg90FslBVoAyuzpGJaFlUCzduTMBArr2QtqDin6EXRnyjg=s0-d-e1-ft#https://substackcdn.com/image/fetch/$s_!LkrL!,w_270,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Femail%2Fpublish-button%402x.png"
+                    width="135" alt="Start writing" height="40"
+                    style="max-width:550px;border:none!important;vertical-align:middle" class="CToWUd"
+                    data-bit="iit"></a></p>
+    </div>
+</div>

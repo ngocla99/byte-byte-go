@@ -1,0 +1,1311 @@
+<div style="font-size:16px;line-height:26px;max-width:728px;width:100%;margin:0 auto">
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div role="region" aria-label="Post header" style="font-size:16px;line-height:26px">
+            <h1
+                style="color:rgb(54,55,55);font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:0;line-height:36px;font-size:32px">
+                <a href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=post-email-title&amp;utm_campaign=email-post-title&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U"
+                    style="color:rgb(54,55,55);text-decoration:none" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dpost-email-title%26utm_campaign%3Demail-post-title%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U&amp;source=gmail&amp;ust=1755481451004000&amp;usg=AOvVaw3p-SJAWyeBnsBS17MPfJGn">Engineering
+                    Trade-offs: Eventual Consistency in Practice</a></h1>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="margin:1em 0;height:20px">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(54,55,55);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <a style="list-style:none;color:rgb(54,55,55);margin:0;font-size:11px;line-height:20px;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px;text-decoration:none"
+                                                                    href="https://substack.com/@bytebytego399569"
+                                                                    target="_blank"
+                                                                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481451004000&amp;usg=AOvVaw0wAvLuo67y3pBBUOcWawz6"><span
+                                                                        class="il">ByteByteGo</span></a></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <time datetime="2025-05-15T15:40:52.689Z">May 15</time>
+                                                            </div>
+                                                        </td>
+                                                        <td width="4" style="min-width:4px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                ∙</div>
+                                                                        </td>
+                                                                        <td width="4" style="min-width:4px"></td>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;color:rgb(123,97,255);font-size:11px;line-height:20px;text-decoration:unset;margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                Paid</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:middle"><a
+                                                href="https://substack.com/@bytebytego399569" target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481451004000&amp;usg=AOvVaw0wAvLuo67y3pBBUOcWawz6"><img
+                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NbMCgdJvKdjXr0fOBZroInJwgWd_XZEhBFIQUaHzuoyQkylhvsJ-bobtSBG9fWF0W6oX2DYHW5hu7kALqnDmhDm1oLYQW7TF40BoFd1rW0xm-gcQo4wLHViC1JmidvmxMAO8SRa20m-_NvSIiwhyza1zOaH0Vq97L40hN-Rwv53qLbwtZOS6oikiTdl1vt2yfsgNVuIzynxlyf7hW8vhKvLBRJWKjc50X5Afp7p0yIoiUqsrPanChBp2beOzI-oKWAcKx0VQk9Pt7cPMajGkd5_WQiDUFGYwCmY=s0-d-e1-ft#https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9941c68-e5b7-4b93-be75-df7cc4ffef02_504x540.png"
+                                                    style="box-sizing:border-box;border-radius:500000px;max-width:550px;border:none;vertical-align:middle;width:40px;height:40px;min-width:40px;min-height:40px;object-fit:cover;margin:0px;display:inline"
+                                                    width="40" height="40" class="CToWUd" data-bit="iit"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+                <tbody>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.alEcvU8wZX1Wp8aZXzF6SNXpo4zGdw6nNO7RRdav0wk&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.alEcvU8wZX1Wp8aZXzF6SNXpo4zGdw6nNO7RRdav0wk%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw1q4op9ssYRkKCMBPzlI1nu"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYOjKnGdA6WctG38AS6EVdNYu_-7fh22xck2A9-pvWHOzWlHUTWwJBnDEHuihQT-mHYSFSOPGMFj17PoFDPqBRyAweZbKJBfmfdf0nN2gA2vpA_t4hra0npxdFv1Su3gybOyNLyHYsDXBY3m_mn080mcPeWTKQqIgqXPRT2V1wYwfkaPCLzlY_V-PiTggfv_xrTA8HYh7HKuHujEESc2P0y1oNal12FbEVuGHyE1cfT8Ao_kDE4WXwuj4hsN9KnkWa2-U1gOjvQJix2w3wAxTvq7i8tS-cG5kiw_zDtLa2jRkfU-2J9dqE1fRI=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw1hhu09LPlN5ImZn6vdYBpR"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZQ6ul5mfmbhHqaf8QqG95Pk2-u43roqB75nm5jJzhHXd--mR5Y8AvAyxxNDy_VtDd9fmjbUCT-HubbmsyqACondkMynDxF_4OPkse-myg1NEghIdojn9hXTPU8-8O66FdE-vni0HscGR7DdII1fBBP6Cqijmqt79Qf4aXgmizh3DWrKKu-k0Wgdk-bqdv-bhzJc25nY0ZIwaK-MSHSD25MZOwmFTqke48mYHWY7_OTC_tC7y9c6l7pZazslKv0l7zCVu3O4lHo5J4IzMUhAsYY7HrfIK6I1w19tGLaiFqYRu_GEX2HfaE1wzpyR-8=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;utm_campaign=email-share&amp;action=share&amp;triggerShare=true&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dsubstack%26utm_medium%3Demail%26utm_content%3Dshare%26utm_campaign%3Demail-share%26action%3Dshare%26triggerShare%3Dtrue%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw0WpydiXWTtI2pu8JxpTvQk"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NapSNhlS0wrP7TDO6xUMgaIvZAZVT6MPmCAQFChOJhlxMGNru6s-y28sjhxVgbEu0DpzgqZQGQ4LcdG7Ul9q6nczy7BDzFm23Py7j0OEAVgy6SDQg2utY1XcxnYRBTskLmml51_yQ45AxHVDG-RBUVlAF-hxHVVPUPXxjNlwjDSAe2PtFip_g4-8C5MI_RiVd5ONVV1B-rA4_Mkj91Y5EyCYYxlBC1Zj6ucBCurj9X_g83Bxg-EpbK4rOuSdTZ9QlJrojVx0qPyyH5cZeAZ1cobCEkYM_CLohPpHCMYsoprHIKVuPo0eIO1fQRH=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideShare2%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2EtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4_dXRtX3NvdXJjZT1zdWJzdGFjayZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1lbWFpbC1yZXN0YWNrLWNvbW1lbnQmYWN0aW9uPXJlc3RhY2stY29tbWVudCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW5CdmMzUmZhV1FpT2pFMk16RTBNemcyTlN3aWFXRjBJam94TnpRM016SXpOekkzTENKbGVIQWlPakUzTkRrNU1UVTNNamNzSW1semN5STZJbkIxWWkwNE1UY3hNeklpTENKemRXSWlPaUp3YjNOMExYSmxZV04wYVc5dUluMC5kRUxWTUJyUjVub25nbGRtbElVLUdmWmtHWXdoN2JlQ1IyTEE1QkJ4eV9VIiwicCI6MTYzMTQzODY1LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0NzMyMzcyNywiZXhwIjoxNzQ5OTE1NzI3LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.ytNvv-w_hu8RF-KblFof6PVajHp59Seoal5-HaU_hGQ?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2EtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4_dXRtX3NvdXJjZT1zdWJzdGFjayZ1dG1fbWVkaXVtPWVtYWlsJnV0bV9jYW1wYWlnbj1lbWFpbC1yZXN0YWNrLWNvbW1lbnQmYWN0aW9uPXJlc3RhY2stY29tbWVudCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW5CdmMzUmZhV1FpT2pFMk16RTBNemcyTlN3aWFXRjBJam94TnpRM016SXpOekkzTENKbGVIQWlPakUzTkRrNU1UVTNNamNzSW1semN5STZJbkIxWWkwNE1UY3hNeklpTENKemRXSWlPaUp3YjNOMExYSmxZV04wYVc5dUluMC5kRUxWTUJyUjVub25nbGRtbElVLUdmWmtHWXdoN2JlQ1IyTEE1QkJ4eV9VIiwicCI6MTYzMTQzODY1LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0NzMyMzcyNywiZXhwIjoxNzQ5OTE1NzI3LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.ytNvv-w_hu8RF-KblFof6PVajHp59Seoal5-HaU_hGQ?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw1rQv9XIaCXTexcp8jENieD"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NaAcs1x603C43QswW4X8QyFClE_iV8uDH81ZVUNp3jAGANfuOCmrOzybMjuK33ZdFBhvT8DDWg0rf3MAXaLwNX60pbEsKrG6mTkBF_tG7ZARpxyWUW8cpyvgr3eSzZICeFBgjAqeW7re2q56EWvaeduPbgJWgiIE9-PkR4dtd6NjoikjabCx8n01yfhM-NyOQS1DN1XI5hM2LQTOCVv40Fu_bvfnwiQEBzDUjZ76gEeQ0xvcjRPaP32NaqS8DohcCuxk54JO6YLS-Pjq0NbVW1t8PiuH78evl4TcGgXxoJn5_wamD9wxnzC27JB_yLT=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://open.substack.com/pub/bytebytego/p/a-guide-to-eventual-consistency-in?utm_source=email&amp;redirect=app-store&amp;utm_campaign=email-read-in-app"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://open.substack.com/pub/bytebytego/p/a-guide-to-eventual-consistency-in?utm_source%3Demail%26redirect%3Dapp-store%26utm_campaign%3Demail-read-in-app&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw0eGeLKCvebyw6hRXtxnk0N">
+                                                                                <div
+                                                                                    style="font-size:16px;line-height:26px;display:inline-block;vertical-align:middle;max-width:0;min-height:18px">
+                                                                                </div><span
+                                                                                    style="vertical-align:middle;margin-right:4px">READ
+                                                                                    IN APP</span><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NaVoM1eU0jjTkvA2WW013vxrJswf87KeRy9ZEoh-hxMmrrvtCgKHkpQtp-N3t7hh3LjreScqwuiZDtTl9WoV8aFqqMbCc7mcDn_7HlwUj72eKTcnfWWcV_21jW4_1RAKX6y0NsWFKbmQlPsojxLoT6g1lDIHlbYd7Qw9eGm2joz0q2aeHFLqWh0Qzn7Vp7zQSUMi2G7WXKarVwxNIcKwcqCqKaGMRRu0eqjYWPFO0M-uYomtkRGaw42vCwJ0OIJJ2s1FXcAX85MM51wHWw9dXugaANkCwE3Au45zgyyZnHYrC50Em3BhvterOZkofH84x1S=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideArrowUpRight%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="min-width:18px;min-height:18px;border:none;vertical-align:middle;margin-right:0;margin-left:0;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit">
+                                                                            </a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div dir="auto"
+            style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0">Imagine a
+                ride-sharing app that shows a driver’s location with a few seconds of delay. Now, imagine if the entire
+                app refused to show anything until every backend service agreed on the perfect current location. No
+                movement, no updates, just a spinning wheel.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">That’s what would happen if
+                strong consistency were always preferred in a distributed system.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Modern applications (social
+                feeds, marketplaces, logistics platforms) don’t run on a single database or monolithic backend anymore.
+                They run on event-driven, distributed systems. Services publish and react to events. Data flows
+                asynchronously, and components update independently. This decoupling unlocks flexibility, scalability,
+                and resilience. However, it also means consistency is no longer immediate or guaranteed.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is where eventual
+                consistency becomes important.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some examples are as
+                follows:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A payment system might mark a transaction as pending until multiple downstream services confirm
+                        it.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A feed service might render posts while a background job deduplicates or reorders them later.
+                    </p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A warehouse system might temporarily oversell a product, then issue a correction as inventory
+                        updates sync across regions.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">These aren’t bugs but
+                trade-offs.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Eventual consistency lets
+                each component do its job independently, then reconcile later. It prioritizes availability and
+                responsiveness over immediate agreement.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This article explores what
+                it means to build with eventual consistency in an event-driven world. It breaks down how to deal with
+                out-of-order events and how to design systems that can handle delays.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/06168dfb-25a6-44f4-abdd-ab58d022658f?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/06168dfb-25a6-44f4-abdd-ab58d022658f?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw1YB_Gb7l2ZI8e2pwkNrTBu"><img
+                                            alt="" width="550" height="641.4148351648352"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NaeAqKRMQy9dnG8QD_CaS1D4XTlexeO0OX87ftNYzQdzZmWHdIE3XfFZmx-PYleM61NALvu0h8zUT0EHlwTesSJr5ce7xQkZWRgSj0Um_KKrAQ-Npz6lhjuX3o_SYrQTwhzpRdhStBJjXWES3Fr71XKdfrfNQUdxguEpr9UsENA0rOgM_1o7HuNCOCQKWox4xYgF9WxAH9g18WtLiZl283xWOR9-f_bEGJjvqZhcvZ13YOhqBG_dpUPNfNfffC8ZC1b3pEmnY2OEEv_i7m5L048OL5FdzRlYGRKgdelJrOMHvzcRjrWdtXt3IE=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Faa4b4949-70e8-4c9a-902d-70e179513bb2_2250x2624.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                What is Eventual Consistency?</h2>
+            <div style="font-size:16px;line-height:26px;display:none"></div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Picture a group of friends
+                agreeing on where to meet for dinner over text. One friend suggests a coffee shop, another proposes a
+                restaurant, and a third doesn’t see the messages until later. For a few minutes, everyone believes
+                something different. But given enough time, messages get delivered, responses come in, and the group
+                eventually aligns on a single place. The confusion doesn’t last forever. It just takes a few exchanges
+                to settle.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">That’s eventual consistency
+                in a nutshell.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/bb385f0b-4f59-44e1-944f-1bf8164a0111?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/bb385f0b-4f59-44e1-944f-1bf8164a0111?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw2HygVvVeYk921iZzo3G-5N"><img
+                                            alt="" width="550" height="335.8173076923077"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZUA60sHNAa20CkqV2QdYOCFbSrVYv0CcI1gPBC6YdAqbxXMvc-3JO_zeXmrh5uu9nqUCVBibSgrQQl9RuqiReRPrtrn3a13AEWwB5oxLqXcLSatjxf2b-ZRVi_SoeBpz5jYh-kZ2LTLdKxKlY6KU3rB_uNx09OoFdB4e6Y-eRQYiIAfkaI0TzK7-xmsbk5FI1719FGoOAy3QK2DCIW4qqCV_loKZkD8x_KGVnxQPc5n8Vundlet0BtSLakjj0iNGExG3gMxu0jXE-GcZFekfcyGAuHdXsLRtEcBtUhvwZSsjQF4FEI-XfIxso=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff54a53fd-4921-4f2e-8d97-1d54249e3fac_1992x1216.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In distributed systems,
+                eventual consistency means that different parts of the system (databases, caches, services) may hold
+                different views of the data at any given moment. But if no new updates happen, the system guarantees
+                that all parts will eventually converge to the same final state.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems built around
+                eventual consistency do not enforce strict ordering or synchronized updates across nodes. Instead, they
+                tolerate short-term divergence. For example:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A product inventory might show "in stock" on one server and "out of stock" on another for a few
+                        seconds.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A notification service might send an alert slightly before the related database record fully
+                        updates.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">As updates propagate
+                asynchronously, the differences resolve. Eventually, every healthy part of the system will reflect the
+                same truth. The key concept to understand here is the window of inconsistency. During this window:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Reads might return stale or partial data.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Different services might act on slightly different versions of the data..</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Clients might observe anomalies like "missing" or "outdated" information.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Understanding this window
+                matters because it shapes how systems behave under real conditions. The wider the window, the greater
+                the chance users will notice inconsistencies. Systems can shrink the window by tuning replication
+                speeds, retry strategies, and consistency protocols, but shrinking it to zero demands strong
+                consistency, and with it, a steep trade-off in availability and latency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A few important truths
+                about eventual consistency:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        It is not eventual correctness. Systems still need robust conflict resolution and reconciliation
+                        logic to ensure the final state makes sense.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        It does not guarantee order. Events may arrive in different orders at different nodes.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        It is not laziness. Choosing eventual consistency is an engineering decision based on speed,
+                        availability, and resilience trade-offs.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In practice, almost every
+                large-scale, high-availability system leans into eventual consistency somewhere. Shopping carts,
+                messaging apps, and document collaboration tools each allow short-lived inconsistencies because waiting
+                for perfection would destroy usability.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Event-Driven Architecture and the Role of Events</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Every time a user taps a
+                button, places an order, or uploads a photo, something changes inside a system. In traditional designs,
+                the system often tries to immediately update all necessary records, locking resources and coordinating
+                across services in real-time.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Event-Driven Architecture
+                (EDA) takes a different approach. It treats every meaningful change as an event: a standalone, immutable
+                fact about something that happened.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/193b752c-87cb-4703-91ac-7d6b798472db?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/193b752c-87cb-4703-91ac-7d6b798472db?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw3DMKUdeCHP-2qcFdrffOAv"><img
+                                            alt="" width="550" height="353.57142857142856"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NbrYaWJQbvrFXTnJG56cuMZfWW-Omgbaej5FeMrkYSDk7CF9jXjJfPuh2hCsSXes2qY5K2NbO8PrKmEJKXnDH-2A50CgLrhjvAWMFma8wZEjpjR6pW1z3K_QzlWQVSX5MDv6bPHapItVyuBevqDl-wYRE7WiTo72TkHx3GB_wLEf8_89oL-GlE1_vQpUm3PzW_rPSL9YS2d7r6kFCUaB3RNW8tyfdk1m1vW9sUy7CN1ZolzdCFpfK0O7SZbFOZZ3w7QpJLlKxgXhKA2fBL983S4tjen17UKzRxYW7R2j8W-TrUqXZMKcf7ZnnE=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F9e68ad65-e891-499b-ba86-50be956e0ce3_1938x1246.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Instead of tightly wiring
+                actions together, services publish and react to events asynchronously.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">An event is simply a
+                record: "User A placed Order 123", "Driver B started Trip 456," "Photo X was uploaded by User Y." It
+                captures what happened, not what to do next. This subtle difference changes everything. In an
+                event-driven system:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        One service produces an event when its local state changes.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Other services consume that event to trigger their updates or workflows.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Services communicate by sharing facts, not by commanding each other directly.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This decoupling brings
+                enormous benefits in the following cases:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Scalability:</strong><span> Producers and consumers scale independently.</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Resilience:</strong><span> Failures are contained. If a consumer goes down, it can catch
+                            up later.</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Flexibility:</strong><span> New consumers can subscribe to old events without needing
+                            the producer to change.</span></p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A social media platform
+                provides a familiar example. When a user posts a photo:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The upload service emits a "Photo Uploaded" event.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The newsfeed service consumes it to insert the post into followers’ timelines.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The analytics service tracks the event to update engagement metrics.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The notification service alerts friends.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">These services don’t call
+                each other directly. They react to a shared event asynchronously, each on its own timeline.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This loose coupling,
+                however, introduces new challenges. Events can:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Arrive out of order if network delays or retries shuffle delivery.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Arrive late if a downstream service processes a backlog.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        It will be duplicated if a producer retries after a timeout.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Disappear if the infrastructure fails without strong guarantees.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems built on EDA must
+                plan for these realities.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consuming an event is not
+                the same as executing a synchronous API call. Services must account for partial information, deal with
+                inconsistencies, and design for resilience. Since each consumer interprets events independently,
+                coordination across services becomes probabilistic, not absolute. This is where eventual consistency
+                becomes essential. When updates flow through events, temporary inconsistency is inevitable.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A good event-driven design
+                treats events as the ultimate source of truth: immutable, timestamped, and reliable enough to rebuild
+                state if needed. They also treat event flow as a first-class concern, with storage, monitoring, and
+                failure recovery built in.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Why Strong Consistency is Hard in Event-Driven Systems?</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Strong consistency, where
+                every read sees the latest write, sounds like a good goal for a system. In a perfect world, systems
+                would behave like tightly managed filing cabinets: open the drawer, and the latest document is always
+                neatly updated.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Distributed systems don’t
+                live in that world. They live in the real one, full of network delays, service crashes, retries,
+                partitions, and unpredictable failures. Trying to enforce strong consistency in an event-driven
+                architecture means fighting against the nature of distributed computing itself.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consider a simple case: a
+                user submits a review for a product. The review service emits an event: "Review Created." Downstream,
+                the analytics service updates average ratings, and the user profile service logs the user’s contribution
+                count. If one service updates immediately and another lags (or worse, processes events out of order),
+                the system briefly reflects different realities.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Strong consistency would
+                demand that either all services complete successfully, or none do. In an asynchronous, event-driven
+                world, that’s a tall order. The problem starts with the fallacies of distributed computing:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The network is reliable.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Latency is zero.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Bandwidth is infinite.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The topology doesn't change.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Each of these assumptions
+                falls apart in practice. Networks lose packets, and services <span class="il">go</span> down. Messages
+                queue up unpredictably. An event that seems “sent” from one service can silently fail to reach another.
+                When systems rely on asynchronous messaging, these uncertainties multiply.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The CAP theorem formalizes
+                this reality. It states that in any distributed system, it’s impossible to guarantee the following three
+                properties at the same time:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Consistency</strong><span> (every read sees the latest write)</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Availability</strong><span> (every request receives a response, even if not the
+                            latest)</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Partition Tolerance</strong><span> (the system continues despite network
+                            failures)</span></p>
+                </li>
+            </ul>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/3bd7fc5b-852f-4a0a-9815-59d13d5ca936?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/3bd7fc5b-852f-4a0a-9815-59d13d5ca936?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451005000&amp;usg=AOvVaw35-MP_238AgGiT-lrwPp0f"><img
+                                            alt="" width="550" height="353.57142857142856"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Na6WqSHe0dSVgDQTn8FCIyeiH7XlN2IdjXuCVFeTXn2f0TNyvcdfwtgZtxRnM3NoFF9zBz96wfU4N8_tC6uuobIoQ_08OQ3KIkdAgS4xEIEdf5lLikKH8vp1AxXQyxdzze5T2Cd73WZa3MXpmTgb1yXuJz8JXODgUUKXNJG2lnlGhk0gbZdPdRouIzon5QwOpACi7VbzIv2qpfTIs4PfNE9HMm0Cx86UyR9lOoy8ZQ1yWd5TIQdwahlmAXVjrMr_6ey81fEnjo-aV5SZNsvpdEPzGyIvmBVsnwe5Xg33vrSIxnNhg_aK9FfOgA=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd67d92b6-bbc8-4ea4-ad81-cdd602e26fcf_1938x1246.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When partitions happen,
+                systems must choose between consistency and availability.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In event-driven
+                architectures, availability almost always wins. Users expect systems to stay responsive even during
+                network hiccups. Waiting for every service to agree before showing any result would stall the system.
+                Instead, systems opt to be available but temporarily inconsistent, trusting that eventual consistency
+                will clean things up later.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This isn’t to say strong
+                consistency is useless. Some domains (financial transactions, critical state transitions) genuinely
+                require it. But applying it everywhere, especially across loosely coupled, asynchronous services, leads
+                to fragility rather than strength.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Handling Out-of-Order Events</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In distributed systems,
+                out-of-order events are not a rare glitch but an everyday fact.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Therefore, systems must be
+                designed for messier realities. Left unchecked, out-of-order events can create subtle bugs: updates
+                overwriting each other incorrectly, stale views appearing to users, or invalid state transitions
+                slipping through.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some strategies to handle
+                out-of-order events are as follows:</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Event Versioning</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Each event should carry a
+                version or sequence number representing the state it describes.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When a service processes an
+                event, it compares the incoming version to the current version it holds:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If newer, apply the event.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If older, discard or ignore it.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If duplicate, treat idempotently.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Without versioning, a
+                late-arriving event could overwrite a later event, undoing progress.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Systems like DynamoDB and
+                Couchbase often rely on internal versioning (using vector clocks or document revisions) to resolve
+                update conflicts safely.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Idempotent Event Handlers</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Idempotency guarantees that
+                processing the same event multiple times produces the same result.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This principle protects
+                systems when events retry, duplicate, or reorder. Techniques for achieving idempotency include:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Recording processed event IDs to skip duplicates.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Structuring updates to be overwrite-safe, not additive (for example, "set order status to
+                        SHIPPED" instead of "increment shipment counter").</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Using conditional writes or compare-and-swap operations at the storage layer.</p>
+                </li>
+            </ul>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Reordering Buffers</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When events arrive slightly
+                out of order but with predictable patterns (such as sequential numbering), services can use reordering
+                buffers:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Hold a small window of recent events.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Reorder them based on version or timestamp.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Process them once the sequence stabilizes.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">For example, a messaging
+                app might buffer incoming chat messages for a few seconds before rendering, ensuring that "Hello"
+                appears before "How are you?" even if the packets crossed paths en route.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trick is tuning the
+                buffer size and timeout carefully. Too small, and out-of-order events slip through. Too large, and
+                latency balloons unnecessarily.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                State Reconciliation: Fixing Inconsistencies Later</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Sometimes, no buffering or
+                reordering strategy can guarantee a clean state at ingestion time. In these cases, systems build
+                reconciliation jobs that periodically scan, compare, and fix inconsistencies:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Missing shipment updates? Re-sync from event logs.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Out-of-sync inventory counts? Recompute aggregates from ground-truth records.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Event sourcing systems like
+                those built on Kafka or EventStore often rely on replayable logs to rebuild the correct state from a
+                messy sequence of events.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Reconciliation shifts the
+                mindset from "prevent all mistakes" to "detect and fix mistakes quickly."</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Idempotency and Duplicate Event Handling</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In a perfect world, each
+                event would deliver exactly once, arrive on time, and trigger exactly one reaction.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">However, in real systems,
+                retries happen. Messages are duplicated, and services crash mid-process. Handling duplicates is not an
+                edge case.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is where idempotency
+                steps in.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Idempotency means that
+                processing the same event multiple times produces the same result as processing it once. No side effects
+                multiply, no records corrupt, no counters inflate.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Why Duplicates Happen Even in "Reliable" Systems?</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">No messaging system fully
+                guarantees perfect, exactly-once delivery in all conditions. Common patterns where duplicates sneak in
+                are as follows:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A producer sends an event, but the network acknowledgment fails. It retries, unaware that the
+                        original succeeded.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A consumer processes an event, but crashes before acknowledging completion. The system
+                        re-delivers.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A broker like Kafka retries dispatch during leader election or client failover.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Protocols like
+                at-least-once delivery prioritize availability: it’s better to risk duplicates than lose events
+                entirely. The burden shifts to application logic to handle duplicates appropriately.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/766a93ec-7400-425d-9168-a4ae25d182dc?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/766a93ec-7400-425d-9168-a4ae25d182dc?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw3dl0rhqVZjZufl_uCA1NEs"><img
+                                            alt="" width="550" height="363.7706043956044"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nbvrs6zMne9kZUhZ_afgHbDGueDGQZFFeB0rX4-y8jKUMkvWpxB-sv1Vys_-hapEFgPD90NSYXXOkeQFxdo1uxSjBYHhVwYcgvnrmCbt2FpeHUiGvDS1wDIzvpmfw3RWBg1rW-cBYsWHtn5U6vlXc8ze_tFLCC6hIx1-Ps2BTZijJU7RmM00aykdbcPPaFXsAYii19M4mKxwymgUJYlBLu68MZ7EIYu_tBZDsvdCvcpgRUj0KEJb2HMLwevKTxgDbcBDqsE2Z5H4FGW6M69HNSr2sRIYve7NCXVVHFvtXkkLokwU_-9Tk7b2sw=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F0b64660f-d5b5-4508-b020-c2915c2ea85a_1938x1282.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                Core Strategies for Achieving Idempotency</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some key strategies can be
+                used to achieve idempotency:</p>
+            <h4
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.125em">
+                1 - Event IDs</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Each event should carry a
+                globally unique event ID:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Before processing, a consumer checks whether the event ID has been seen.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If yes, it discards or safely no-ops.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If no, it processes and records the ID as handled.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This approach forms the
+                backbone of idempotent processing in systems like payment platforms, where recharging a user twice would
+                be catastrophic.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Key considerations are as
+                follows:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The event ID must be truly unique across retries and failures.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The lookup store for processed IDs must be consistent and performant, or risk becoming a
+                        bottleneck.</p>
+                </li>
+            </ul>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/95c224ce-affc-4bf3-93d7-8b7af7cedf97?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/95c224ce-affc-4bf3-93d7-8b7af7cedf97?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw0eudVgQ4evOLKiV1rPO-1Z"><img
+                                            alt="" width="550" height="353.57142857142856"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Naht6Hb_y3V8gMAeeb2ePP8IX8HQi9hXgJVLscvLfWey3w8N7ud-jJKX_s2kKwiryeSnBmwRwY9GminN_v8RBgzdh0Kv-bkNg-neBpAx07W5V9Rb74sMR7L4Bx-dNZKLFxVnwyoW00O6LZBE1FURldHv_V--dEKxKKXdYkGLonAx7ayMTb4TNr8a7a0rnMpassJ0yvJvL0ivXGwRqj_urJYBw0Dh9R-6iD9jPdglrfVHgNZUndqyu1YMpLFEwrXw5bp8geohfMXymuPZVme3fwG2JVrHybIBunkYMti7_1JJarNzx4ZCBDDj5s=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F44894f6b-5ca5-46b7-9915-b8d348ead513_1938x1246.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h4
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.125em">
+                2 - Deduplication Caches</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Not every system can afford
+                to track every event ID forever. Deduplication caches offer a middle ground:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Keep recent event IDs in an in-memory store (like Redis) with a time-to-live (TTL).</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Assume that true duplicates will show up within a reasonable retry window.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This balances correctness
+                against resource cost. Missed rare duplicates outside the cache window are a risk, but an acceptable one
+                for many non-critical systems (for example, analytics pipelines and feed generators).</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/56ec31eb-b6c6-43eb-8878-1a4d7b306600?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/56ec31eb-b6c6-43eb-8878-1a4d7b306600?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw3I3wfIHB8qHL4Ib_6fqD69"><img
+                                            alt="" width="550" height="380.7692307692308"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Na91vXjDGC8W8WeQpHew98iDC12wSHPQKpX5t9JG1HGmv4xQPo93CeIgc-EsHGo0Hs3zfT4bml3u9gxfFCs0moeqkfJAB6O7R9D7iJrzX8xtHoASxnLXqOrlTWfssEG_QlZDNJUoUyD-w4ndftskra8y53Loe4Pqa8bCivv6C-ThWceGHdxcUjNFJuiCWzm9MmhcMS079Pytb5i6wfLKi7aiyyAt_NVfafF6j4xK9XKPGPjJSBKw2rLKH7tJ2Sp01W71wTOaNKSuywniraPd6RNcqsNer9SPsVqBeXf4New8Wt_FZukwTI8viE=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F6b0275b5-1459-43d3-9937-0b78d9b39d6f_1938x1342.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h4
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.125em">
+                3 - Natural Idempotency</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><span>Sometimes systems can
+                    achieve idempotency </span><strong>by design</strong><span>, without tracking event IDs:</span></p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Set order status to "SHIPPED" instead of incrementing a shipment counter.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Save user profile updates as overwrites rather than applying deltas.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Replace entire shopping cart contents, not just append to them.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When actions naturally
+                overwrite state rather than mutating it incrementally, retries have no lasting negative effects.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This approach shines in
+                document-based stores like DynamoDB, Couchbase, or even S3 object storage.</p>
+            <h4
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.125em">
+                4 - Transactional Writes</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Databases that support
+                atomic operations can combine "check if event ID exists" and "apply changes" into a single transactional
+                write:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Insert event ID and update state atomically.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If the ID already exists, the insert fails, and the state remains unchanged.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This eliminates race
+                conditions and ensures exactly-once behavior inside the database boundary, even if the messaging layer
+                outside remains messy</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/6ac49063-e794-4403-bff0-e26725183451?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/6ac49063-e794-4403-bff0-e26725183451?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw2NUN730-R5Z7rWqGaxG85v"><img
+                                            alt="" width="550" height="351.30494505494505"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NaVrLIoF084xmCQPoT1rbED0NOKiQeMSflcXm6Be8uBXFQSD_AfTT98Ys-GTda2J9JNiguxDa2NrQIKk5Om1YBShx_7tNZDKBlDINaYa4ZBedo6KFHoXy1s7VDuqK520ha4c0IN0gTh-0F4IKii54T9S44RrJihoKCTddlH9SuexBoI9dxt6Z_Xas7b70dT1PVwrEZFExahtBC8CO_98HuMbH581oCcm-dFdSl_McDHNbCJ9Yl0CB9ebCXKd0S22fQqJ7k2J_ee8wxiKI1f5WPXhhbOkgR2bW-tRZxJtO3IBBSRhzCWAwhmlwg=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F87114b9b-c1dd-4041-b93f-0b26d6a36232_2592x1656.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Dead Letter Queues (DLQs)</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Every event-driven system
+                eventually runs into a message it cannot process. Some common causes could be:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Malformed payload</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        A dependent service is down.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The business logic changes, and older events no longer fit.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">When this happens, systems
+                have a choice: either keep retrying forever, risking resource exhaustion and backlog, or isolate the
+                problematic event and move forward. This is the role of a Dead Letter Queue (DLQ).</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A Dead Letter Queue is a
+                secondary queue used to hold events that a system has repeatedly failed to process. It acts as a safety
+                valve, separating poison events from healthy ones to preserve overall system flow.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Without DLQs, a single bad
+                event can stall entire processing pipelines by retrying endlessly, burning CPU, piling up latencies, and
+                masking real throughput.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                How DLQs Work</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here’s a step-by-step
+                process:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        An event enters a consumer or processor.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Processing fails due to invalid data, missing dependencies, or internal errors.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        The system retries processing, either immediately or after a delay.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        After a configurable number of retries (or elapsed time), the system gives up.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Instead of discarding the event silently, it is moved to the Dead Letter Queue for further
+                        inspection.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">DLQs preserve valuable
+                information about failed events, such as the payload that caused the failure, the error thrown, and the
+                responsible system.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Common Mistakes and Anti-Patterns in Eventual Consistency</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here are some of the most
+                common traps, and how better designs sidestep them.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                1 - Over-Retrying Without Dead-Lettering</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">One common mistake in
+                event-driven systems is blindly retrying failed events indefinitely without isolating the ones that will
+                never succeed, often called "poison messages."&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This approach clogs
+                processing queues, blocks healthy events from progressing, and causes latency to spike as the system
+                repeatedly burns resources on the same failures. Over time, these retries flood processing threads,
+                starve legitimate workloads, and degrade overall throughput.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A better approach is to
+                implement bounded retries with exponential backoff, and redirect persistently failing events into a
+                dead-letter queue (DLQ) after a configured threshold. The DLQ acts as a quarantine area for problematic
+                events, allowing systems to move forward while giving operators the ability to inspect and resolve the
+                underlying issue manually.</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                2 - Tight Coupling</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Another common pitfall in
+                event-driven architecture is designing services that cannot process events independently, relying
+                instead on immediately invoking other services during event handling.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This pattern quietly
+                reintroduces tight, synchronous coupling: the very thing event-driven systems are meant to avoid. When
+                one service depends on a downstream call to proceed, the whole chain becomes fragile. A single slowdown
+                or failure propagates upstream, turning isolated hiccups into cascading outages. In the process, the
+                system loses most of the resilience and scalability that event-driven design promises.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The better alternative is
+                to build services that consume events autonomously. Each service should be able to process an event,
+                update its local state, and move forward without waiting on others. When coordination is truly
+                necessary, use established patterns like the outbox pattern, sagas, or compensating transactions to
+                manage cross-service workflows asynchronously.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">These approaches preserve
+                the independence of each component while still supporting distributed workflows.&nbsp;</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                3 - Assuming Events Always Arrive in Order</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A frequent and subtle
+                mistake in event-driven systems is building logic that assumes events will always arrive in the exact
+                order they were produced.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This assumption rarely
+                holds in real-world distributed environments.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Robust systems don’t rely
+                on perfect order. Instead, they are designed to tolerate out-of-order events. This means using event
+                versions or timestamps to determine whether a given update should be applied or safely discarded as
+                stale. For cases where ordering matters (such as financial transactions or user state transitions),
+                engineers can introduce reordering buffers or periodic reconciliation jobs to restore correct
+                sequences.&nbsp;</p>
+            <h3
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.375em">
+                4 - Ignoring Idempotency</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A critical mistake in
+                event-driven systems is writing event handlers that blindly mutate state, assuming each event will only
+                ever arrive once.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In practice, duplicates are
+                inevitable.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Messages get retried,
+                consumers crash mid-processing, and brokers re-deliver during failover. Without safeguards, these
+                retries can wreak havoc: double shipments, duplicate charges, inflated counters, and broken aggregates
+                are all common symptoms of non-idempotent handling.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The solution is to design
+                every handler to be idempotent from the start. This involves tracking event IDs to detect and skip
+                duplicates, overwriting state instead of incrementing, and using conditional writes or transactions to
+                enforce consistency under concurrent access.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In event-driven systems,
+                idempotency is a baseline requirement for correctness and resilience in the face of real-world
+                uncertainty.</p>
+            <h2
+                style="font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:1em 0 0.625em 0;color:rgb(54,55,55);line-height:1.16em;font-size:1.625em">
+                Summary</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we’ve
+                looked at eventual consistency in event-driven architecture in detail.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here are the key learning
+                points in brief:</p>
+            <ul style="margin-top:0;padding:0;margin-bottom:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Eventual consistency is a deliberate design choice that enables distributed systems to remain
+                        available and resilient, even when components temporarily disagree.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        In event-driven systems, eventual consistency means that all services will converge on the same
+                        state over time, even if they observe or process events at different moments.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Events capture changes in system state and enable loosely coupled services to react
+                        asynchronously, but this flexibility comes with the challenge of handling delays, duplicates,
+                        and disorder.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Strong consistency is difficult to enforce in distributed, asynchronous systems due to inherent
+                        network instability, coordination costs, and CAP theorem trade-offs; favoring availability and
+                        autonomy is often more practical.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Out-of-order events are common due to retries, network delays, and partitioned processing, so
+                        systems must use techniques like versioning, timestamps, idempotent handlers, and reordering
+                        buffers to maintain correctness.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Idempotency is essential in event handling to ensure that duplicate events do not cause side
+                        effects or state corruption, and must be baked into handler logic using event IDs, safe updates,
+                        and transactional guarantees.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Dead-letter queues protect pipelines by isolating unprocessable events after retries fail,
+                        allowing healthy traffic to continue and giving operators a window into systemic issues through
+                        inspection and alerting.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Many failures in event-driven consistency stem from design anti-patterns, such as uncontrolled
+                        retries, tight service coupling, assumptions about event order, non-idempotent handlers, and
+                        lack of durable storage, which undermine system robustness.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        style="margin:32px 0 0;width:100%;box-sizing:border-box;border-top:1px solid #e6e6e6;font-size:16px;line-height:26px">
+    </div>
+    <div style="font-size:16px;line-height:26px">
+        <div style="margin:32px 0;font-size:16px;line-height:26px">
+            <div dir="auto"
+                style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0"><span>This
+                        post is only for premium members of&nbsp;</span><a
+                        href="https://substack.com/redirect/dc863abe-8144-4635-8856-3659ecfe6697?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                        rel="" style="color:rgb(54,55,55);text-decoration:underline" target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/dc863abe-8144-4635-8856-3659ecfe6697?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw0X-OjrIebpAAUDJzT9U4Hh">the
+                        <span class="il">ByteByteGo</span> newsletter</a><span>.&nbsp;This email is intended for a
+                        single recipient, but occasional forwarding is totally fine.</span></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>Know someone who
+                        would benefit from the newsletter? Consider gifting a subscription.</em></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmEtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4mcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0ltbGhkQ0k2TVRjME56TXlNemN5Tnl3aVpYaHdJam94TnpRNU9URTFOekkzTENKcGMzTWlPaUp3ZFdJdE9ERTNNVE15SWl3aWMzVmlJam9pWTJobFkydHZkWFFpZlEuTHhMZlA4ODFvOHl2OFprYXVLTHRnLTQ0N0FDMDMzelh4MVBHa1RfNGoyWSIsInAiOjE2MzE0Mzg2NSwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.AuaTKWRUiBneQqw1YtMFQzIW_EvTS-Cz2Mom5AW5Hh4?&amp;gift=true"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmEtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4mcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0ltbGhkQ0k2TVRjME56TXlNemN5Tnl3aVpYaHdJam94TnpRNU9URTFOekkzTENKcGMzTWlPaUp3ZFdJdE9ERTNNVE15SWl3aWMzVmlJam9pWTJobFkydHZkWFFpZlEuTHhMZlA4ODFvOHl2OFprYXVLTHRnLTQ0N0FDMDMzelh4MVBHa1RfNGoyWSIsInAiOjE2MzE0Mzg2NSwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.AuaTKWRUiBneQqw1YtMFQzIW_EvTS-Cz2Mom5AW5Hh4?%26gift%3Dtrue&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw284e6kkF-KQ5EszB13ZaOn"><span
+                            style="color:#ffffff;text-decoration:none">Give a gift subscription</span></a></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>For group
+                        subscriptions</em><span>,&nbsp;click here:</span></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-bottom:0;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmEtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4mcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0ltbGhkQ0k2TVRjME56TXlNemN5Tnl3aVpYaHdJam94TnpRNU9URTFOekkzTENKcGMzTWlPaUp3ZFdJdE9ERTNNVE15SWl3aWMzVmlJam9pWTJobFkydHZkWFFpZlEuTHhMZlA4ODFvOHl2OFprYXVLTHRnLTQ0N0FDMDMzelh4MVBHa1RfNGoyWSIsInAiOjE2MzE0Mzg2NSwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.AuaTKWRUiBneQqw1YtMFQzIW_EvTS-Cz2Mom5AW5Hh4?group=true&amp;coupon=254241e3"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmEtZ3VpZGUtdG8tZXZlbnR1YWwtY29uc2lzdGVuY3ktaW4mcj00dzNiYnImdG9rZW49ZXlKMWMyVnlYMmxrSWpveU9UVTNOamN3TmpNc0ltbGhkQ0k2TVRjME56TXlNemN5Tnl3aVpYaHdJam94TnpRNU9URTFOekkzTENKcGMzTWlPaUp3ZFdJdE9ERTNNVE15SWl3aWMzVmlJam9pWTJobFkydHZkWFFpZlEuTHhMZlA4ODFvOHl2OFprYXVLTHRnLTQ0N0FDMDMzelh4MVBHa1RfNGoyWSIsInAiOjE2MzE0Mzg2NSwicyI6ODE3MTMyLCJmIjpmYWxzZSwidSI6Mjk1NzY3MDYzLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTAiLCJzdWIiOiJsaW5rLXJlZGlyZWN0In0.AuaTKWRUiBneQqw1YtMFQzIW_EvTS-Cz2Mom5AW5Hh4?group%3Dtrue%26coupon%3D254241e3&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw3vDl4dINc9MLw9l2yFlRMQ"><span
+                            style="color:#ffffff;text-decoration:none">Get 20% off a group subscription</span></a></p>
+            </div>
+        </div>
+    </div>
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+        style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+        <tbody>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0"
+                                        style="margin:0 auto">
+                                        <tbody>
+                                            <tr>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.alEcvU8wZX1Wp8aZXzF6SNXpo4zGdw6nNO7RRdav0wk&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDczMjM3MjcsImV4cCI6MTc0OTkxNTcyNywiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.alEcvU8wZX1Wp8aZXzF6SNXpo4zGdw6nNO7RRdav0wk%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw3kMKIKwW9HUfOQFn7SaVtS"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYOjKnGdA6WctG38AS6EVdNYu_-7fh22xck2A9-pvWHOzWlHUTWwJBnDEHuihQT-mHYSFSOPGMFj17PoFDPqBRyAweZbKJBfmfdf0nN2gA2vpA_t4hra0npxdFv1Su3gybOyNLyHYsDXBY3m_mn080mcPeWTKQqIgqXPRT2V1wYwfkaPCLzlY_V-PiTggfv_xrTA8HYh7HKuHujEESc2P0y1oNal12FbEVuGHyE1cfT8Ao_kDE4WXwuj4hsN9KnkWa2-U1gOjvQJix2w3wAxTvq7i8tS-cG5kiw_zDtLa2jRkfU-2J9dqE1fRI=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Like</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=163143865&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D163143865%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2MzE0Mzg2NSwiaWF0IjoxNzQ3MzIzNzI3LCJleHAiOjE3NDk5MTU3MjcsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.dELVMBrR5nongldmlIU-GfZkGYwh7beCR2LA5BBxy_U%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481451006000&amp;usg=AOvVaw2NSUVE50mWt8NEbPeRMJ-Q"></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

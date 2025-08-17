@@ -1,0 +1,1219 @@
+<div style="font-size:16px;line-height:26px;max-width:728px;width:100%;margin:0 auto">
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div role="region" aria-label="Post header" style="font-size:16px;line-height:26px">
+            <h1
+                style="color:rgb(54,55,55);font-family:'SF Pro Display',-apple-system-headline,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:bold;margin:0;line-height:36px;font-size:32px">
+                <a href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=post-email-title&amp;utm_campaign=email-post-title&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ"
+                    style="color:rgb(54,55,55);text-decoration:none" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dpost-email-title%26utm_campaign%3Demail-post-title%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw32Z-RDzp93Xx1ni88pFkQ9">Database
+                    Schema Design Simplified: Normalization vs Denormalization</a></h1>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="margin:1em 0;height:20px">
+                <tbody>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(54,55,55);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <a style="list-style:none;color:rgb(54,55,55);margin:0;font-size:11px;line-height:20px;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px;text-decoration:none"
+                                                                    href="https://substack.com/@bytebytego399569"
+                                                                    target="_blank"
+                                                                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw0VvFJEXAYb5-hkGMAGQFlZ"><span
+                                                                        class="il">ByteByteGo</span></a></div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <div
+                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                <time datetime="2025-06-12T15:40:46.627Z">Jun 12</time>
+                                                            </div>
+                                                        </td>
+                                                        <td width="4" style="min-width:4px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;font-size:11px;line-height:20px;text-decoration:unset;color:rgb(119,119,119);margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                ∙</div>
+                                                                        </td>
+                                                                        <td width="4" style="min-width:4px"></td>
+                                                                        <td style="vertical-align:middle">
+                                                                            <div
+                                                                                style="list-style:none;color:rgb(123,97,255);font-size:11px;line-height:20px;text-decoration:unset;margin:0;font-family:'SF Compact',-apple-system,system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';font-weight:500;text-transform:uppercase;letter-spacing:.2px">
+                                                                                Paid</div>
+                                                                        </td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                        <td align="right">
+                            <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td style="vertical-align:middle"><a
+                                                href="https://substack.com/@bytebytego399569" target="_blank"
+                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/@bytebytego399569&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw0VvFJEXAYb5-hkGMAGQFlZ"><img
+                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NbMCgdJvKdjXr0fOBZroInJwgWd_XZEhBFIQUaHzuoyQkylhvsJ-bobtSBG9fWF0W6oX2DYHW5hu7kALqnDmhDm1oLYQW7TF40BoFd1rW0xm-gcQo4wLHViC1JmidvmxMAO8SRa20m-_NvSIiwhyza1zOaH0Vq97L40hN-Rwv53qLbwtZOS6oikiTdl1vt2yfsgNVuIzynxlyf7hW8vhKvLBRJWKjc50X5Afp7p0yIoiUqsrPanChBp2beOzI-oKWAcKx0VQk9Pt7cPMajGkd5_WQiDUFGYwCmY=s0-d-e1-ft#https://substackcdn.com/image/fetch/f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fc9941c68-e5b7-4b93-be75-df7cc4ffef02_504x540.png"
+                                                    style="box-sizing:border-box;border-radius:500000px;max-width:550px;border:none;vertical-align:middle;width:40px;height:40px;min-width:40px;min-height:40px;object-fit:cover;margin:0px;display:inline"
+                                                    width="40" height="40" class="CToWUd" data-bit="iit"></a></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+                style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+                <tbody>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDk3NDMwMDgsImV4cCI6MTc1MjMzNTAwOCwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.AAkD1AvAFcO5jQYFxECntmo4mqMJ0llMTgofMO5iJcc&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDk3NDMwMDgsImV4cCI6MTc1MjMzNTAwOCwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.AAkD1AvAFcO5jQYFxECntmo4mqMJ0llMTgofMO5iJcc%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw3R6_S5SH4xdgwX6N7IUfBt"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NYOjKnGdA6WctG38AS6EVdNYu_-7fh22xck2A9-pvWHOzWlHUTWwJBnDEHuihQT-mHYSFSOPGMFj17PoFDPqBRyAweZbKJBfmfdf0nN2gA2vpA_t4hra0npxdFv1Su3gybOyNLyHYsDXBY3m_mn080mcPeWTKQqIgqXPRT2V1wYwfkaPCLzlY_V-PiTggfv_xrTA8HYh7HKuHujEESc2P0y1oNal12FbEVuGHyE1cfT8Ao_kDE4WXwuj4hsN9KnkWa2-U1gOjvQJix2w3wAxTvq7i8tS-cG5kiw_zDtLa2jRkfU-2J9dqE1fRI=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw1rnxxMp8t5MJLS65iHUI0u"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NZQ6ul5mfmbhHqaf8QqG95Pk2-u43roqB75nm5jJzhHXd--mR5Y8AvAyxxNDy_VtDd9fmjbUCT-HubbmsyqACondkMynDxF_4OPkse-myg1NEghIdojn9hXTPU8-8O66FdE-vni0HscGR7DdII1fBBP6Cqijmqt79Qf4aXgmizh3DWrKKu-k0Wgdk-bqdv-bhzJc25nY0ZIwaK-MSHSD25MZOwmFTqke48mYHWY7_OTC_tC7y9c6l7pZazslKv0l7zCVu3O4lHo5J4IzMUhAsYY7HrfIK6I1w19tGLaiFqYRu_GEX2HfaE1wzpyR-8=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=substack&amp;utm_medium=email&amp;utm_content=share&amp;utm_campaign=email-share&amp;action=share&amp;triggerShare=true&amp;isFreemail=false&amp;r=4w3bbr&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dsubstack%26utm_medium%3Demail%26utm_content%3Dshare%26utm_campaign%3Demail-share%26action%3Dshare%26triggerShare%3Dtrue%26isFreemail%3Dfalse%26r%3D4w3bbr%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw14kk9MSnRRAqf6lmVok8gm"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NapSNhlS0wrP7TDO6xUMgaIvZAZVT6MPmCAQFChOJhlxMGNru6s-y28sjhxVgbEu0DpzgqZQGQ4LcdG7Ul9q6nczy7BDzFm23Py7j0OEAVgy6SDQg2utY1XcxnYRBTskLmml51_yQ45AxHVDG-RBUVlAF-hxHVVPUPXxjNlwjDSAe2PtFip_g4-8C5MI_RiVd5ONVV1B-rA4_Mkj91Y5EyCYYxlBC1Zj6ucBCurj9X_g83Bxg-EpbK4rOuSdTZ9QlJrojVx0qPyyH5cZeAZ1cobCEkYM_CLohPpHCMYsoprHIKVuPo0eIO1fQRH=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideShare2%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                        <td width="8" style="min-width:8px"></td>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="38" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZD91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWVtYWlsLXJlc3RhY2stY29tbWVudCZhY3Rpb249cmVzdGFjay1jb21tZW50JnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNOVEl6TXpVd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSndiM04wTFhKbFlXTjBhVzl1SW4wLm9VdkZLXzRwbW5DeU5jMWNSbzJ1TTRPSGFyRGJvd2JFaHA0NDY0WW5nY1EiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.WYFIs_ztsp6eIAvL4ZKIpLmKMAaMfwv4cIsC0tKWtus?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:1;padding:9px 0;text-decoration:none;color:rgb(119,119,119);min-width:38px;box-sizing:border-box;width:38px"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZD91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWVtYWlsLXJlc3RhY2stY29tbWVudCZhY3Rpb249cmVzdGFjay1jb21tZW50JnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNOVEl6TXpVd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSndiM04wTFhKbFlXTjBhVzl1SW4wLm9VdkZLXzRwbW5DeU5jMWNSbzJ1TTRPSGFyRGJvd2JFaHA0NDY0WW5nY1EiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.WYFIs_ztsp6eIAvL4ZKIpLmKMAaMfwv4cIsC0tKWtus?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw1lNu_WNR8hyTqRA-HJQ4Jw"><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NaAcs1x603C43QswW4X8QyFClE_iV8uDH81ZVUNp3jAGANfuOCmrOzybMjuK33ZdFBhvT8DDWg0rf3MAXaLwNX60pbEsKrG6mTkBF_tG7ZARpxyWUW8cpyvgr3eSzZICeFBgjAqeW7re2q56EWvaeduPbgJWgiIE9-PkR4dtd6NjoikjabCx8n01yfhM-NyOQS1DN1XI5hM2LQTOCVv40Fu_bvfnwiQEBzDUjZ76gEeQ0xvcjRPaP32NaqS8DohcCuxk54JO6YLS-Pjq0NbVW1t8PiuH78evl4TcGgXxoJn5_wamD9wxnzC27JB_yLT=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="border:none;vertical-align:middle;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit"></a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                cellpadding="0">
+                                                <tbody>
+                                                    <tr>
+                                                        <td style="vertical-align:middle">
+                                                            <table role="presentation" width="auto" border="0"
+                                                                cellspacing="0" cellpadding="0">
+                                                                <tbody>
+                                                                    <tr>
+                                                                        <td align="center"><a
+                                                                                href="https://open.substack.com/pub/bytebytego/p/database-schema-design-simplified?utm_source=email&amp;redirect=app-store&amp;utm_campaign=email-read-in-app"
+                                                                                style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                                target="_blank"
+                                                                                data-saferedirecturl="https://www.google.com/url?q=https://open.substack.com/pub/bytebytego/p/database-schema-design-simplified?utm_source%3Demail%26redirect%3Dapp-store%26utm_campaign%3Demail-read-in-app&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw1IuD7pRzAniXB2J1k6VhuT">
+                                                                                <div
+                                                                                    style="font-size:16px;line-height:26px;display:inline-block;vertical-align:middle;max-width:0;min-height:18px">
+                                                                                </div><span
+                                                                                    style="vertical-align:middle;margin-right:4px">READ
+                                                                                    IN APP</span><img
+                                                                                    src="https://ci3.googleusercontent.com/meips/ADKq_NaVoM1eU0jjTkvA2WW013vxrJswf87KeRy9ZEoh-hxMmrrvtCgKHkpQtp-N3t7hh3LjreScqwuiZDtTl9WoV8aFqqMbCc7mcDn_7HlwUj72eKTcnfWWcV_21jW4_1RAKX6y0NsWFKbmQlPsojxLoT6g1lDIHlbYd7Qw9eGm2joz0q2aeHFLqWh0Qzn7Vp7zQSUMi2G7WXKarVwxNIcKwcqCqKaGMRRu0eqjYWPFO0M-uYomtkRGaw42vCwJ0OIJJ2s1FXcAX85MM51wHWw9dXugaANkCwE3Au45zgyyZnHYrC50Em3BhvterOZkofH84x1S=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideArrowUpRight%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                                    width="18" height="18"
+                                                                                    style="min-width:18px;min-height:18px;border:none;vertical-align:middle;margin-right:0;margin-left:0;max-width:18px"
+                                                                                    alt="" class="CToWUd"
+                                                                                    data-bit="iit">
+                                                                            </a></td>
+                                                                    </tr>
+                                                                </tbody>
+                                                            </table>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </td>
+                    </tr>
+                    <tr height="16">
+                        <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div dir="auto" style="padding:32px 0 0 0;font-size:16px;line-height:26px">
+        <div dir="auto"
+            style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0">Database
+                schema design plays a crucial role in determining how quickly queries run, how easily features are
+                implemented, and how well things perform at scale. Schema design is never static. What works at 10K
+                users might collapse at 10 million. The best architects revisit schema choices, adapting structure to
+                scale, shape, and current system goals.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Done right, schema design
+                can become a great asset for the system. It accelerates product velocity, reduces data duplication debt,
+                and shields teams from late-stage refactors. Done wrong, it bottlenecks everything: performance,
+                evolution, and sometimes entire features.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Every engineering team hits
+                the same fork in the road: normalize the schema for clean structure and consistency, or denormalize for
+                speed and simplicity. The wrong choice doesn’t necessarily cause immediate issues. However, problems
+                creep in through slow queries, fragile migrations, and data bugs that surface months later during a
+                traffic spike or product pivot.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In truth, normalization and
+                denormalization aren't rival approaches, but just tools to get the job done. Each solves a different
+                kind of problem. Normalization focuses on data integrity, minimal redundancy, and long-term
+                maintainability. Denormalization prioritizes read efficiency, simplicity of access, and performance
+                under load.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this article, we’ll look
+                into both of them in detail. We’ll start with the foundations: normal forms and how they shape
+                normalized schemas. We will then explore denormalization and the common strategies for implementing it.
+                From there, we will map the trade-offs between normalization and denormalization</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The goal isn't to declare
+                one approach as the winner. It's to understand their mechanics, consequences, and ideal use cases.&nbsp;
+            </p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/628f968b-6522-49fc-a1fd-e3c767f43a1c?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/628f968b-6522-49fc-a1fd-e3c767f43a1c?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw1jeCj5Y3lz7AXltRv1kwIU"><img
+                                            alt="" width="550" height="641.4148351648352"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYGQvYaDKzTrqxWfDCLs-lbB05tRrT64eNwxWH0izZ1xuQ0GtK3Ufnd5H9QpJ6rgD1NseMmJFsusvIOpLs23NR_bd96ymdsgAJBoSsy6ldRA3EFLZ1YR6-PCS5qvALyq4FCcKA80yQpHU6plt4WSWB9jfaJ5mbetKgdmjTxn7TOfBK5TlNNHel0X27JJCUFKtJ6PNF0bmr70bZ8q6uMNFtqHBHIT5aP3XzrDqYjCSwMj_8127XtqpN2XfPFTyIgZJPasud3KqH140AmgrN8xFlswn6a4FpwPVe7TTCxNG8xLKE8i3GfjS_y7AE=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fcb8b771f-baa7-4504-ae79-4aa69adf0f5a_2250x2624.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h2>Foundations of Schema Design</h2>
+            <div style="font-size:16px;line-height:26px;display:none"></div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Schema design sets the
+                foundation for how a system stores, relates, and retrieves data. Let’s understand a few key aspects
+                about it in detail.</p>
+            <h3>What Is Schema Design?</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Schema design is the
+                structural blueprint of a relational database.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">It defines what tables
+                exist, how they relate to each other, and what rules govern their data.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A well-designed schema
+                enforces integrity, reduces duplication, and enables efficient querying. The best schema designs reflect
+                both the business domain and the access patterns of the application.&nbsp;</p>
+            <h3>The Role of Entity-Relationship Modeling</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Before defining tables,
+                schema design typically starts with Entity-Relationship (ER) modeling.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This high-level design
+                process maps out entities (real-world objects or concepts), their attributes (data fields), and the
+                relationships between them.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">ER models help clarify
+                cardinality (one-to-many, many-to-many) and participation constraints (mandatory vs. optional
+                relationships). These details drive the eventual table structure and foreign key decisions. Most
+                importantly, ER modeling sets the stage for normalization by identifying the core units of meaning in
+                the data model.</p>
+            <h3>Logical vs. Physical Schema</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The logical schema defines
+                the data model at a conceptual level (tables, columns, keys, and relationships) without worrying about
+                how the database engine will implement it. The physical schema, on the other hand, involves indexes,
+                partitioning strategies, storage engines, and disk layout.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">That separation
+                matters.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A schema might look clean
+                on paper, but perform poorly in production. Performance tuning often begins with the logical schema, but
+                ends in the physical layer. Understanding both is critical when navigating trade-offs between
+                normalization and denormalization later in the stack. For this article, we’ll stay in the logical
+                space.&nbsp;</p>
+            <h2>Normalization</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normalization sits at the
+                heart of relational database design. It’s a methodical process that shapes how data is structured,
+                stored, and maintained.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">At its core, normalization
+                aims to eliminate data redundancy. Storing the same information in multiple places might seem convenient
+                at first, but it invites inconsistencies and increases storage needs. A normalized schema stores each
+                piece of information exactly once, then references it wherever needed.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The second goal is to
+                prevent update anomalies. Without normalization, modifying a single data point (like changing a product
+                name or a user email) might require updating multiple rows in different tables. Miss one, and the data
+                becomes inconsistent. Normalization ensures that updates propagate correctly and predictably.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Finally, normalization
+                enforces logical data dependencies. It ensures that every column in a table relates directly to the
+                primary key, not indirectly through some unrelated field. This clarity makes the data model easier to
+                reason about, test, and evolve.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/b1dd553d-b06a-46bf-a688-d544d0475c9f?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/b1dd553d-b06a-46bf-a688-d544d0475c9f?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454004000&amp;usg=AOvVaw0jbX3BMThEWOCYzh6sWJSa"><img
+                                            alt="" width="550" height="382.2802197802198"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nai6XO-9uxORt99SX2olP7sB7vRBixB3KCHOKbDhlquR6IY5OoLo0MYM2JkRFUgK8GxzFCMHnp_eRYlmEMXsCC1Bad1VqQIa_rhP-kYG-bRv2uPeNSkjetZaYdTTY_jUbnYjhbtr_J5Iw9MoKh9rGsz_XfpwvStKGz26qBg4rMfW8DHU2xODjwQYyElIVi98zzxHIiKu7qKOYZUyj1Qhb-UHr6QTrA0KGgS1FhsNDw1_WckCO40N9WR1wVDjCqJRq-5GGAhGis0jxYu-A0L1d6KeeShHmm8ZGplSgPEtCrobvE3uJS-OmGZDvQ=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Ff84d5d17-3953-4961-a816-a61c5c047c88_2832x1968.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In short, normalization
+                brings structure. When applied correctly, normalization makes schemas lean, predictable, and resilient
+                to change. When ignored or misused, it can lead to bloated tables, hidden dependencies, and a
+                maintenance nightmare.</p>
+            <h3>The Normal Forms</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normal forms are a set of
+                rules used to improve database design. Each form targets a specific kind of redundancy or anomaly.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Let’s look at different
+                normal forms with examples.</p>
+            <h4>1 - First Normal Form (1NF)</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">1NF requires that:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Each column contains a single, atomic value.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        No column contains a set, list, or repeating group. In other words, each column in a table must
+                        contain only one value in a cell. For example, a value like “productA, productB” in one column
+                        violates the first normal form.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consider a raw orders table
+                as shown in the diagram below.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The problem here is clear.
+                Multiple products live in separate columns. This design violates 1NF because it contains multiple
+                columns (Product1, Product2, and Product3) that refer to the same type of data. To fix it, break out
+                each product into a separate row as shown in the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/8d1d2485-a12c-4d36-9e2f-6ecc79128413?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/8d1d2485-a12c-4d36-9e2f-6ecc79128413?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw3ZFsB3tQ7n4HqjskDnhzNJ"><img
+                                            alt="" width="550" height="351.6826923076923"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NY7FfOZtZ46wSk6F0Vyym8ZebeZEbD05oEzvhMPS6sTl2UeAli5YK6AdkyoWU32c734-2U-DKIPzOk5Y5np5jbpCkLuyneLBQBsyDfgDBuq6s1OyTU19AO21zLHXcfd73pU417yFDUGvgSV3F9xwwghnJpI_8oMEm_LrY1sguqhsLXI71dDcTCz3Dc6sZp_lIn-oqBZQDla_sMEtA1mR5Wiv5JUd49COZTlEKE-b-ippRd2iE2z9SCAZ-DrYGtTWbRDvpe20XV1WGCOVfXZSlPijW7O9KpljINKuLKq_fBbBW_8xq52e-tOTms=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fdbd43815-0718-45ad-92f4-71d1e463a9ef_2814x1800.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now the table is in 1NF.
+                Each column holds a single value, and the product data is no longer spread across multiple fields.</p>
+            <h4>2 - Second Normal Form (2NF)</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">2NF builds on 1NF by
+                requiring that all non-key columns depend on the entire primary key, not just part of it. In other
+                words, it eliminates partial dependencies.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Assume the primary key here
+                is a composite of (OrderID + Product) in the current structure. In that case, columns like CustomerName
+                and CustomerEmail depend only on OrderID, not the full key. That’s a partial dependency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">To adhere to 2NF, split the
+                data into two tables as shown in the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/0f7b1cbb-40dd-4b20-b300-ec674b64c6bc?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/0f7b1cbb-40dd-4b20-b300-ec674b64c6bc?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw1udNbb73nXaHseJijKL0pM"><img
+                                            alt="" width="550" height="351.6826923076923"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYB1xHk_ljPsX1qtod7dyaRpGJDcEoAnUcZn2bVSu7VrbPIvifiFOokyVaQCgB0Gcjgax1PKTJUZMT1YnDJnD9blY5uOp8cjj5emZEXhF2uM3s8EC3P7PZ1CSDdiePG57KvN_ZfwvC4MwNruzTePswx13_h2ej0Qx_EYaL_XFXaXOoqOV1KUASBOKoiLdTH3NBisfYqek4jMF_wfvVjOxIoFytbY92ZKVo0USEDoWJ4GYTe6ptCqlB-cBoZcbHTxp3n5F2_e61dYu79s5itL76oXU59av7W5J8cBQrR8N4KDtrxd2pAb_X-P18=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F595209b9-96da-4ce2-a692-7ae297466edc_2814x1800.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now, every non-key column
+                in each table depends fully on the primary key. The schema is in 2NF.</p>
+            <h4>3 - Third Normal Form (3NF)</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The third normal form is a
+                key concept of database normalization. 3NF eliminates transitive dependencies when a non-key column
+                depends on another non-key column.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Let’s say the system adds a
+                Region column inferred from the email domain.&nbsp; Here, Region is indirectly dependent on
+                CustomerEmail and not directly on OrderID. That’s a transitive dependency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">To bring this into 3NF,
+                break the customer information into a separate table as shown in the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/ef17c42c-12d9-4f49-bb90-6fcedb1fea1d?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/ef17c42c-12d9-4f49-bb90-6fcedb1fea1d?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw2p_me-vFrZLmusmMR1T6oX"><img
+                                            alt="" width="550" height="262.9120879120879"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NayliBCjkFcjlNNLxGyAMQ5_MQY6OnQZoTQ_bPdmdL0RrzFBUFSre1_QqDVY3KHXW7ecyMsU0RqMrA7vyID_oF4GdkmsMRrhfoDdcJ3o1bJMwm-Sv7JbEGcfezBOA4nYf27mV2nBYKFwKqVvevV2x_kNCmN6wfJQkgpmV64dWXOuIoh06Op5avpXxK32JnrLcni9ciWPCz9FjjzX7ZwtXrDrYpyXw9AeGK9ms7Gx3aCfRHC-vSdHBnyUTEeUvrlzG9xJUJ2FJ8uXfi3RBIbvQ2idwG34LcGUQKY_cMaf1kQJnpqJfAYrD8hNmg=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F92ca22cd-4411-4655-bfdc-989ddc089a33_3348x1600.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now, each non-key column
+                depends only on the primary key in the respective table. The schema satisfies 3NF.</p>
+            <h4>4 - Boyce-Codd Normal Form (BCNF)</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">BCNF addresses a rare edge
+                case where 3NF passes, but anomalies still exist due to overlapping candidate keys.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Imagine a table where each
+                row represents a course being taught in a specific room. It looks something like this:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/d4970f28-4d81-4752-908e-15076c525537?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/d4970f28-4d81-4752-908e-15076c525537?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw3t_LBMHB4NqaavDG2tjzXG"><img
+                                            alt="" width="550" height="359.99313186813185"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZNNlTbcIaCiEtUdFQSv5IO-8yFpRm6MuaHJgLFjt_8pzasRImaKcrgqizyRH2_Ar_YcZg5l8I9ICaDwVBrVtYeLFrxso6W7zmtkdE0pd8g9hp3NapFdb2WSuiCLiK9nH9JO7Wga_rbyqoSBkeqii597vH6QvQKxoMDAUIclwO6hyrIoAiIVsJNn1qRNJSI-1G0McY3QG8s0pu6GQ3MG0ELOf2JUW5jpcL296feCNEDZBybwpVTnvbRZYqGk5dJwNzh5X-kU3cF6MDwcjPJDxMpFoRXRvV32io5b169JrSOhUYgzOsd_AinMj8=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2Fd5b2643c-80cf-4d6d-9f8f-8d52a0d09faf_1926x1260.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now, based on how this
+                system works, there are two facts to know:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Each course is always taught by the same instructor, no matter which room it’s scheduled in. For
+                        example, CS101 is always taught by Dr Adams, whether it happens in Room A or Room B.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Each room can only be used for one course at a time. So if Room A is booked at a certain time,
+                        it can only be used for one course in that slot (for example, CS101).</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In other words, there are
+                two key relationships here:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If the Course ID is known, the Instructor can be looked up. In other words, the identity of the
+                        course fully determines which instructor is teaching it.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        If the Room Number is known (during a specific time), the Course ID being taught there can be
+                        determined. That is, the room tells us which course is being taught in it.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">At first glance, this might
+                seem fine. But imagine what happens if someone updates the instructor for CS101 in only one of the rows
+                and forgets the other. Suddenly, CS101 appears to be taught by two different people.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is because the
+                Instructor depends only on the Course ID, not on the combination of the Course ID and the Room Number.
+                Therefore, storing the instructor repeatedly across multiple rows opens the door for inconsistencies.
+                The moment the same course shows up in different rooms, there’s a risk that someone might assign
+                different instructors by mistake.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This violates BCNF.&nbsp;
+            </p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In relational design terms,
+                the primary key of this table is a combination of Course ID and Room Number because each row is meant to
+                describe a specific pairing of a course in a room. However, the problem is that one of the columns,
+                Instructor, doesn’t depend on both of those values. It depends only on the Course ID.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">That’s a mismatch.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">BCNF says that if a column
+                depends on some other column, then that “other column” must be enough to identify each row on its own
+                uniquely. In other words, it must be a key.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In this case, Course ID
+                determines the Instructor, but Course ID is not the table’s key. The key is the Course ID and Room
+                Number. Therefore, we’ve a dependency that doesn’t align with the key.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The fix is to split the
+                table into two separate ones that reflect the actual relationships in the data. See the diagram below,
+                where we have two tables: Course Instructor and Course Room Mapping. The Course Room Mapping table has
+                R101 (Room A) and R102 (Room B) to map the Course ID with the time slot.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/c2717d96-9fb6-4ae3-a426-333b4d0fa670?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/c2717d96-9fb6-4ae3-a426-333b4d0fa670?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw3fFg4LY81DVk1tRCe19Arw"><img
+                                            alt="" width="550" height="288.5989010989011"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYoWT7-kp2xlmFeOV0zAeGmaU8Fk7GN24VPdjNf-gixPOedaE66kGMElRTvtQtviMeI0G2yg4fRNCfaZnXCEL8iZHfdRE8J6pLEtUuBmsaspywC9a_C-ojfqurR6rICJIHSWVPtJo2rukkZu8r4wbKbklEXNHWkGTRp8VNEGJyZM0WcgvJqad0ljHzx4HvIpBdkWiZo1tVoUUCcyly1kXPnfscxh91PVpYBWccvey9Ca0Uk4XTN9kVoC7ZjzmU3PivEIjuSynLCnFTLOMiviz0Hd3LUqdhfMOygfRrIGPHsd-RBJ4sku0O5n3c=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F3a46ff53-d617-46b5-a476-dbecd4acc20a_2402x1260.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <h4>5 - Fourth Normal Form (4NF)</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">4NF comes into play when a
+                single table tries to represent two or more independent one-to-many relationships for the same entity.
+                It ends up generating all possible combinations, resulting in a Cartesian explosion.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">For example, let’s say
+                there is an employee E001 who knows two skills: Java and Python. Also, E001 is working on two projects:
+                ProjectX and ProjectY.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>How many rows are
+                    needed to represent all this in one table with three columns: EmployeeID, Skill, and Project?</em>
+            </p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The answer is 4 rows
+                because the table doesn’t know whether a skill applies to a specific project or not. Therefore, it
+                assumes every skill is used in every project, resulting in the Cartesian explosion. The situation only
+                gets worse with more skills and projects.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This structure seems to
+                suggest that an employee is using Java on ProjectY and Python on ProjectX. However, it may not be true,
+                and the company never recorded which skill is used on which project, and doesn’t even care. However, the
+                table is implying relationships that may not exist, which may be incorrect and also a waste of storage.
+            </p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The skills of an employee
+                and the project an employee is working on are two independent dimensions. And hence, it’s better to
+                model them in independent tables.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/38db03ef-6f33-4e63-8841-1d009c45c281?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/38db03ef-6f33-4e63-8841-1d009c45c281?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw0T4_IpU56235KLF9EWDlI8"><img
+                                            alt="" width="550" height="491.4491758241758"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYxQVesv0IiAzEYrrz5YXKoEOh14fO511RPhqvSGrExjPTEaoDeXPWmKCLkVvYLFodkJQY6lVqJwgxH6nNaYtltvv3jyMmSLpn8bMJus-e4QLqmusOdTV_p7l8ubBeCi7_CcYCocDWtrVAz13S84BDEHPB4vdsUSr2m5XvuYr9w1WQxYmjp5wTV5yjw2uCnFtd340foGdNy4eiiSUqKqUtG2yQ8SlqIF3Mtw4OGTPQ-FXCbzeMj62HAb0QbGWTyYXsRAO-KM-Pt4WG-K64xg1vm1l-M2Yg-JCljhkj_Dld9W9Xi4XY8mWwBV1A=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F36329683-1fa2-4575-a656-328e1c68f622_2344x2094.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This is the 4NF approach
+                that eliminates redundant combinations from multi-valued dependencies.</p>
+            <h4>Takeaway</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The first three forms (1NF,
+                2NF, and 3NF) handle 95% of real-world use cases.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">They ensure data is stored
+                logically, with minimal redundancy and maximum integrity. BCNF adds guardrails for edge cases, while 4NF
+                and other higher normal forms deal with complex many-to-many and join-heavy designs.</p>
+            <h2>Denormalization</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalization flips the
+                principles of normalization on their head.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">While normalization brings
+                structure and integrity, it often comes at a performance cost. Denormalization introduces controlled
+                redundancy to reduce that cost, especially in read-heavy systems where query speed matters more than
+                strict normalization rules.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normalized schemas often
+                require multiple joins to fetch a complete data object. This works fine at a low scale. But as traffic
+                grows, or query complexity deepens, those joins can become bottlenecks.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Consider a product
+                dashboard that pulls:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        User details from a Users table.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Product data from Products.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Order info from Orders.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Discount info from a Promotions table.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">A normalized schema
+                requires four joins to assemble the view. At scale, these joins hit disk, strain indexes, and increase
+                query latency.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalization addresses
+                this by pre-joining or duplicating data. It puts everything the application needs into a single place,
+                so the database has to do less work during reads. In other words, denormalization trades write
+                complexity for read performance.</p>
+            <h3>Common Denormalization Techniques</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalization isn’t
+                one-size-fits-all.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">It takes different forms
+                depending on access patterns, performance goals, and database constraints.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Below are common patterns
+                used in production systems:</p>
+            <h4>1 - Merging Related Tables</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The simplest approach is to
+                combine two frequently joined tables into one. For example, if every order needs customer data, consider
+                merging Orders and Customers.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below for
+                reference:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/8a769c15-c349-4b9b-a5ae-7cf700ed1fbf?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/8a769c15-c349-4b9b-a5ae-7cf700ed1fbf?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw0oBhv-T_I0ZFMYS0fG3Yhw"><img
+                                            alt="" width="550" height="292.7541208791209"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nat52M98yATHbCdxqAuuW6iS22plwvPQGAKB8xpGnBFualQ0pCJxftdQ-zG25p0AnwJ9psEYr2xuKXswTzR-80ag8ter1QGckUMBO1V1518RbNnKiJ-_9x3OlkoSEUz_3UmKNojuwhUIj3soivP8vdIBLA7HOrceXRdd-aWVeYPD67c9BZsFcXn-BAqP6fPH_eVqB8WA7neaLLrQ1XMEImDqk7Uhv4O7NJXcdT6zGNL2P5aiMOHTP0tjqJHuStzIDw_PNj75fK1kBzL2T87t6VjRP7fYyLzvje4NLGow7xzvgdYeoQKUSEBabY=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F76d1984c-8574-4664-8c3e-4c7d158f16a3_3162x1684.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now, reading an order no
+                longer requires a join. But updating a customer’s name means touching every order they've placed.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trade-off is that this
+                approach is great for read speed. However, it can be problematic if customer details change frequently.
+            </p>
+            <h4>2 - Add Redundant Columns</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Sometimes, full merging
+                isn’t needed, and just selective duplication is sufficient.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">For example, storing
+                ProductName in the OrderItems table, even though Products already holds that information.</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/45ab2918-ccd9-4f7f-83d6-ce0f6ad38b52?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/45ab2918-ccd9-4f7f-83d6-ce0f6ad38b52?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw3EAgTUGJNTbEXbaWxUr400"><img
+                                            alt="" width="550" height="339.9725274725275"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZqm-X2CntFuobpZTxU0UiCCXl-qXyqRUrHefsp4Ie_xuat7mv6D05o0wnaprXbVYXM2rMbuUNL5ApuCPL6RdtFTqCHy_WMzwj0Jnb9dx8oF57v6jgKA7TnltDRnc5-Sl2dBNGZuUIoAYuRwbeUQe2iwo6uxOuSnQxiFEdDw8JJwmeYStuLoarkI13VJcYHLGegRLmrYS4-EwfKu01p1Ir0bh718BMAcVo5I4UCEPntKNDB84mIbJd2WxCCiiAh3gp9U_-6agJGac1VdMqXMowbQpNzaD4-sQ7PLbwyPwnTEndPRPtHA3vT4rk=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F392c3f7f-ba79-4d3a-a986-79f42cb7b1c5_2552x1578.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This avoids a join at query
+                time, especially useful in reporting or data export scenarios. However, if product names change (for
+                example, due to branding), every reference needs an update.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trade-off here is
+                faster reads, but at the risk of stale or inconsistent data.</p>
+            <h4>3 - Creating Summary Tables</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Summary tables
+                pre-aggregate data to avoid expensive computations during reads.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">This structure is ideal for
+                dashboards and analytics tools. Updates are handled via scheduled jobs, event triggers, or batch
+                pipelines.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trade-off here is fast
+                queries at the cost of freshness. However, it needs orchestration to stay accurate.</p>
+            <h4>4 - Using Materialized Views</h4>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Materialized views store
+                the output of a query, not just the query itself. They’re maintained by the database and can be
+                refreshed periodically or incrementally.</p>
+            <pre style="background:#eeeeee;padding:16px;margin:32px 0;border-radius:8px;box-sizing:border-box"><code style="white-space:pre-wrap;font-size:16px;line-height:20px;font-weight:500">CREATE MATERIALIZED VIEW TopProducts AS
+SELECT ProductID, COUNT(*) AS OrderCount
+FROM OrderItems
+GROUP BY ProductID;</code></pre>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Now, getting top-selling
+                products becomes a simple “select” query. Most relational databases (for example, PostgreSQL, Oracle)
+                support this.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">See the diagram below that
+                shows the basic concept of a materialized view with another example where a specific value can be
+                calculated and stored for quick and efficient queries:</p>
+            <div style="font-size:16px;line-height:26px;margin:32px auto">
+                <figure style="width:100%;margin:0 auto">
+                    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td style="text-align:center"></td>
+                                <td align="left" width="1456" style="text-align:center"><a
+                                        href="https://substack.com/redirect/f20418fc-d1fd-4f6e-8d1d-1b6b9ba53b37?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                                        rel=""
+                                        style="padding:0;width:auto;height:auto;border:none;text-decoration:none;display:block;margin:0"
+                                        target="_blank"
+                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/f20418fc-d1fd-4f6e-8d1d-1b6b9ba53b37?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw1BVSxoRwv2iZyPCyoSUS0E"><img
+                                            alt="" width="550" height="389.0796703296703"
+                                            src="https://ci3.googleusercontent.com/meips/ADKq_Nb-9AKOmESdNwGwOhD3_ErrAjeAowSAxfkpTt_gJ0GIT5nIneltAgFu5zQlZIbb6EnRXZK3EIZr7Q-0oUzDaNJX0dZQucJKjlq-ew1Y6aU78987JBI-EBiCrtnv-k0PsB82ulNtXy1pH0kcGhQY_03_7VDLYgOzE6-KZ8R-CuZFU0JrT_ekDCUxp6sgrAYYTpQWkg1gu_hapQ-8Wg8Ktkl1FMDie6KhO-da3U82Wr9OrRVF69xjoYsE4bSJS_tm6s3QChBaQ4ADidp9TH2BCKay6gooMXh3-3sSU1CEoVwOMoXEOyxdB70bv0M=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_1100,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack-post-media.s3.amazonaws.com%2Fpublic%2Fimages%2F99cb48d8-bd6f-413a-af3b-3f044c866950_3162x2236.png"
+                                            style="border:none!important;vertical-align:middle;display:block;height:auto;margin-bottom:0;width:auto!important;max-width:100%!important;margin:0 auto"
+                                            class="CToWUd" data-bit="iit"></a></td>
+                                <td style="text-align:center"></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </figure>
+            </div>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">The trade-off is that
+                materialized views simplify queries and offload computation, but they need careful refresh logic. Stale
+                views can mislead consumers.</p>
+            <h2>Trade-Offs Between Normalization and Denormalization</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Let’s look at some of the
+                key trade-offs involved when choosing between normalization and denormalization.</p>
+            <h3>Performance Considerations</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normalized schemas shine
+                when it comes to write performance and data integrity. Since data lives in one place, insertions and
+                updates are efficient and safe. There's no need to write the same value into multiple tables or worry
+                about consistency across redundant fields.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">However, reading normalized
+                data often involves multiple joins, especially in feature-rich applications. That means:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        More CPU cycles per query,</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        More disk seeks for scattered rows,</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        And more room for subtle performance regressions as the data grows.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalized schemas flip
+                the equation. By duplicating data or storing pre-joined structures, they eliminate joins at query time,
+                dramatically reducing response times. This is especially useful for dashboards, search APIs, and mobile
+                clients where latency is king.</p>
+            <h3>Maintenance Complexity</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normalized data models are
+                easier to evolve and maintain. Changing a data attribute (like renaming a product or updating a user’s
+                profile) happens in one place. Indexes and constraints stay lean. Also, refactoring a schema doesn’t
+                involve hunting down duplicated logic or scattered dependencies.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalized schemas are
+                harder to keep consistent. Data duplication means more places to update. Every new sync path introduces
+                the risk of bugs, missed edge cases, or stale values leaking into production.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In practice, keeping
+                denormalized data clean requires:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Custom update logic.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Scheduled jobs or triggers.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Change-data-capture pipelines.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">All of these add
+                engineering overhead and failure points.</p>
+            <h3>Storage and Redundancy</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Normalized schemas are
+                space-efficient. Each data item is stored once, indexed as needed, and referenced by keys. In
+                large-scale systems with high write volumes, like messaging apps or transaction logs, this efficiency
+                compounds quickly.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalized schemas
+                utilize more space by design. Redundant fields, summary tables, and precomputed joins all inflate disk
+                usage. However, in read-optimized environments like OLAP systems or data warehouses, that trade-off is
+                often acceptable.</p>
+            <h3>Use-Case-Driven Decision Making</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">There’s no universal
+                “correct” level of normalization. It depends entirely on how the system behaves.</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        OLTP systems (such as banking, e-commerce, and inventory management) deal with frequent writes,
+                        strict consistency, and transactional integrity. Here, normalization works best.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        OLAP systems (such as reporting dashboards, customer insights, and event analytics) prioritize
+                        fast reads and aggregations across large datasets. Denormalization, summaries, and precomputed
+                        joins help them scale.</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">In many cases, the answer
+                lies somewhere in between. Teams normalize the core schema, then selectively denormalize read-critical
+                paths either manually or through caching layers, materialized views, or downstream data platforms.</p>
+            <h2>Best Practices For Developers</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Schema design isn’t a
+                one-and-done task, but a continuous process. Workloads shift, access patterns evolve, and what worked at
+                launch might struggle under growth.&nbsp;</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some best practices that
+                can help developers are as follows:</p>
+            <h3>Start with Normalization, Denormalize Later</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Start with a clean,
+                normalized schema. It clarifies intent, enforces consistency, and makes the data model easier to reason
+                about. Early-stage systems benefit from this clarity, especially when the domain is still evolving or
+                when correctness matters more than speed.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalize only in
+                response to specific requirements. If a specific read path becomes a bottleneck and joins become costly,
+                denormalize that slice of the model.</p>
+            <h3>Monitor Query Patterns and Workload Behavior</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Schema design without
+                observability is equivalent to guesswork. Use query logs, slow query analyzers, APM tools, and database
+                profilers to spot the real hotspots.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Look for patterns like:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Frequent joins across the same set of tables</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        High latency on aggregate queries</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Heavy reads on fields that require lookups or subqueries</p>
+                </li>
+            </ul>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Use these signals to
+                validate whether denormalization will improve performance.&nbsp;</p>
+            <h3>Automate Consistency Where Possible</h3>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Denormalization always
+                introduces the risk of stale or inconsistent data. When choosing to duplicate data across tables or
+                systems, automate consistency as much as possible.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Some options include:</p>
+            <ul style="margin-top:0;padding:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Triggers:</strong><span> Use database-level triggers to propagate changes. This is
+                            effective for low-frequency updates but hard to maintain at scale.</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Application logic:</strong><span> Centralized writes in well-defined service layers that
+                            update all relevant tables in sync.</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Background jobs:</strong><span> Periodically refresh derived or summary data to correct
+                            drift in eventual consistency models.</span></p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        <strong>Change Data Capture (CDC):</strong><span> Stream changes from the source of truth to
+                            downstream copies in real-time or near-real-time pipelines.</span></p>
+                </li>
+            </ul>
+            <h2>Summary</h2>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">We’ve now looked at
+                database schema design with special focus on normalization and denormalization in detail.</p>
+            <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px">Here are the key learning
+                points in brief:</p>
+            <ul style="margin-top:0;padding:0;margin-bottom:0">
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Schema design defines how data is structured, related, and retrieved in a database, impacting
+                        performance, maintainability, and correctness.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Entity-Relationship (ER) modeling helps identify entities, attributes, and relationships,
+                        forming the conceptual basis for table design.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Logical schema focuses on data relationships and structure, whereas physical schema deals with
+                        how data is stored and optimized for performance.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Normalization eliminates redundancy and enforces data integrity by organizing data into logical,
+                        dependency-driven forms.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        First Normal Form (1NF) removes repeating groups and ensures atomic values in each column.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Second Normal Form (2NF) removes partial dependencies by ensuring all non-key columns depend on
+                        the full primary key.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Third Normal Form (3NF) eliminates transitive dependencies, ensuring non-key columns depend only
+                        on primary keys.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Boyce-Codd Normal Form (BCNF) resolves edge cases involving multiple overlapping candidate keys.
+                    </p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Denormalization introduces controlled redundancy to optimize for read-heavy workloads by
+                        reducing joins and simplifying queries.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Common denormalization techniques include merging tables, duplicating fields, creating summary
+                        tables, and using materialized views.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Normalized schemas improve write performance and data consistency but often suffer from slower
+                        reads due to costly joins.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Denormalized schemas optimize for read speed but introduce complexity in writes and data
+                        consistency management.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Normalized models are easier to maintain, while denormalized ones require tooling or specific
+                        logic to keep redundant data accurate.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        Storage use is leaner in normalized schemas, whereas denormalization trades disk space for
+                        performance and developer convenience.</p>
+                </li>
+                <li style="margin:8px 0 0 32px">
+                    <p
+                        style="color:rgb(54,55,55);line-height:26px;margin-bottom:0;box-sizing:border-box;padding-left:4px;font-size:16px;margin:0">
+                        OLTP systems favor normalization for consistency. On the other hand, OLAP systems lean on
+                        denormalization to serve complex, high-volume reads efficiently.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div
+        style="margin:32px 0 0;width:100%;box-sizing:border-box;border-top:1px solid #e6e6e6;font-size:16px;line-height:26px">
+    </div>
+    <div style="font-size:16px;line-height:26px">
+        <div style="margin:32px 0;font-size:16px;line-height:26px">
+            <div dir="auto"
+                style="text-align:initial;font-size:16px;line-height:26px;width:100%;word-break:break-word;margin-bottom:16px">
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-top:0"><span>This
+                        post is only for premium members of&nbsp;</span><a
+                        href="https://substack.com/redirect/8b13f5a8-8b6f-4f36-a311-b87060c84bf6?j=eyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s"
+                        rel="" style="color:rgb(54,55,55);text-decoration:underline" target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/8b13f5a8-8b6f-4f36-a311-b87060c84bf6?j%3DeyJ1IjoiNHczYmJyIn0.8e0w4-0q-RFN6irgmuQiCn0Z5qrzGdYTlhlmUSeaY-s&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw1Y5UChI4dVLdWggnGZzzt8">the
+                        <span class="il">ByteByteGo</span> newsletter</a><span>.&nbsp;This email is intended for a
+                        single recipient, but occasional forwarding is totally fine.</span></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>Know someone who
+                        would benefit from the newsletter? Consider gifting a subscription.</em></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW1saGRDSTZNVGMwT1RjME16QXdPQ3dpWlhod0lqb3hOelV5TXpNMU1EQTRMQ0pwYzNNaU9pSndkV0l0T0RFM01UTXlJaXdpYzNWaUlqb2lZMmhsWTJ0dmRYUWlmUS5pSXdNUXJqdFNvVERGRkxyZ1RrYVZ1bU9CX21nMzdUblgwcWFMM1NXU0t3IiwicCI6MTY1NzQzNjg5LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0OTc0MzAwOCwiZXhwIjoxNzUyMzM1MDA4LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.f1VY9GZFIu_APbVc7Vun080dJDGuI_jFGLOjFbRU9yA?&amp;gift=true"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW1saGRDSTZNVGMwT1RjME16QXdPQ3dpWlhod0lqb3hOelV5TXpNMU1EQTRMQ0pwYzNNaU9pSndkV0l0T0RFM01UTXlJaXdpYzNWaUlqb2lZMmhsWTJ0dmRYUWlmUS5pSXdNUXJqdFNvVERGRkxyZ1RrYVZ1bU9CX21nMzdUblgwcWFMM1NXU0t3IiwicCI6MTY1NzQzNjg5LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0OTc0MzAwOCwiZXhwIjoxNzUyMzM1MDA4LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.f1VY9GZFIu_APbVc7Vun080dJDGuI_jFGLOjFbRU9yA?%26gift%3Dtrue&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw0jI9oJlW5j3djMYv8PIKp4"><span
+                            style="color:#ffffff;text-decoration:none">Give a gift subscription</span></a></p>
+                <p style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px"><em>For group
+                        subscriptions</em><span>,&nbsp;click here:</span></p>
+                <p
+                    style="margin:0 0 20px 0;color:rgb(54,55,55);line-height:26px;font-size:16px;margin-bottom:0;text-align:center;border-radius:4px">
+                    <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW1saGRDSTZNVGMwT1RjME16QXdPQ3dpWlhod0lqb3hOelV5TXpNMU1EQTRMQ0pwYzNNaU9pSndkV0l0T0RFM01UTXlJaXdpYzNWaUlqb2lZMmhsWTJ0dmRYUWlmUS5pSXdNUXJqdFNvVERGRkxyZ1RrYVZ1bU9CX21nMzdUblgwcWFMM1NXU0t3IiwicCI6MTY1NzQzNjg5LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0OTc0MzAwOCwiZXhwIjoxNzUyMzM1MDA4LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.f1VY9GZFIu_APbVc7Vun080dJDGuI_jFGLOjFbRU9yA?group=true&amp;coupon=254241e3"
+                        rel=""
+                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;box-sizing:border-box;border:none;font-size:14px;line-height:20px;font-weight:600;margin:0;opacity:1;outline:none;white-space:nowrap;color:#ffffff!important;text-decoration:none!important;background-color:#7756e3;text-align:center;border-radius:4px;padding:12px 20px;height:auto"
+                        target="_blank"
+                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL3N1YnNjcmliZT91dG1fc291cmNlPXBvc3QmdXRtX2NhbXBhaWduPWVtYWlsLWNoZWNrb3V0Jm5leHQ9aHR0cHMlM0ElMkYlMkZibG9nLmJ5dGVieXRlZ28uY29tJTJGcCUyRmRhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZCZyPTR3M2JiciZ0b2tlbj1leUoxYzJWeVgybGtJam95T1RVM05qY3dOak1zSW1saGRDSTZNVGMwT1RjME16QXdPQ3dpWlhod0lqb3hOelV5TXpNMU1EQTRMQ0pwYzNNaU9pSndkV0l0T0RFM01UTXlJaXdpYzNWaUlqb2lZMmhsWTJ0dmRYUWlmUS5pSXdNUXJqdFNvVERGRkxyZ1RrYVZ1bU9CX21nMzdUblgwcWFMM1NXU0t3IiwicCI6MTY1NzQzNjg5LCJzIjo4MTcxMzIsImYiOmZhbHNlLCJ1IjoyOTU3NjcwNjMsImlhdCI6MTc0OTc0MzAwOCwiZXhwIjoxNzUyMzM1MDA4LCJpc3MiOiJwdWItMCIsInN1YiI6ImxpbmstcmVkaXJlY3QifQ.f1VY9GZFIu_APbVc7Vun080dJDGuI_jFGLOjFbRU9yA?group%3Dtrue%26coupon%3D254241e3&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw0GHn5uPDhkxofDiwxK3ZLk"><span
+                            style="color:#ffffff;text-decoration:none">Get 20% off a group subscription</span></a></p>
+            </div>
+        </div>
+    </div>
+    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0"
+        style="border-top:1px solid rgb(0,0,0,.1);border-bottom:1px solid rgb(0,0,0,.1);min-width:100%">
+        <tbody>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+            <tr>
+                <td>
+                    <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0"
+                                        style="margin:0 auto">
+                                        <tbody>
+                                            <tr>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=substack&amp;isFreemail=false&amp;submitLike=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDk3NDMwMDgsImV4cCI6MTc1MjMzNTAwOCwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.AAkD1AvAFcO5jQYFxECntmo4mqMJ0llMTgofMO5iJcc&amp;utm_medium=email&amp;utm_campaign=email-reaction&amp;r=4w3bbr"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dsubstack%26isFreemail%3Dfalse%26submitLike%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwicmVhY3Rpb24iOiLinaQiLCJpYXQiOjE3NDk3NDMwMDgsImV4cCI6MTc1MjMzNTAwOCwiaXNzIjoicHViLTgxNzEzMiIsInN1YiI6InJlYWN0aW9uIn0.AAkD1AvAFcO5jQYFxECntmo4mqMJ0llMTgofMO5iJcc%26utm_medium%3Demail%26utm_campaign%3Demail-reaction%26r%3D4w3bbr&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw2PI0APMBaQ4lN8xmsChH32"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NYOjKnGdA6WctG38AS6EVdNYu_-7fh22xck2A9-pvWHOzWlHUTWwJBnDEHuihQT-mHYSFSOPGMFj17PoFDPqBRyAweZbKJBfmfdf0nN2gA2vpA_t4hra0npxdFv1Su3gybOyNLyHYsDXBY3m_mn080mcPeWTKQqIgqXPRT2V1wYwfkaPCLzlY_V-PiTggfv_xrTA8HYh7HKuHujEESc2P0y1oNal12FbEVuGHyE1cfT8Ao_kDE4WXwuj4hsN9KnkWa2-U1gOjvQJix2w3wAxTvq7i8tS-cG5kiw_zDtLa2jRkfU-2J9dqE1fRI=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideHeart%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Like</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/app-link/post?publication_id=817132&amp;post_id=165743689&amp;utm_source=substack&amp;utm_medium=email&amp;isFreemail=false&amp;comments=true&amp;token=eyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ&amp;r=4w3bbr&amp;utm_campaign=email-half-magic-comments&amp;action=post-comment&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/app-link/post?publication_id%3D817132%26post_id%3D165743689%26utm_source%3Dsubstack%26utm_medium%3Demail%26isFreemail%3Dfalse%26comments%3Dtrue%26token%3DeyJ1c2VyX2lkIjoyOTU3NjcwNjMsInBvc3RfaWQiOjE2NTc0MzY4OSwiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi04MTcxMzIiLCJzdWIiOiJwb3N0LXJlYWN0aW9uIn0.oUvFK_4pmnCyNc1cRo2uM4OHarDbowbEhp4464YngcQ%26r%3D4w3bbr%26utm_campaign%3Demail-half-magic-comments%26action%3Dpost-comment%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw1KauFpKyEmIgk9yMBlEGK0"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NZQ6ul5mfmbhHqaf8QqG95Pk2-u43roqB75nm5jJzhHXd--mR5Y8AvAyxxNDy_VtDd9fmjbUCT-HubbmsyqACondkMynDxF_4OPkse-myg1NEghIdojn9hXTPU8-8O66FdE-vni0HscGR7DdII1fBBP6Cqijmqt79Qf4aXgmizh3DWrKKu-k0Wgdk-bqdv-bhzJc25nY0ZIwaK-MSHSD25MZOwmFTqke48mYHWY7_OTC_tC7y9c6l7pZazslKv0l7zCVu3O4lHo5J4IzMUhAsYY7HrfIK6I1w19tGLaiFqYRu_GEX2HfaE1wzpyR-8=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FLucideComments%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Comment</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                                <td width="8" style="min-width:8px"></td>
+                                                <td style="vertical-align:middle">
+                                                    <table role="presentation" width="auto" border="0" cellspacing="0"
+                                                        cellpadding="0">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td align="center"><a
+                                                                        href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZD91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWVtYWlsLXJlc3RhY2stY29tbWVudCZhY3Rpb249cmVzdGFjay1jb21tZW50JnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNOVEl6TXpVd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSndiM04wTFhKbFlXTjBhVzl1SW4wLm9VdkZLXzRwbW5DeU5jMWNSbzJ1TTRPSGFyRGJvd2JFaHA0NDY0WW5nY1EiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.WYFIs_ztsp6eIAvL4ZKIpLmKMAaMfwv4cIsC0tKWtus?&amp;utm_source=substack&amp;utm_medium=email"
+                                                                        style="font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';display:inline-block;font-weight:500;border:1px solid rgb(0,0,0,.1);border-radius:9999px;text-transform:uppercase;font-size:12px;line-height:12px;padding:9px 14px;text-decoration:none;color:rgb(119,119,119)"
+                                                                        target="_blank"
+                                                                        data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9vcGVuLnN1YnN0YWNrLmNvbS9wdWIvYnl0ZWJ5dGVnby9wL2RhdGFiYXNlLXNjaGVtYS1kZXNpZ24tc2ltcGxpZmllZD91dG1fc291cmNlPXN1YnN0YWNrJnV0bV9tZWRpdW09ZW1haWwmdXRtX2NhbXBhaWduPWVtYWlsLXJlc3RhY2stY29tbWVudCZhY3Rpb249cmVzdGFjay1jb21tZW50JnI9NHczYmJyJnRva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNOVEl6TXpVd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSndiM04wTFhKbFlXTjBhVzl1SW4wLm9VdkZLXzRwbW5DeU5jMWNSbzJ1TTRPSGFyRGJvd2JFaHA0NDY0WW5nY1EiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.WYFIs_ztsp6eIAvL4ZKIpLmKMAaMfwv4cIsC0tKWtus?%26utm_source%3Dsubstack%26utm_medium%3Demail&amp;source=gmail&amp;ust=1755481454005000&amp;usg=AOvVaw180mlwTmzIV9cWOS-yEB9S"><img
+                                                                            src="https://ci3.googleusercontent.com/meips/ADKq_NaAcs1x603C43QswW4X8QyFClE_iV8uDH81ZVUNp3jAGANfuOCmrOzybMjuK33ZdFBhvT8DDWg0rf3MAXaLwNX60pbEsKrG6mTkBF_tG7ZARpxyWUW8cpyvgr3eSzZICeFBgjAqeW7re2q56EWvaeduPbgJWgiIE9-PkR4dtd6NjoikjabCx8n01yfhM-NyOQS1DN1XI5hM2LQTOCVv40Fu_bvfnwiQEBzDUjZ76gEeQ0xvcjRPaP32NaqS8DohcCuxk54JO6YLS-Pjq0NbVW1t8PiuH78evl4TcGgXxoJn5_wamD9wxnzC27JB_yLT=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_36,c_scale,f_png,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Ficon%2FNoteForwardIcon%3Fv%3D4%26height%3D36%26fill%3Dnone%26stroke%3D%2523808080%26strokeWidth%3D2"
+                                                                            width="18" height="18"
+                                                                            style="margin-right:8px;min-width:18px;min-height:18px;border:none;vertical-align:middle;max-width:18px"
+                                                                            alt="" class="CToWUd" data-bit="iit"><span
+                                                                            style="vertical-align:middle">Restack</span></a>
+                                                                </td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                                <td align="right">
+                                    <table role="presentation" width="auto" border="0" cellspacing="0" cellpadding="0">
+                                        <tbody>
+                                            <tr></tr>
+                                        </tbody>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+            <tr height="16">
+                <td height="16" style="font-size:0px;line-height:0">&nbsp;</td>
+            </tr>
+        </tbody>
+    </table>
+    <div style="color:rgb(119,119,119);text-align:center;font-size:16px;line-height:26px;padding:24px0">
+        <div style="font-size:16px;line-height:26px;padding-bottom:24px">
+            <p
+                style="list-style:none;font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;font-size:12px;line-height:16px;margin:0;color:rgb(119,119,119);text-decoration:unset">
+                © 2025 <span><span class="il">ByteByteGo</span></span><br>548 Market Street PMB 72296, San Francisco, CA
+                94104 <br><a
+                    href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNPREV5Tnprd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLjVHcmtwc2lPV2RlZEdjTjdob25CYjB1bmxsd3Z0YmlHY0R2Q1hwY2JqNGsiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.NSo1vMeuYu9m0zCOmLQ2XWGqKrrmxmlsiqYGIJeVcAQ?"
+                    style="text-decoration:underline;color:rgb(119,119,119)" target="_blank"
+                    data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9ibG9nLmJ5dGVieXRlZ28uY29tL2FjdGlvbi9kaXNhYmxlX2VtYWlsP3Rva2VuPWV5SjFjMlZ5WDJsa0lqb3lPVFUzTmpjd05qTXNJbkJ2YzNSZmFXUWlPakUyTlRjME16WTRPU3dpYVdGMElqb3hOelE1TnpRek1EQTRMQ0psZUhBaU9qRTNPREV5Tnprd01EZ3NJbWx6Y3lJNkluQjFZaTA0TVRjeE16SWlMQ0p6ZFdJaU9pSmthWE5oWW14bFgyVnRZV2xzSW4wLjVHcmtwc2lPV2RlZEdjTjdob25CYjB1bmxsd3Z0YmlHY0R2Q1hwY2JqNGsiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.NSo1vMeuYu9m0zCOmLQ2XWGqKrrmxmlsiqYGIJeVcAQ?&amp;source=gmail&amp;ust=1755481454006000&amp;usg=AOvVaw0-IOhg79IInRtZJJL_K20y"><span
+                        style="color:rgb(119,119,119);text-decoration:underline">Unsubscribe</span></a></p>
+        </div>
+        <p
+            style="padding:0 24px;font-size:12px;line-height:20px;margin:0;color:rgb(119,119,119);font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif,'Apple Color Emoji','Segoe UI Emoji','Segoe UI Symbol';padding-bottom:0;margin-top:0">
+            <a href="https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.8JQhRdYSwFTCIidtIlxh1yfMcxNuL72hvJMod7PY_h0?"
+                style="color:rgb(119,119,119);text-decoration:none;display:inline-block;margin:0 4px" target="_blank"
+                data-saferedirecturl="https://www.google.com/url?q=https://substack.com/redirect/2/eyJlIjoiaHR0cHM6Ly9zdWJzdGFjay5jb20vc2lnbnVwP3V0bV9zb3VyY2U9c3Vic3RhY2smdXRtX21lZGl1bT1lbWFpbCZ1dG1fY29udGVudD1mb290ZXImdXRtX2NhbXBhaWduPWF1dG9maWxsZWQtZm9vdGVyJmZyZWVTaWdudXBFbWFpbD1zdWJzdGFjay53ZWNvbW1pdEBnbWFpbC5jb20mcj00dzNiYnIiLCJwIjoxNjU3NDM2ODksInMiOjgxNzEzMiwiZiI6ZmFsc2UsInUiOjI5NTc2NzA2MywiaWF0IjoxNzQ5NzQzMDA4LCJleHAiOjE3NTIzMzUwMDgsImlzcyI6InB1Yi0wIiwic3ViIjoibGluay1yZWRpcmVjdCJ9.8JQhRdYSwFTCIidtIlxh1yfMcxNuL72hvJMod7PY_h0?&amp;source=gmail&amp;ust=1755481454006000&amp;usg=AOvVaw3zKGa0aWxbhMbTPM8FMZKg"><img
+                    src="https://ci3.googleusercontent.com/meips/ADKq_NZ4lOp8aWSBfU6yfIwf9ZFtYM7PBGVaylmSbXq06khzY1otuB4StshNMWv9w8yBZLyMUoBKeAstVyxhVMQDg3u0D4UD_-GglcQCsq8WBUu_ZzxTirbaLgNnRm7d5spED6iLTgDcE8gqRLUrCx2LybXGLAZHYA9N_aJ9fAsYCXnuzNvBy4DQLmS5DKzkBv2MK5vmCHr10yRuv-TNL9iBVqd1qD8Vqpts2foUMkOTUFrsTd1J=s0-d-e1-ft#https://substackcdn.com/image/fetch/w_270,c_limit,f_auto,q_auto:good,fl_progressive:steep/https%3A%2F%2Fsubstack.com%2Fimg%2Femail%2Fpublish-button%402x.png"
+                    width="135" alt="Start writing" height="40"
+                    style="max-width:550px;border:none!important;vertical-align:middle" class="CToWUd"
+                    data-bit="iit"></a></p>
+    </div>
+</div>
