@@ -19,7 +19,7 @@ function HomeComponent() {
         const blogPosts = await getAllBlogPosts();
         setPosts(blogPosts);
       } catch {
-        // eslint-disable-next-line no-console
+        console.error('Error loading blog posts');
       } finally {
         setLoading(false);
       }
