@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotherDuck - Analytics Platform</title>
+
+    <!-- Link to extracted complete CSS -->
+    <link rel="stylesheet" href="./extracted-styles.css">
+
+    <style>
+        /* Additional custom styles for demo content */
+        .demo-section {
+            padding: 4rem 0;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: var(--bg400, #1a1a1a);
+            border: 1px solid var(--grid500, #312a31);
+            border-radius: 8px;
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--fg1200, #f5c0c0);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--fg1200, #f5c0c0);
+        }
+
+        .feature-card p {
+            color: var(--fg1100, rgba(245, 192, 192, 0.8));
+            line-height: 1.6;
+        }
+
+        .content-text {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        .content-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--fg1200, #f5c0c0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="LayoutGrid-sc-fu5iik-0 iyFuQF text-base">
+        <a class="sr-only" href="#main">Skip to main content</a>
+
+        <!-- Background paper texture layer -->
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Page__PaperTexture-sc-185uuuz-0 hbCrco lnUGXW"></div>
+
+        <!-- Main content layer -->
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+
+            <!-- Fixed header container -->
+            <div style="position:fixed;z-index:3;inset:auto 0" class="LayoutGrid-sc-fu5iik-0 iyFuQF">
+
+                <!-- Grid lines for header -->
+                <div aria-hidden="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Header__TopGridLines-sc-8habwv-0 hbCrco iLwctE">
+                    <div data-minor="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                    <div class="GridLines__GridRule-sc-18us314-1 cLOeU"></div>
+                    <div class="GridLines__GridRule-sc-18us314-1 bLYxbN"></div>
+                    <div data-minor="true" data-right="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                </div>
+
+                <!-- Header navigation -->
+                <header class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+
+                    <!-- Ticker announcement bar -->
+                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Header__TickerWrapper-sc-8habwv-1 hbCrco gxVpcv">
+                        <div data-minor="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                        <div data-content-grid="true" style="opacity:1;transform:none" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Ticker__Bg-sc-607qoe-0 hbCrco dcJqqO">
+                            <div aria-label="announcements" role="marquee" class="Ticker__Marquee-sc-607qoe-2 dnPfBX">
+                                <div class="sr-only">
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#news">
+                                        <span>🚀</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">Announcing MotherDuck:</span> The fastest analytics platform
+                                    </a>
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#features">
+                                        <span>⚡</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">10x faster queries</span> with our optimized engine
+                                    </a>
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#pricing">
+                                        <span>💎</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">Get started free</span> No credit card required
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        <div data-minor="true" data-right="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                    </div>
+
+                    <!-- Main navigation -->
+                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                            <div style="transform:translateY(28px)" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Nav__NavWrapper-sc-wbxqho-7 hbCrco jbIBXx">
+
+                                <!-- Nav background -->
+                                <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Nav__Background-sc-wbxqho-9 hbCrco icfDab">
+                                    <div style="--stop-1:rgba(0, 0, 0, 0.48);--stop-2:rgba(0, 0, 0, 0)" class="Nav__BackgroundInner-sc-wbxqho-10 jfEWJN"></div>
+                                </div>
+
+                                <!-- Nav content -->
+                                <div data-pile="true" style="transform:translateY(1.25rem)" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                                    <div style="opacity:0" class="Nav__NavShadow-sc-wbxqho-12 jCsMyE"></div>
+
+                                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                                        <div style="opacity:0" class="Nav__NavBorderBottom-sc-wbxqho-8 bfTQac"></div>
+
+                                        <div class="Nav__NavigationRootEl-sc-wbxqho-0 jUbPSt">
+                                            <div style="position:relative">
+                                                <!-- Left nav items -->
+                                                <ul data-orientation="horizontal" class="Nav__NavigationList-sc-wbxqho-2 Nav__LeftNav-sc-wbxqho-3 bLNJNN jtSLjZ" dir="ltr">
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#platform">Platform</a>
+                                                    </li>
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#solutions">Solutions</a>
+                                                    </li>
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#enterprise">Enterprise</a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Logo -->
+                                                <a aria-current="page" class="Nav__HomeNavLinkWrapper-sc-wbxqho-13 eDJtmH" data-active="" data-state="closed" href="/">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 52 20" class="Nav__Hex-sc-wbxqho-1 iqnmHi">
+                                                        <path fill="currentColor" fill-rule="evenodd" d="M9 0v6.973H7V0H0v20h7V10h2v10h7V0zm9 20h16v-8h-7v5h-2v-7h9V0H18zm7-13V3h2v4zm20 0V0h7v5l-3 3.5 3 3.5v8h-7V9.973h-2V20h-7v-8l3-3.5L36 5V0h7v7z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </a>
+
+                                                <!-- Right nav items -->
+                                                <div style="position:relative">
+                                                    <ul data-orientation="horizontal" class="Nav__NavigationList-sc-wbxqho-2 Nav__RightNav-sc-wbxqho-4 bLNJNN hxYzLx" dir="ltr">
+                                                        <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                            <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#resources">Resources</a>
+                                                        </li>
+                                                        <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                            <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#pricing">Pricing</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="Nav__LogInLink-sc-wbxqho-5 coMZHl" href="#login">Log In</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="Button__LinkWrapper-sc-y7ym94-1 hEVhHO Nav__SignUpButton-sc-wbxqho-6 byRXys" href="#signup">
+                                                                <div class="Button__Inner-sc-y7ym94-2 fECOTI">
+                                                                    <div class="CornerLines__Wrapper-sc-15dqtzb-0 prRVv">
+                                                                        <span class="CornerLines__TopLeft-sc-15dqtzb-1 bXHGzM"></span>
+                                                                        <span class="CornerLines__TopRight-sc-15dqtzb-2 dcHmWI"></span>
+                                                                        <span class="CornerLines__BottomLeft-sc-15dqtzb-3 daIqJa"></span>
+                                                                        <span class="CornerLines__BottomRight-sc-15dqtzb-4 geZdbC"></span>
+                                                                    </div>
+                                                                    <div data-which="corner-circles" class="CornerCircles__Wrapper-sc-89ohnd-0 bHcjRD">
+                                                                        <span class="CornerCircles__Left-sc-89ohnd-1 fkaKgT"></span>
+                                                                        <span class="CornerCircles__Right-sc-89ohnd-2 guQMof"></span>
+                                                                    </div>
+                                                                    <div class="Button__Children-sc-y7ym94-4 hJzacx">Get started</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accent corner lines -->
+                                <div data-position="tl" class="Accent__LContainer-sc-fv2ogk-2 JHtVZ">
+                                    <div style="--progress:-1;opacity:0" class="Accent__VerticalBar-sc-fv2ogk-0 hzSfJ"></div>
+                                    <div style="--progress:-1;opacity:0" class="Accent__HorizontalBar-sc-fv2ogk-1 bMipNU"></div>
+                                </div>
+                                <div data-position="tr" class="Accent__LContainer-sc-fv2ogk-2 JHtVZ">
+                                    <div style="--progress:-1;opacity:0" class="Accent__VerticalBar-sc-fv2ogk-0 hzSfJ"></div>
+                                    <div style="--progress:-1;opacity:0" class="Accent__HorizontalBar-sc-fv2ogk-1 bMipNU"></div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
+                </header>
+            </div>
+
+            <!-- Main content -->
+            <main id="main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+
+                <!-- Hero Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Hero__Bg-sc-1sadz74-0 hbCrco ciHlRj">
+                    <div class="GridLines__CheckeredMargin-sc-18us314-3 jPSPwV"></div>
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid-sc-fu5iik-0 LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 Hero__Wrapper-sc-1sadz74-1 iyFuQF bTlcdO cvEFcy">
+                            <div class="Hero__ContentThumbnail-sc-1sadz74-3 cdxBlP">
+                                <div class="Hero__Content-sc-1sadz74-4 ioJMWf">
+                                    <div class="Hero__Text-sc-1sadz74-5 cJsuno">
+                                        <h1 class="Hero__H1-sc-1sadz74-6 biEhoa heading-0">
+                                            <svg fill="none" viewBox="0 0 47 47" xmlns="http://www.w3.org/2000/svg" class="Hero__SparkleSvg-sc-1sadz74-14 iwXKBG">
+                                                <path d="M8.96094 23.0768L1.02019 31.0175" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="M16.0223 26.0006L16.0223 37.2294" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="M23.0788 23.0793L31.0195 31.0201" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="M26.0016 16.0196L37.2305 16.0196" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                                <path d="M23.0788 8.96006L31.0195 1.01932" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                            </svg>
+                                            Make everyone<br/>a data person
+                                        </h1>
+                                        <p class="Hero__P-sc-1sadz74-7 fkPyUh text-xl">Hex is a connected platform for using AI to work with data. Ask questions in natural language, partner with agents to do better analysis, and curate context for trusted answers.</p>
+                                    </div>
+                                    <div class="Hero__Actions-sc-1sadz74-8 OIdWF">
+                                        <div>
+                                            <div class="Cta__AccentsContainer-sc-1yc7jue-9 cFXSLl">
+                                                <div data-position="tl" style="--i:0" class="Cta__Circle-sc-1yc7jue-5 dcjZKt"></div>
+                                                <div data-position="tr" style="--i:1" class="Cta__Circle-sc-1yc7jue-5 dcjZKt"></div>
+                                                <div data-position="bl" style="--i:2" class="Cta__Circle-sc-1yc7jue-5 dcjZKt"></div>
+                                                <div data-position="br" style="--i:3" class="Cta__Circle-sc-1yc7jue-5 dcjZKt"></div>
+                                                <div class="Cta__AccentsContainer-sc-1yc7jue-9 cFXSLl">
+                                                    <div data-position="t" style="--i:0" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                        <div data-position="t" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                            <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-position="r" style="--i:1" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                        <div data-position="r" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                            <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-position="b" style="--i:2" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                        <div data-position="b" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                            <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                        </div>
+                                                    </div>
+                                                    <div data-position="l" style="--i:3" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                        <div data-position="l" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                            <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                            <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                        </div>
+                                                    </div>
+                                                    <a href="#signup" class="Cta__PrimaryCta-sc-1yc7jue-0 eFKESU text-l">
+                                                        <div class="Cta__PrimaryCtaIconWrapper-sc-1yc7jue-2 gfCFIM">
+                                                            <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                                                <path d="M2.5 11.5L6.75 7L9 9.5L13 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                                <path d="M10.5 4.5H13.5V7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                            </svg>
+                                                        </div>
+                                                        Get started
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="Cta__AccentsContainer-sc-1yc7jue-9 cFXSLl">
+                                            <div data-position="t" style="--i:0" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                <div data-position="t" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                    <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                </div>
+                                            </div>
+                                            <div data-position="r" style="--i:1" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                <div data-position="r" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                    <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                </div>
+                                            </div>
+                                            <div data-position="b" style="--i:2" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                <div data-position="b" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                    <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                </div>
+                                            </div>
+                                            <div data-position="l" style="--i:3" class="Cta__CornerTrack-sc-1yc7jue-8 cIfeOw">
+                                                <div data-position="l" class="Cta__CornerLinePosition-sc-1yc7jue-7 fTwcQM">
+                                                    <div data-order="1" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="2" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                    <div data-order="3" class="Cta__CornerLine-sc-1yc7jue-6 KfQWl"></div>
+                                                </div>
+                                            </div>
+                                            <a class="Cta__SecondaryCta-sc-1yc7jue-4 cynrto text-l" href="#demo">Request a demo</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="Hero__ThumbnailArea-sc-1sadz74-13 dFIrAB">
+                                    <button class="Hero__PegBoard-sc-1sadz74-12 bzcrte">
+                                        <div class="Hero__FeatherEdgeMask-sc-1sadz74-11 iKpLEX">
+                                            <div class="Textures__DotGridMask-sc-ocrfgq-0 hMEEoz">
+                                                <div class="Hero__DotGridBg-sc-1sadz74-9 buQIEI"></div>
+                                                <div class="Hero__PerlinNoise-sc-1sadz74-10 kfPquW"></div>
+                                            </div>
+                                        </div>
+                                        <div class="Hero__ThumbnailShadow-sc-1sadz74-2 fXuojw">
+                                            <video autoplay="" loop="" muted="" playsinline="" poster="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" class="Thumbnail__Loop-sc-8z36x-1 gFjTiU">
+                                                <source src="https://videos.ctfassets.net/mmgv7yhaaeds/2DlD754nzgoTraiKF5Dsa3/c6bd8551ec56ef482a5d34208c300f86/homepage-looping-thumb-2025-compressed.mp4" type="video/mp4"/>
+                                            </video>
+                                            <span class="Thumbnail__PlayButtonGlass-sc-8z36x-2 catUDI">
+                                                <div class="Thumbnail__PlayButton-sc-8z36x-4 ktNhIV">
+                                                    <span class="Thumbnail__PlayButtonInner-sc-8z36x-3 heXqBb">
+                                                        <svg fill="none" height="17" viewBox="0 0 15 17" width="15" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M12.7007 7.50366C13.5359 7.9859 13.5887 9.14654 12.8579 9.71362L12.7007 9.81909L2.84131 15.5115C1.95038 16.0254 0.837402 15.3819 0.837402 14.3533L0.837402 2.96948C0.837402 2.00499 1.81587 1.37891 2.67236 1.72827L2.84131 1.81128L12.7007 7.50366Z" stroke="currentColor" stroke-width="1.32"></path>
+                                                        </svg>
+                                                    </span>
+                                                </div>
+                                            </span>
+                                        </div>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="GridLines__CheckeredMargin-sc-18us314-3 jPSPwV" data-right="true"></div>
+
+                    <!-- Customer Banner Section -->
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 CustomerBanner__Section-sc-1vt73hh-0 hbCrco iXGioA">
+                        <div class="CustomerBanner__LAccents-sc-1vt73hh-2 WOduR"></div>
+                        <h2 class="CustomerBanner__SectionLabel-sc-1vt73hh-1 fnbsIT annotation">Trusted by leading data companies</h2>
+                        <ul class="CustomerBannerV2__CustomerLogosList-sc-16628sx-12 eCXCQK">
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Reddit" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/25KiatL5rLXnJtH3doWff9/028824e8dd54a58f7b3cfe1f4fb89688/reddit-logo.svg" width="auto" style="aspect-ratio:115 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Anthropic" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/6XHKdCEAwxLUOTWAIAyde2/0cad1f43371b91e739c1055deda1ac49/anthropic.svg" width="auto" style="aspect-ratio:132 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: SeatGeek" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/2MXni6T9kihZI98GQrAMsW/5d37a6ff35a7ff239bd331f08d7b4eba/SeatGeek.svg" width="auto" style="aspect-ratio:51 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Notion" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/45K7YZyXLDrOeeYIN7Vi3y/d20ebb5f53a1f1bf6e5a061d828f2b09/Notion.svg" width="auto" style="aspect-ratio:39 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: ClickUp" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/5vPww5FHfw0UynXyrSzZUR/211e3f4cd7cd2fd3621d8e87d237eba9/clickup-logo.svg" width="auto" style="aspect-ratio:119 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: AllTrails" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/3XfXKREnsPmQw2IRr3xPjk/d01681e707c221aa0cd8ec7ec7989ac8/AllTrails.svg" width="auto" style="aspect-ratio:151 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Modern Treasury" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/73RDTo37lpDEyDEtC7ufIU/17060533cf7f69f04c04df47ed00b438/ModernTreasury.svg" width="auto" style="aspect-ratio:181 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Ramp" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/3vVS6IZa8fMaRmaHjJzWM1/c9af5775787334f3f16f66db33bcbfb5/ramp-logo.svg" width="auto" style="aspect-ratio:120 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Sedgwick" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/1xB9po5yV2WYeX7rTh0KMI/b70619da13770baffec9051f2f0b178d/Sedgwick.svg" width="auto" style="aspect-ratio:150 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Calendly" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/4bMPy2EUINYNrNq0DTycSJ/4c5cbac0564950245eef497b1852420d/calendly_logo.svg" width="auto" style="aspect-ratio:148 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Greenhouse" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/5D0flLmtGIxebM5ToQDI0/cce09ecc3a7f89e42195835894ddd921/Greenhouse.svg" width="auto" style="aspect-ratio:141 / 50"/>
+                                </div>
+                            </li>
+                            <li class="CustomerBannerV2__Li-sc-16628sx-8 bpjqyB">
+                                <div class="CustomerBannerV2__LogoWrapper-sc-16628sx-2 dIAZSJ">
+                                    <img alt="Hex customer: Paytronix" height="40" loading="lazy" src="https://images.ctfassets.net/mmgv7yhaaeds/23UT3ToVYAyCdic7NnS8YU/c6818d53fb5f7b2a63c1a6ce20217d01/paytronix.svg" width="auto" style="aspect-ratio:113 / 50"/>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Features Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">Why MotherDuck?</h2>
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>⚡ Lightning Fast</h3>
+                                    <p>Query billions of rows in milliseconds with our optimized columnar storage engine and intelligent caching.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🔒 Enterprise Security</h3>
+                                    <p>Bank-grade encryption, SOC 2 compliance, and granular access controls keep your data safe.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🌐 Global Scale</h3>
+                                    <p>Deploy across multiple regions with automatic replication and low-latency access worldwide.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🤝 Seamless Integration</h3>
+                                    <p>Connect to your favorite BI tools, data sources, and APIs with our extensive integration library.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>📊 Real-time Analytics</h3>
+                                    <p>Stream processing and incremental materialization for always-fresh insights on your data.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>💰 Cost Effective</h3>
+                                    <p>Pay only for what you use with per-query pricing and automatic workload optimization.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- About Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section" style="background: var(--bg400, #1a1a1a);">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">Built on Modern Architecture</h2>
+                            <div class="content-text">
+                                <p>
+                                    MotherDuck is built from the ground up with modern cloud architecture in mind. Our platform leverages
+                                    the power of DuckDB, an in-process SQL OLAP database management system, combined with cloud storage
+                                    and compute separation for ultimate flexibility and performance.
+                                </p>
+                                <p>
+                                    The LayoutGrid system you're experiencing right now provides a sophisticated approach to web layouts,
+                                    combining the flexibility of CSS Grid with the precision of subgrid support. This allows for seamless
+                                    nesting and perfect alignment across all levels of your layout hierarchy.
+                                </p>
+                                <p>
+                                    With automatic content width management and a responsive 12-column grid, content always looks perfect
+                                    regardless of viewport size. The system handles complex layouts with ease, from simple landing pages
+                                    to intricate application interfaces.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Details Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">How It Works</h2>
+                            <div class="content-text">
+                                <p>
+                                    The LayoutGrid system uses CSS variables to define a 12-column grid with automatic content width
+                                    calculation. Each column's width is derived from the content width divided by the number of columns,
+                                    ensuring perfect proportions at any screen size.
+                                </p>
+                                <p>
+                                    The main grid container creates three columns: a left margin, the content area (subdivided into
+                                    12 columns), and a right margin. This ensures your content is always centered and properly bounded,
+                                    providing a professional and polished appearance.
+                                </p>
+                                <p>
+                                    Subgrid support allows nested elements to align with the parent grid, creating a cohesive visual
+                                    structure throughout your entire page. Elements can span multiple columns or use the full content
+                                    width as needed, giving you complete control over your layout.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Footer__Container-sc-1xr1w1c-0 hbCrco cqRDTQ">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <div style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--grid500, #312a31);">
+                                <p style="opacity: 0.7; margin-bottom: 0.5rem;">
+                                    &copy; 2025 MotherDuck. Built with the LayoutGrid system.
+                                </p>
+                                <p style="opacity: 0.5; font-size: 0.875rem;">
+                                    Experience the power of modern CSS Grid with subgrid support
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+
+    <script>
+        // Theme initialization (matching style-ref pattern)
+        (function(storageKey, themeKey, defaultTheme, fallbackTheme, themes, forceTheme, respectSystemPreference, respectToggle) {
+            function p(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            function c() {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+
+            if (forceTheme) {
+                p(forceTheme);
+            } else {
+                try {
+                    let stored = localStorage.getItem(storageKey) || defaultTheme;
+                    let theme = respectSystemPreference && stored === "system" ? c() : stored;
+                    p(theme);
+                } catch (e) {
+                    p(fallbackTheme);
+                }
+            }
+        })("data-theme", "theme", "dark", "dark", ["light", "dark", "pink"], null, true, true);
+    </script>
+</body>
+</html>
