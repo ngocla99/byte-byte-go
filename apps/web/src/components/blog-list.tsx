@@ -47,13 +47,13 @@ function SearchAndFilters({
   clearFilters: () => void;
 }) {
   return (
-    <div className="space-y-6 rounded-2xl border bg-card/50 p-6 backdrop-blur-sm">
+    <div className="space-y-6 border bg-card/50 p-6 backdrop-blur-sm">
       {/* Search Bar */}
       <div className="flex items-center gap-4">
         <div className="relative mx-auto max-w-md flex-1">
           <Search className="-translate-y-1/2 absolute top-1/2 left-4 h-5 w-5 text-muted-foreground" />
           <Input
-            className="rounded-xl border-2 py-3 pr-4 pl-12 text-base transition-all duration-200 focus:ring-2 focus:ring-primary/20"
+            className="border-2 py-3 pr-4 pl-12 text-base transition-all duration-200 focus:ring-2 focus:ring-primary/20"
             onChange={(e) => setSearchTerm(e.target.value)}
             placeholder="Search articles by title, topic, or keyword..."
             value={searchTerm}
@@ -97,7 +97,7 @@ function SearchAndFilters({
         <div className="flex flex-wrap gap-2">
           {categories.map((category) => (
             <Button
-              className={`rounded-lg px-3 py-2 font-medium text-xs transition-all duration-200 ${
+              className={`px-3 py-2 font-medium text-xs transition-all duration-200 ${
                 selectedCategory === category
                   ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
                   : 'hover:scale-105 hover:bg-muted hover:shadow-md'
@@ -106,7 +106,7 @@ function SearchAndFilters({
               key={category}
               onClick={() => setSelectedCategory(category)}
               size="sm"
-              variant={selectedCategory === category ? 'default' : 'outline'}
+              variant={selectedCategory === category ? 'default' : 'ghost'}
             >
               {category}
               {category !== 'All' && (
@@ -126,7 +126,7 @@ function SearchAndFilters({
             <span>Active filters:</span>
             <div className="flex items-center gap-2">
               {searchTerm && (
-                <div className="flex items-center gap-1 rounded-md bg-primary/10 px-2 py-1 text-primary">
+                <div className="flex items-center gap-1 bg-primary/10 px-2 py-1 text-primary">
                   <span>Search: "{searchTerm}"</span>
                   <button
                     className="rounded p-0.5 hover:bg-primary/20"
@@ -138,10 +138,10 @@ function SearchAndFilters({
                 </div>
               )}
               {selectedCategory !== 'All' && (
-                <div className="flex items-center gap-1 rounded-md bg-blue-500/10 px-2 py-1 text-blue-600">
+                <div className="flex items-center gap-1 bg-muted/10 px-2 py-1 text-muted">
                   <span>Category: {selectedCategory}</span>
                   <button
-                    className="rounded p-0.5 hover:bg-blue-500/20"
+                    className="rounded p-0.5 hover:bg-muted/20"
                     onClick={() => setSelectedCategory('All')}
                     type="button"
                   >
