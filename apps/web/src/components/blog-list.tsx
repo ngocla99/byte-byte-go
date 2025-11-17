@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/complexity/noExcessiveLinesPerFunction: <explanation> */
 import { BookOpen, Filter, Search, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import type { BlogPost } from '../lib/blogs';
@@ -10,6 +11,7 @@ import { BlogCard } from './blog-card';
 import { Button } from './ui/button';
 import './search-input.css';
 import './category-filter.css';
+import { cn } from '@/lib/utils';
 
 type BlogListProps = {
   posts: BlogPost[];
@@ -167,15 +169,20 @@ function SearchAndFilters({
                     </div>
                   </div>
                   <button
-                    className={`category-filter-button ${selectedCategory === category ? 'active' : ''}`}
+                    className={cn(
+                      `category-filter-button ${selectedCategory === category ? 'active' : ''}`,
+                      'px-3! py-2! text-xs!'
+                    )}
                     onClick={() => setSelectedCategory(category)}
                     type="button"
                   >
+                    {' '}
                     <span className="category-filter-button-text">
-                      {category}
-                    </span>
-                  </button>
-                </div>
+                      {' '}
+                      {category}{' '}
+                    </span>{' '}
+                  </button>{' '}
+                </div>{' '}
               </div>
             ) : (
               <Button
@@ -194,7 +201,7 @@ function SearchAndFilters({
                   {filterPostsByCategory(posts, category).length}
                 </span>
               </Button>
-            ),
+            )
           )}
         </div>
       </div>
