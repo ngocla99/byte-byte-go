@@ -54,24 +54,70 @@ function SearchAndFilters({
       {/* Search Bar */}
       <div className="flex items-center gap-4">
         <div className="mx-auto max-w-md flex-1">
-          <div className="search-input-wrapper">
-            <Search className="search-input-icon h-5 w-5" />
-            <input
-              className="search-input-styled"
-              onChange={(e) => setSearchTerm(e.target.value)}
-              placeholder="Search articles by title, topic, or keyword..."
-              type="text"
-              value={searchTerm}
-            />
-            {searchTerm && (
-              <button
-                className="search-input-clear"
-                onClick={() => setSearchTerm('')}
-                type="button"
-              >
-                <X className="h-4 w-4" />
-              </button>
-            )}
+          <div className="cta-accents-container">
+            <div
+              className="cta-corner-track"
+              data-position="t"
+              style={{ '--i': 0 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="t">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="r"
+              style={{ '--i': 1 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="r">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="b"
+              style={{ '--i': 2 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="b">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="l"
+              style={{ '--i': 3 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="l">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div className="search-input-wrapper">
+              <Search className="search-input-icon h-5 w-5" />
+              <input
+                className="search-input-styled"
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search articles by title, topic, or keyword..."
+                type="text"
+                value={searchTerm}
+              />
+              {searchTerm && (
+                <button
+                  className="search-input-clear"
+                  onClick={() => setSearchTerm('')}
+                  type="button"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
           </div>
         </div>
       </div>

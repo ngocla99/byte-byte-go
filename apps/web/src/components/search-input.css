@@ -21,7 +21,8 @@
   overflow: hidden;
 }
 
-.search-input-wrapper:hover {
+/* Hover on parent container (cta-accents-container) */
+.cta-accents-container:hover .search-input-wrapper {
   filter: brightness(1.13);
 }
 
