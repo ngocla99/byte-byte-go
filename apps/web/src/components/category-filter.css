@@ -107,7 +107,7 @@
 }
 
 @media (hover: hover) {
-  .category-filter-button:hover .cta-corner-circle {
+  .cta-accents-container:hover .cta-corner-circle {
     transition-delay: calc(var(--i, 0) * 0.04s);
     scale: 0;
   }
@@ -161,24 +161,24 @@
 }
 
 @media (hover: hover) {
-  .category-filter-button:hover .cta-corner-line-position {
+  .cta-accents-container:hover .cta-corner-line-position {
     transition: transform 0.4s var(--out-cubic), opacity 0.4s var(--out-cubic);
     opacity: 1;
   }
 
-  .category-filter-button:hover .cta-corner-line-position[data-position='t'] {
+  .cta-accents-container:hover .cta-corner-line-position[data-position='t'] {
     transform: translateX(100%);
   }
 
-  .category-filter-button:hover .cta-corner-line-position[data-position='r'] {
+  .cta-accents-container:hover .cta-corner-line-position[data-position='r'] {
     transform: translateY(100%);
   }
 
-  .category-filter-button:hover .cta-corner-line-position[data-position='b'] {
+  .cta-accents-container:hover .cta-corner-line-position[data-position='b'] {
     transform: translateX(-100%);
   }
 
-  .category-filter-button:hover .cta-corner-line-position[data-position='l'] {
+  .cta-accents-container:hover .cta-corner-line-position[data-position='l'] {
     transform: translateY(-100%);
   }
 }

@@ -149,7 +149,6 @@
   margin: 0 !important;
   pointer-events: none;
   opacity: 0;
-  pointer-events: all;
 }
 
 .corner-lines-wrapper > span::before {
@@ -159,26 +158,6 @@
   width: 15px;
   height: 15px;
   transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
-}
-
-.corner-lines-wrapper:hover {
-  opacity: 1;
-}
-
-.corner-lines-wrapper:hover .corner-line-tl::before {
-  transform: translate(-5px, -5px);
-}
-
-.corner-lines-wrapper:hover .corner-line-bl::before {
-  transform: translate(-5px, 5px);
-}
-
-.corner-lines-wrapper:hover .corner-line-tr::before {
-  transform: translate(5px, -5px);
-}
-
-.corner-lines-wrapper:hover .corner-line-br::before {
-  transform: translate(5px, 5px);
 }
 
 /* Corner Line Top Left */
