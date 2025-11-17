@@ -98,90 +98,104 @@ function SearchAndFilters({
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <div className="cta-accents-container" key={category}>
-              <div
-                className="cta-corner-circle"
-                data-position="tl"
-                style={{ '--i': 0 } as React.CSSProperties}
-              />
-              <div
-                className="cta-corner-circle"
-                data-position="tr"
-                style={{ '--i': 1 } as React.CSSProperties}
-              />
-              <div
-                className="cta-corner-circle"
-                data-position="bl"
-                style={{ '--i': 2 } as React.CSSProperties}
-              />
-              <div
-                className="cta-corner-circle"
-                data-position="br"
-                style={{ '--i': 3 } as React.CSSProperties}
-              />
-              <div className="cta-accents-container">
+          {categories.map((category) =>
+            category === 'All' ? (
+              <div className="cta-accents-container" key={category}>
                 <div
-                  className="cta-corner-track"
-                  data-position="t"
+                  className="cta-corner-circle"
+                  data-position="tl"
                   style={{ '--i': 0 } as React.CSSProperties}
-                >
-                  <div className="cta-corner-line-position" data-position="t">
-                    <div className="cta-corner-line" data-order="1" />
-                    <div className="cta-corner-line" data-order="2" />
-                    <div className="cta-corner-line" data-order="3" />
-                  </div>
-                </div>
+                />
                 <div
-                  className="cta-corner-track"
-                  data-position="r"
+                  className="cta-corner-circle"
+                  data-position="tr"
                   style={{ '--i': 1 } as React.CSSProperties}
-                >
-                  <div className="cta-corner-line-position" data-position="r">
-                    <div className="cta-corner-line" data-order="1" />
-                    <div className="cta-corner-line" data-order="2" />
-                    <div className="cta-corner-line" data-order="3" />
-                  </div>
-                </div>
+                />
                 <div
-                  className="cta-corner-track"
-                  data-position="b"
+                  className="cta-corner-circle"
+                  data-position="bl"
                   style={{ '--i': 2 } as React.CSSProperties}
-                >
-                  <div className="cta-corner-line-position" data-position="b">
-                    <div className="cta-corner-line" data-order="1" />
-                    <div className="cta-corner-line" data-order="2" />
-                    <div className="cta-corner-line" data-order="3" />
-                  </div>
-                </div>
+                />
                 <div
-                  className="cta-corner-track"
-                  data-position="l"
+                  className="cta-corner-circle"
+                  data-position="br"
                   style={{ '--i': 3 } as React.CSSProperties}
-                >
-                  <div className="cta-corner-line-position" data-position="l">
-                    <div className="cta-corner-line" data-order="1" />
-                    <div className="cta-corner-line" data-order="2" />
-                    <div className="cta-corner-line" data-order="3" />
+                />
+                <div className="cta-accents-container">
+                  <div
+                    className="cta-corner-track"
+                    data-position="t"
+                    style={{ '--i': 0 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="t">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
                   </div>
-                </div>
-                <button
-                  className={`category-filter-button ${selectedCategory === category ? 'active' : ''}`}
-                  onClick={() => setSelectedCategory(category)}
-                  type="button"
-                >
-                  <span className="category-filter-button-text">
-                    {category}
-                  </span>
-                  {category !== 'All' && (
-                    <span className="category-filter-button-count">
-                      {filterPostsByCategory(posts, category).length}
+                  <div
+                    className="cta-corner-track"
+                    data-position="r"
+                    style={{ '--i': 1 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="r">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <div
+                    className="cta-corner-track"
+                    data-position="b"
+                    style={{ '--i': 2 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="b">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <div
+                    className="cta-corner-track"
+                    data-position="l"
+                    style={{ '--i': 3 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="l">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <button
+                    className={`category-filter-button ${selectedCategory === category ? 'active' : ''}`}
+                    onClick={() => setSelectedCategory(category)}
+                    type="button"
+                  >
+                    <span className="category-filter-button-text">
+                      {category}
                     </span>
-                  )}
-                </button>
+                  </button>
+                </div>
               </div>
-            </div>
-          ))}
+            ) : (
+              <Button
+                className={`px-3 py-2 font-medium text-xs transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                    : 'hover:scale-105 hover:bg-muted hover:shadow-md'
+                }`}
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                size="sm"
+                variant={selectedCategory === category ? 'default' : 'ghost'}
+              >
+                {category}
+                <span className="ml-2 text-xs opacity-70">
+                  {filterPostsByCategory(posts, category).length}
+                </span>
+              </Button>
+            ),
+          )}
         </div>
       </div>
 
