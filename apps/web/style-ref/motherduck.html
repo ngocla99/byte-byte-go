@@ -168,7 +168,11 @@
         /* ==========================================
            LAYOUT GRID SYSTEM
         ========================================== */
+        /* Main Layout Grid */
         .layout-grid {
+            --columns: 12;
+            --content-width: min(96%, 1840px);
+            --content: repeat(var(--columns), calc(var(--content-width) / var(--columns)));
             display: grid;
             grid-template-columns: 1fr var(--content) 1fr;
             gap: 0;
@@ -179,12 +183,41 @@
             grid-column: 2 / -2;
         }
 
+        /* Layout Subgrid */
         .layout-subgrid {
             display: grid;
             grid-column: 1 / -1;
             grid-template-columns: subgrid;
         }
 
+        .layout-subgrid[data-pile] {
+            grid-row: 1 / -1;
+        }
+
+        .layout-subgrid[data-content-grid] {
+            grid-column: 2 / -2;
+            grid-template-columns: repeat(var(--columns), 1fr);
+        }
+
+        .layout-subgrid[data-content-grid] > * {
+            grid-column: 1 / -1;
+        }
+
+        [data-content-grid]:where(.layout-subgrid > *) {
+            grid-column: 1 / -1;
+        }
+
+        :where(.layout-subgrid > *) {
+            grid-column: 2 / -2;
+        }
+
+        /* Layout Grid Condensed */
+        .layout-grid-condensed {
+            --content-width: min(calc(100% - 24px), 1536px);
+            grid-column: 2 / -2;
+        }
+
+        /* Content Grid */
         .content-grid {
             grid-column: 2 / -2;
             display: grid;
@@ -196,19 +229,7 @@
             grid-column: 1 / -1;
         }
 
-        /* Grid Lines - Visual Guide */
-        .grid-line-left {
-            grid-column: 1;
-            border-right: 1px solid var(--grid500);
-            align-self: stretch;
-        }
-
-        .grid-line-right {
-            border-left: 1px solid var(--grid500);
-            grid-column: -2 / span 1;
-            align-self: stretch;
-        }
-
+        /* Checkered Margins */
         .checkered-margin {
             position: relative;
             background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="4" height="4"><rect width="2" height="2" fill="%23312a31" /><rect x="2" y="2" width="2" height="2" fill="%23312a31"/></svg>');
@@ -220,6 +241,44 @@
             border-left: 1px solid var(--grid500);
             border-right: unset;
             grid-column: -2 / span 1;
+        }
+
+        .checkered-margin[data-border-top='major'] {
+            border-top: 1px solid var(--grid500);
+        }
+
+        .checkered-margin[data-border-top='minor'] {
+            border-top: 1px solid var(--grid300);
+        }
+
+        /* Cartesian Grid - Unit Grid */
+        .unit-grid {
+            grid-column: 1 / -1;
+            position: absolute;
+            inset: 0;
+            mask-image: linear-gradient(to right, transparent, transparent calc(100% - 1px), white calc(100% - 1px), white),
+                        linear-gradient(to bottom, transparent, transparent calc(100% - 1px), white calc(100% - 1px), white);
+            mask-size: 32px 32px;
+            mask-position: bottom center;
+        }
+
+        .unit-grid-mask {
+            position: absolute;
+            inset: 0;
+            mask-image: radial-gradient(ellipse 100% 100% at 50% 50%, transparent 60%, white 100%);
+            mask-composite: intersect;
+        }
+
+        .radial-gradient {
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 50% 50%, rgba(245, 192, 192, 0.077) 50%, rgba(245, 192, 192, 0.172));
+        }
+
+        .dot-grid-bg {
+            position: absolute;
+            inset: 0;
+            background: rgba(245, 192, 192, 0.172);
         }
 
         /* ==========================================
@@ -386,50 +445,124 @@
         /* ==========================================
            HERO SECTION
         ========================================== */
-        .hero {
-            min-height: 80vh;
+        .hero-bg {
+            position: relative;
+            overflow-x: clip;
+        }
+
+        .hero-wrapper {
+            position: relative;
+        }
+
+        .hero-content-thumbnail {
+            position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 2rem;
-            position: relative;
-            overflow: hidden;
+            gap: 64px;
+            grid-column: 1 / -1;
+            padding: 160px 0 80px 0;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 50% 20%, rgba(245, 192, 192, 0.1), transparent 50%);
-            pointer-events: none;
+        @media (max-width: 1000px) {
+            .hero-content-thumbnail {
+                padding-top: 240px;
+                padding-bottom: 80px;
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .hero-content-thumbnail {
+                padding: 0;
+                padding-top: 180px;
+                padding-bottom: 48px;
+                gap: 32px;
+            }
         }
 
         .hero-content {
-            max-width: 900px;
-            text-align: center;
-            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+        }
+
+        .hero-text {
+            grid-row: 1;
+            grid-column: 1;
+            align-self: center;
+            padding: 0 0 40px 0;
+        }
+
+        @media (max-width: 450px) {
+            .hero-text {
+                padding-left: 0;
+            }
         }
 
         .hero h1 {
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, var(--roseQuartz), var(--amethyst));
+            position: relative;
+            font-size: clamp(2.375rem, 1.6149rem + 2.7027vw, 4.5rem);
+            background-size: 100%;
+            background-repeat: repeat;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+            margin-bottom: 1.5rem;
+            background-image: linear-gradient(135deg, var(--roseQuartz), var(--amethyst));
+        }
+
+        @media (max-width: 450px) {
+            .hero h1 {
+                text-align: center;
+            }
+        }
+
+        .hero-sparkle-svg {
+            position: absolute;
+            top: 0;
+            right: 0;
+            transform: translate(-30%, -28%) rotate(-90deg);
+            width: 40px;
+            color: var(--roseQuartz);
+        }
+
+        @media (max-width: 800px) {
+            .hero-sparkle-svg {
+                display: none;
+            }
         }
 
         .hero p {
+            text-wrap: balance;
             font-size: 20px;
             color: var(--fg900);
             margin-bottom: 2rem;
             line-height: 1.6;
         }
 
-        .hero-buttons {
+        .hero-actions {
+            grid-row: 2;
+            grid-column: 1;
+            padding-right: 0;
             display: flex;
-            gap: 1rem;
-            justify-content: center;
-            flex-wrap: wrap;
+            height: min-content;
+            gap: 16px;
+        }
+
+        @media (max-width: 1000px) {
+            .hero-actions {
+                border-bottom: 1px solid var(--grid300);
+            }
+        }
+
+        @media (max-width: 450px) {
+            .hero-actions {
+                padding-left: 0;
+                gap: 12px;
+                justify-content: center;
+            }
         }
 
         /* ==========================================
@@ -957,99 +1090,123 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Make everyone a data person</h1>
-            <p class="text-l">Hex is a connected platform for using AI to work with data. Ask questions in natural language, partner with agents to do better analysis, and curate context for trusted answers.</p>
-            <div class="hero-buttons">
-                <!-- Primary CTA with Accents -->
-                <div>
-                    <div class="cta-accents-container">
-                        <!-- Corner Circles -->
-                        <div data-position="tl" style="--i:0" class="cta-circle"></div>
-                        <div data-position="tr" style="--i:1" class="cta-circle"></div>
-                        <div data-position="bl" style="--i:2" class="cta-circle"></div>
-                        <div data-position="br" style="--i:3" class="cta-circle"></div>
-
-                        <!-- Nested Accents Container with Corner Lines and Button -->
-                        <div class="cta-accents-container">
-                            <div data-position="t" style="--i:0" class="cta-corner-track">
-                                <div data-position="t" class="cta-corner-line-position">
-                                    <div data-order="1" class="cta-corner-line"></div>
-                                    <div data-order="2" class="cta-corner-line"></div>
-                                    <div data-order="3" class="cta-corner-line"></div>
-                                </div>
-                            </div>
-                            <div data-position="r" style="--i:1" class="cta-corner-track">
-                                <div data-position="r" class="cta-corner-line-position">
-                                    <div data-order="1" class="cta-corner-line"></div>
-                                    <div data-order="2" class="cta-corner-line"></div>
-                                    <div data-order="3" class="cta-corner-line"></div>
-                                </div>
-                            </div>
-                            <div data-position="b" style="--i:2" class="cta-corner-track">
-                                <div data-position="b" class="cta-corner-line-position">
-                                    <div data-order="1" class="cta-corner-line"></div>
-                                    <div data-order="2" class="cta-corner-line"></div>
-                                    <div data-order="3" class="cta-corner-line"></div>
-                                </div>
-                            </div>
-                            <div data-position="l" style="--i:3" class="cta-corner-track">
-                                <div data-position="l" class="cta-corner-line-position">
-                                    <div data-order="1" class="cta-corner-line"></div>
-                                    <div data-order="2" class="cta-corner-line"></div>
-                                    <div data-order="3" class="cta-corner-line"></div>
-                                </div>
-                            </div>
-                            <a href="https://app.hex.tech/signup?source=hero" class="cta-primary text-l">
-                                <div class="cta-icon-wrapper">
-                                    <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
-                                        <path d="M2.5 11.5L6.75 7L9 9.5L13 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                        <path d="M10.5 4.5H13.5V7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
-                                    </svg>
-                                </div>
-                                Get started
-                            </a>
-                        </div>
+    <!-- Hero Section with Grid Layout -->
+    <div class="layout-subgrid hero-bg">
+        <div class="checkered-margin"></div>
+        <div data-content-grid="true" class="layout-subgrid">
+            <div class="layout-grid layout-grid-condensed hero-wrapper">
+                <div class="unit-grid">
+                    <div class="unit-grid-mask">
+                        <div class="radial-gradient"></div>
                     </div>
                 </div>
+                <div class="hero-content-thumbnail">
+                    <div class="hero-content">
+                        <div class="hero-text">
+                            <h1>
+                                <svg fill="none" viewBox="0 0 47 47" xmlns="http://www.w3.org/2000/svg" class="hero-sparkle-svg">
+                                    <path d="M8.96094 23.0768L1.02019 31.0175" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M16.0223 26.0006L16.0223 37.2294" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M23.0788 23.0793L31.0195 31.0201" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M26.0016 16.0196L37.2305 16.0196" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                    <path d="M23.0788 8.96006L31.0195 1.01932" stroke="currentColor" stroke-miterlimit="10" stroke-width="1"></path>
+                                </svg>
+                                Make everyone<br>a data person
+                            </h1>
+                            <p class="text-l">Hex is a connected platform for using AI to work with data. Ask questions in natural language, partner with agents to do better analysis, and curate context for trusted answers.</p>
+                        </div>
+                        <div class="hero-actions">
+                            <!-- Primary CTA with Accents -->
+                            <div>
+                                <div class="cta-accents-container">
+                                    <!-- Corner Circles -->
+                                    <div data-position="tl" style="--i:0" class="cta-circle"></div>
+                                    <div data-position="tr" style="--i:1" class="cta-circle"></div>
+                                    <div data-position="bl" style="--i:2" class="cta-circle"></div>
+                                    <div data-position="br" style="--i:3" class="cta-circle"></div>
 
-                <!-- Secondary CTA with Accents -->
-                <div class="cta-accents-container">
-                    <div data-position="t" style="--i:0" class="cta-corner-track">
-                        <div data-position="t" class="cta-corner-line-position">
-                            <div data-order="1" class="cta-corner-line"></div>
-                            <div data-order="2" class="cta-corner-line"></div>
-                            <div data-order="3" class="cta-corner-line"></div>
+                                    <!-- Nested Accents Container with Corner Lines and Button -->
+                                    <div class="cta-accents-container">
+                                        <div data-position="t" style="--i:0" class="cta-corner-track">
+                                            <div data-position="t" class="cta-corner-line-position">
+                                                <div data-order="1" class="cta-corner-line"></div>
+                                                <div data-order="2" class="cta-corner-line"></div>
+                                                <div data-order="3" class="cta-corner-line"></div>
+                                            </div>
+                                        </div>
+                                        <div data-position="r" style="--i:1" class="cta-corner-track">
+                                            <div data-position="r" class="cta-corner-line-position">
+                                                <div data-order="1" class="cta-corner-line"></div>
+                                                <div data-order="2" class="cta-corner-line"></div>
+                                                <div data-order="3" class="cta-corner-line"></div>
+                                            </div>
+                                        </div>
+                                        <div data-position="b" style="--i:2" class="cta-corner-track">
+                                            <div data-position="b" class="cta-corner-line-position">
+                                                <div data-order="1" class="cta-corner-line"></div>
+                                                <div data-order="2" class="cta-corner-line"></div>
+                                                <div data-order="3" class="cta-corner-line"></div>
+                                            </div>
+                                        </div>
+                                        <div data-position="l" style="--i:3" class="cta-corner-track">
+                                            <div data-position="l" class="cta-corner-line-position">
+                                                <div data-order="1" class="cta-corner-line"></div>
+                                                <div data-order="2" class="cta-corner-line"></div>
+                                                <div data-order="3" class="cta-corner-line"></div>
+                                            </div>
+                                        </div>
+                                        <a href="https://app.hex.tech/signup?source=hero" class="cta-primary text-l">
+                                            <div class="cta-icon-wrapper">
+                                                <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M2.5 11.5L6.75 7L9 9.5L13 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                    <path d="M10.5 4.5H13.5V7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"></path>
+                                                </svg>
+                                            </div>
+                                            Get started
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Secondary CTA with Accents -->
+                            <div class="cta-accents-container">
+                                <div data-position="t" style="--i:0" class="cta-corner-track">
+                                    <div data-position="t" class="cta-corner-line-position">
+                                        <div data-order="1" class="cta-corner-line"></div>
+                                        <div data-order="2" class="cta-corner-line"></div>
+                                        <div data-order="3" class="cta-corner-line"></div>
+                                    </div>
+                                </div>
+                                <div data-position="r" style="--i:1" class="cta-corner-track">
+                                    <div data-position="r" class="cta-corner-line-position">
+                                        <div data-order="1" class="cta-corner-line"></div>
+                                        <div data-order="2" class="cta-corner-line"></div>
+                                        <div data-order="3" class="cta-corner-line"></div>
+                                    </div>
+                                </div>
+                                <div data-position="b" style="--i:2" class="cta-corner-track">
+                                    <div data-position="b" class="cta-corner-line-position">
+                                        <div data-order="1" class="cta-corner-line"></div>
+                                        <div data-order="2" class="cta-corner-line"></div>
+                                        <div data-order="3" class="cta-corner-line"></div>
+                                    </div>
+                                </div>
+                                <div data-position="l" style="--i:3" class="cta-corner-track">
+                                    <div data-position="l" class="cta-corner-line-position">
+                                        <div data-order="1" class="cta-corner-line"></div>
+                                        <div data-order="2" class="cta-corner-line"></div>
+                                        <div data-order="3" class="cta-corner-line"></div>
+                                    </div>
+                                </div>
+                                <a class="cta-secondary text-l" href="#demo">Request a demo</a>
+                            </div>
                         </div>
                     </div>
-                    <div data-position="r" style="--i:1" class="cta-corner-track">
-                        <div data-position="r" class="cta-corner-line-position">
-                            <div data-order="1" class="cta-corner-line"></div>
-                            <div data-order="2" class="cta-corner-line"></div>
-                            <div data-order="3" class="cta-corner-line"></div>
-                        </div>
-                    </div>
-                    <div data-position="b" style="--i:2" class="cta-corner-track">
-                        <div data-position="b" class="cta-corner-line-position">
-                            <div data-order="1" class="cta-corner-line"></div>
-                            <div data-order="2" class="cta-corner-line"></div>
-                            <div data-order="3" class="cta-corner-line"></div>
-                        </div>
-                    </div>
-                    <div data-position="l" style="--i:3" class="cta-corner-track">
-                        <div data-position="l" class="cta-corner-line-position">
-                            <div data-order="1" class="cta-corner-line"></div>
-                            <div data-order="2" class="cta-corner-line"></div>
-                            <div data-order="3" class="cta-corner-line"></div>
-                        </div>
-                    </div>
-                    <a class="cta-secondary text-l" href="#demo">Request a demo</a>
                 </div>
             </div>
         </div>
-    </section>
+        <div data-right="true" class="checkered-margin"></div>
+    </div>
 
     <!-- Customer Banner -->
     <section class="customer-banner">
