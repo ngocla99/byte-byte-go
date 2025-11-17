@@ -1,0 +1,235 @@
+/* Mode Toggle Button - MotherDuck Header "Get started" style */
+
+.mode-toggle-button {
+  box-sizing: content-box;
+  position: relative;
+  flex: none;
+  display: flex;
+  height: 36px;
+  background: transparent;
+  outline: none;
+  padding: 0 15px;
+  user-select: none;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--fg1200, #f5c0c0);
+  border: 1px solid transparent;
+  min-width: 0;
+  transition: background-color 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), border-color 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+  background: linear-gradient(to right, var(--bg300, #14141C), var(--bg300, #14141C)), linear-gradient(45deg, var(--fg1200, #f5c0c0), var(--fg900, #ad8eb6));
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+}
+
+.mode-toggle-button:hover {
+  background-color: var(--fgA500, rgba(245, 192, 192, 0.12));
+  border-color: var(--fgA700, rgba(245, 192, 192, 0.4));
+  text-decoration: none;
+}
+
+.mode-toggle-button:active {
+  background-color: var(--fgA600, rgba(245, 192, 192, 0.2));
+}
+
+.mode-toggle-button::after {
+  content: '';
+  pointer-events: none;
+  position: absolute;
+  top: 1px;
+  left: 1px;
+  right: 1px;
+  z-index: 1;
+  bottom: 1px;
+  background: linear-gradient(45deg, rgba(245, 192, 192, 0.85), rgba(173, 142, 182, 0.5));
+  opacity: 0.2;
+  background-clip: padding-box, border-box;
+  background-origin: padding-box, border-box;
+  transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.mode-toggle-button:hover::after {
+  opacity: 0.3;
+}
+
+.mode-toggle-button:active::after {
+  opacity: 0.6;
+}
+
+.mode-toggle-button:hover .corner-circles-wrapper {
+  opacity: 0;
+}
+
+.mode-toggle-button:focus-visible {
+  outline: 2px solid var(--fg1200, #f5c0c0);
+  outline-offset: 2px;
+}
+
+/* Button Inner */
+.button-inner {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  flex-direction: row;
+  align-items: center;
+  height: inherit;
+  white-space: nowrap;
+  min-width: 0;
+  gap: 10px;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Button Children */
+.button-children {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 0;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+/* Corner Circles Wrapper */
+.corner-circles-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 !important;
+  pointer-events: none;
+  opacity: 1;
+  transition: opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.corner-circles-wrapper > span::before,
+.corner-circles-wrapper > span::after {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+}
+
+/* Corner Circle Left */
+.corner-circle-left::before {
+  top: -9px;
+  left: -9px;
+}
+
+.corner-circle-left::after {
+  bottom: -9px;
+  left: -9px;
+}
+
+/* Corner Circle Right */
+.corner-circle-right::before {
+  top: -9px;
+  right: -9px;
+}
+
+.corner-circle-right::after {
+  bottom: -9px;
+  right: -9px;
+}
+
+/* Corner Lines Wrapper */
+.corner-lines-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 !important;
+  pointer-events: none;
+  opacity: 0;
+  pointer-events: all;
+}
+
+.corner-lines-wrapper > span::before {
+  content: '';
+  display: block;
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.25s cubic-bezier(0.25, 0.1, 0.25, 1), opacity 0.25s cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.corner-lines-wrapper:hover {
+  opacity: 1;
+}
+
+.corner-lines-wrapper:hover .corner-line-tl::before {
+  transform: translate(-5px, -5px);
+}
+
+.corner-lines-wrapper:hover .corner-line-bl::before {
+  transform: translate(-5px, 5px);
+}
+
+.corner-lines-wrapper:hover .corner-line-tr::before {
+  transform: translate(5px, -5px);
+}
+
+.corner-lines-wrapper:hover .corner-line-br::before {
+  transform: translate(5px, 5px);
+}
+
+/* Corner Line Top Left */
+.corner-line-tl::before {
+  border-top: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  border-left: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  top: -1px;
+  left: -1px;
+}
+
+/* Corner Line Top Right */
+.corner-line-tr::before {
+  border-top: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  border-right: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  top: -1px;
+  right: -1px;
+}
+
+/* Corner Line Bottom Left */
+.corner-line-bl::before {
+  border-bottom: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  border-left: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  bottom: -1px;
+  left: -1px;
+}
+
+/* Corner Line Bottom Right */
+.corner-line-br::before {
+  border-bottom: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  border-right: 1px solid var(--fgA700, rgba(245, 192, 192, 0.3));
+  bottom: -1px;
+  right: -1px;
+}
+
+/* Make corner lines visible on button hover */
+.mode-toggle-button:hover .corner-lines-wrapper {
+  opacity: 1;
+}
+
+.mode-toggle-button:hover .corner-line-tl::before {
+  transform: translate(-5px, -5px);
+}
+
+.mode-toggle-button:hover .corner-line-bl::before {
+  transform: translate(-5px, 5px);
+}
+
+.mode-toggle-button:hover .corner-line-tr::before {
+  transform: translate(5px, -5px);
+}
+
+.mode-toggle-button:hover .corner-line-br::before {
+  transform: translate(5px, 5px);
+}
