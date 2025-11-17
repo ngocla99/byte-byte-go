@@ -627,6 +627,231 @@
         .mt-2 { margin-top: 1rem; }
         .mt-3 { margin-top: 1.5rem; }
         .mt-4 { margin-top: 2rem; }
+
+        /* ==========================================
+           CTA BUTTON WITH DECORATIVE ACCENTS
+        ========================================== */
+        .cta-wrapper {
+            position: relative;
+            display: inline-block;
+        }
+
+        .cta-accents-container {
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+        }
+
+        /* Corner Circles */
+        .cta-circle {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--roseQuartz);
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .cta-circle[data-position="tl"] {
+            top: -4px;
+            left: -4px;
+            animation: pulse-tl 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+            animation-delay: calc(var(--i) * 0.15s);
+        }
+
+        .cta-circle[data-position="tr"] {
+            top: -4px;
+            right: -4px;
+            animation: pulse-tr 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+            animation-delay: calc(var(--i) * 0.15s);
+        }
+
+        .cta-circle[data-position="bl"] {
+            bottom: -4px;
+            left: -4px;
+            animation: pulse-bl 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+            animation-delay: calc(var(--i) * 0.15s);
+        }
+
+        .cta-circle[data-position="br"] {
+            bottom: -4px;
+            right: -4px;
+            animation: pulse-br 2s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+            animation-delay: calc(var(--i) * 0.15s);
+        }
+
+        .cta-wrapper:hover .cta-circle {
+            opacity: 0.8;
+        }
+
+        /* Corner Lines */
+        .cta-corner-track {
+            position: absolute;
+            overflow: hidden;
+        }
+
+        .cta-corner-track[data-position="t"] {
+            top: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+
+        .cta-corner-track[data-position="r"] {
+            top: 0;
+            right: -1px;
+            bottom: 0;
+            width: 1px;
+        }
+
+        .cta-corner-track[data-position="b"] {
+            bottom: -1px;
+            left: 0;
+            right: 0;
+            height: 1px;
+        }
+
+        .cta-corner-track[data-position="l"] {
+            top: 0;
+            left: -1px;
+            bottom: 0;
+            width: 1px;
+        }
+
+        .cta-corner-line-position {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cta-corner-line {
+            position: absolute;
+            background: linear-gradient(90deg, transparent, var(--roseQuartz), transparent);
+            opacity: 0;
+        }
+
+        .cta-corner-track[data-position="t"] .cta-corner-line,
+        .cta-corner-track[data-position="b"] .cta-corner-line {
+            width: 30%;
+            height: 100%;
+            animation: slide-horizontal 3s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
+
+        .cta-corner-track[data-position="r"] .cta-corner-line,
+        .cta-corner-track[data-position="l"] .cta-corner-line {
+            width: 100%;
+            height: 30%;
+            background: linear-gradient(180deg, transparent, var(--roseQuartz), transparent);
+            animation: slide-vertical 3s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
+
+        .cta-corner-line[data-order="1"] {
+            animation-delay: calc(var(--i, 0) * 0.6s);
+        }
+
+        .cta-corner-line[data-order="2"] {
+            animation-delay: calc(var(--i, 0) * 0.6s + 0.5s);
+        }
+
+        .cta-corner-line[data-order="3"] {
+            animation-delay: calc(var(--i, 0) * 0.6s + 1s);
+        }
+
+        .cta-wrapper:hover .cta-corner-line {
+            opacity: 1;
+        }
+
+        /* Primary CTA Button */
+        .cta-primary {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.875rem 2rem;
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--roseQuartz);
+            background: var(--obsidian);
+            border: 1px solid rgba(245, 192, 192, 0.3);
+            text-decoration: none;
+            transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+            overflow: hidden;
+        }
+
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(45deg, rgba(245, 192, 192, 0.1), rgba(164, 119, 178, 0.1));
+            opacity: 0;
+            transition: opacity 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);
+        }
+
+        .cta-primary:hover {
+            border-color: rgba(245, 192, 192, 0.6);
+            box-shadow: 0 0 20px rgba(245, 192, 192, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .cta-primary:hover::before {
+            opacity: 1;
+        }
+
+        .cta-primary:active {
+            transform: translateY(0);
+        }
+
+        .cta-icon-wrapper {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 16px;
+            height: 16px;
+        }
+
+        .cta-icon-wrapper svg {
+            width: 100%;
+            height: 100%;
+            display: block;
+        }
+
+        /* Animations */
+        @keyframes pulse-tl {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes pulse-tr {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes pulse-bl {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes pulse-br {
+            0%, 100% { opacity: 0; transform: scale(0.8); }
+            50% { opacity: 0.8; transform: scale(1.2); }
+        }
+
+        @keyframes slide-horizontal {
+            0% { left: -30%; opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { left: 100%; opacity: 0; }
+        }
+
+        @keyframes slide-vertical {
+            0% { top: -30%; opacity: 0; }
+            20% { opacity: 1; }
+            80% { opacity: 1; }
+            100% { top: 100%; opacity: 0; }
+        }
     </style>
 </head>
 
@@ -652,7 +877,55 @@
             <h1>Make everyone a data person</h1>
             <p class="text-l">Hex is a connected platform for using AI to work with data. Ask questions in natural language, partner with agents to do better analysis, and curate context for trusted answers.</p>
             <div class="hero-buttons">
-                <button class="btn btn-lg btn-gradient">Start for free</button>
+                <div class="cta-wrapper">
+                    <div class="cta-accents-container">
+                        <!-- Corner Circles -->
+                        <div data-position="tl" style="--i:0" class="cta-circle"></div>
+                        <div data-position="tr" style="--i:1" class="cta-circle"></div>
+                        <div data-position="bl" style="--i:2" class="cta-circle"></div>
+                        <div data-position="br" style="--i:3" class="cta-circle"></div>
+
+                        <!-- Corner Lines -->
+                        <div data-position="t" style="--i:0" class="cta-corner-track">
+                            <div data-position="t" class="cta-corner-line-position">
+                                <div data-order="1" class="cta-corner-line"></div>
+                                <div data-order="2" class="cta-corner-line"></div>
+                                <div data-order="3" class="cta-corner-line"></div>
+                            </div>
+                        </div>
+                        <div data-position="r" style="--i:1" class="cta-corner-track">
+                            <div data-position="r" class="cta-corner-line-position">
+                                <div data-order="1" class="cta-corner-line"></div>
+                                <div data-order="2" class="cta-corner-line"></div>
+                                <div data-order="3" class="cta-corner-line"></div>
+                            </div>
+                        </div>
+                        <div data-position="b" style="--i:2" class="cta-corner-track">
+                            <div data-position="b" class="cta-corner-line-position">
+                                <div data-order="1" class="cta-corner-line"></div>
+                                <div data-order="2" class="cta-corner-line"></div>
+                                <div data-order="3" class="cta-corner-line"></div>
+                            </div>
+                        </div>
+                        <div data-position="l" style="--i:3" class="cta-corner-track">
+                            <div data-position="l" class="cta-corner-line-position">
+                                <div data-order="1" class="cta-corner-line"></div>
+                                <div data-order="2" class="cta-corner-line"></div>
+                                <div data-order="3" class="cta-corner-line"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <a href="https://app.hex.tech/signup?source=hero" class="cta-primary text-l">
+                        <div class="cta-icon-wrapper">
+                            <svg fill="none" height="16" viewBox="0 0 16 16" width="16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M2.5 11.5L6.75 7L9 9.5L13 5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" opacity="1" pathLength="1" stroke-dashoffset="0px" stroke-dasharray="1px 1px"></path>
+                                <path d="M10.5 4.5H13.5V7.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" opacity="1"></path>
+                            </svg>
+                        </div>
+                        Get started
+                    </a>
+                </div>
                 <button class="btn btn-lg btn-outline">Book a demo</button>
             </div>
         </div>
