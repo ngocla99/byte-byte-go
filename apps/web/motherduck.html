@@ -1,298 +1,343 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MotherDuck - LayoutGrid Demo</title>
+    <title>MotherDuck - Analytics Platform</title>
+
+    <!-- Link to extracted complete CSS -->
+    <link rel="stylesheet" href="./extracted-styles.css">
+
     <style>
-        /* Reset and base styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+        /* Additional custom styles for demo content */
+        .demo-hero {
+            padding: 8rem 0 4rem 0;
         }
 
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: #fff;
-        }
-
-        /* LayoutGrid base styles */
-        .LayoutGrid-sc-fu5iik-0 {
-            --columns: 12;
-            --content-width: min(96%, 1840px);
-            --content: repeat(var(--columns), calc(var(--content-width) / var(--columns)));
-            display: grid;
-            grid-template-columns: 1fr var(--content) 1fr;
-            gap: 0;
-        }
-
-        :where(.LayoutGrid-sc-fu5iik-0 > *) {
-            grid-column: 2/-2;
-        }
-
-        /* LayoutSubgrid styles */
-        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1 {
-            display: grid;
-            grid-column: 1/-1;
-            grid-template-columns: subgrid;
-        }
-
-        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-pile] {
-            grid-row: 1/-1;
-        }
-
-        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-content-grid] {
-            grid-column: 2/-2;
-            grid-template-columns: repeat(var(--columns), 1fr);
-        }
-
-        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-content-grid] > * {
-            grid-column: 1/-1;
-        }
-
-        [data-content-grid]:where(.LayoutGrid__LayoutSubgrid-sc-fu5iik-1 > *) {
-            grid-column: 1/-1;
-        }
-
-        :where(.LayoutGrid__LayoutSubgrid-sc-fu5iik-1 > *) {
-            grid-column: 2/-2;
-        }
-
-        /* LayoutGridCondensed */
-        .LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 {
-            --content-width: min(calc(100% - 24px), 1536px);
-            grid-column: 2/-2;
-        }
-
-        /* Utility classes */
-        .text-base {
-            font-size: 1rem;
-        }
-
-        .sr-only {
-            position: absolute;
-            width: 1px;
-            height: 1px;
-            padding: 0;
-            margin: -1px;
-            overflow: hidden;
-            clip: rect(0, 0, 0, 0);
-            white-space: nowrap;
-            border-width: 0;
-        }
-
-        /* Grid Lines for visual debugging */
-        .GridLines__ContentMarginLine {
-            background: rgba(255, 0, 0, 0.1);
-            grid-row: 1/-1;
-        }
-
-        .GridLines__ContentMarginLine[data-right] {
-            grid-column: -2/-1;
-        }
-
-        .GridLines__ContentMarginLine:not([data-right]) {
-            grid-column: 1/2;
-        }
-
-        .GridLines__GridRule {
-            background: rgba(0, 0, 255, 0.1);
-            grid-row: 1/-1;
-        }
-
-        /* Header styles */
-        header {
-            background: #f8f9fa;
-            padding: 2rem 0;
-            border-bottom: 1px solid #dee2e6;
-        }
-
-        /* Content sections */
-        .content-section {
-            padding: 4rem 0;
-        }
-
-        .content-section:nth-child(even) {
-            background: #f8f9fa;
-        }
-
-        /* Sample content styles */
-        .hero {
-            padding: 6rem 0;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
+        .demo-hero h1 {
+            font-size: clamp(2rem, 5vw, 4rem);
             font-weight: 700;
-            margin-bottom: 1rem;
-            color: #1a1a1a;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #f5c0c0, #ad8eb6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .hero p {
+        .demo-hero p {
             font-size: 1.25rem;
-            color: #666;
+            opacity: 0.8;
             max-width: 600px;
             margin: 0 auto;
         }
 
+        .demo-section {
+            padding: 4rem 0;
+        }
+
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            padding: 2rem 0;
+            margin-top: 3rem;
         }
 
         .feature-card {
             padding: 2rem;
-            background: white;
+            background: var(--bg400, #1a1a1a);
+            border: 1px solid var(--grid500, #312a31);
             border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.2s, border-color 0.2s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--fg1200, #f5c0c0);
         }
 
         .feature-card h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            color: #1a1a1a;
+            color: var(--fg1200, #f5c0c0);
         }
 
         .feature-card p {
-            color: #666;
+            color: var(--fg1100, rgba(245, 192, 192, 0.8));
+            line-height: 1.6;
         }
 
-        /* Navigation */
-        nav {
-            padding: 1rem 0;
+        .content-text {
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
         }
 
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            justify-content: center;
+        .content-text p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
         }
 
-        nav a {
-            color: #333;
-            text-decoration: none;
-            font-weight: 500;
-            transition: color 0.2s;
-        }
-
-        nav a:hover {
-            color: #0066cc;
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--fg1200, #f5c0c0);
         }
     </style>
 </head>
 
 <body>
-    <div class="LayoutGrid-sc-fu5iik-0 text-base">
+    <div class="LayoutGrid-sc-fu5iik-0 iyFuQF text-base">
         <a class="sr-only" href="#main">Skip to main content</a>
 
-        <!-- Background layer -->
-        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1"></div>
+        <!-- Background paper texture layer -->
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Page__PaperTexture-sc-185uuuz-0 hbCrco lnUGXW"></div>
 
         <!-- Main content layer -->
-        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
 
             <!-- Fixed header container -->
-            <div style="position:fixed;z-index:3;inset:auto 0" class="LayoutGrid-sc-fu5iik-0">
+            <div style="position:fixed;z-index:3;inset:auto 0" class="LayoutGrid-sc-fu5iik-0 iyFuQF">
 
-                <!-- Header -->
-                <header class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                    <nav aria-label="Main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                        <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                            <ul>
-                                <li><a href="#home">Home</a></li>
-                                <li><a href="#features">Features</a></li>
-                                <li><a href="#about">About</a></li>
-                                <li><a href="#contact">Contact</a></li>
-                            </ul>
+                <!-- Grid lines for header -->
+                <div aria-hidden="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Header__TopGridLines-sc-8habwv-0 hbCrco iLwctE">
+                    <div data-minor="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                    <div class="GridLines__GridRule-sc-18us314-1 cLOeU"></div>
+                    <div class="GridLines__GridRule-sc-18us314-1 bLYxbN"></div>
+                    <div data-minor="true" data-right="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                </div>
+
+                <!-- Header navigation -->
+                <header class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+
+                    <!-- Ticker announcement bar -->
+                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Header__TickerWrapper-sc-8habwv-1 hbCrco gxVpcv">
+                        <div data-minor="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                        <div data-content-grid="true" style="opacity:1;transform:none" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Ticker__Bg-sc-607qoe-0 hbCrco dcJqqO">
+                            <div aria-label="announcements" role="marquee" class="Ticker__Marquee-sc-607qoe-2 dnPfBX">
+                                <div class="sr-only">
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#news">
+                                        <span>🚀</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">Announcing MotherDuck:</span> The fastest analytics platform
+                                    </a>
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#features">
+                                        <span>⚡</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">10x faster queries</span> with our optimized engine
+                                    </a>
+                                    <a class="Ticker__MarqueeItem-sc-607qoe-4 hlBXDK" href="#pricing">
+                                        <span>💎</span> <span class="Ticker__MarqueeItemTitle-sc-607qoe-5 ezzwYr">Get started free</span> No credit card required
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                    </nav>
+                        <div data-minor="true" data-right="true" class="GridLines__ContentMarginLine-sc-18us314-0 jYmGAr"></div>
+                    </div>
+
+                    <!-- Main navigation -->
+                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <nav aria-label="Main" data-orientation="horizontal" dir="ltr" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                            <div style="transform:translateY(28px)" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Nav__NavWrapper-sc-wbxqho-7 hbCrco jbIBXx">
+
+                                <!-- Nav background -->
+                                <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Nav__Background-sc-wbxqho-9 hbCrco icfDab">
+                                    <div style="--stop-1:rgba(0, 0, 0, 0.48);--stop-2:rgba(0, 0, 0, 0)" class="Nav__BackgroundInner-sc-wbxqho-10 jfEWJN"></div>
+                                </div>
+
+                                <!-- Nav content -->
+                                <div data-pile="true" style="transform:translateY(1.25rem)" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                                    <div style="opacity:0" class="Nav__NavShadow-sc-wbxqho-12 jCsMyE"></div>
+
+                                    <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                                        <div style="opacity:0" class="Nav__NavBorderBottom-sc-wbxqho-8 bfTQac"></div>
+
+                                        <div class="Nav__NavigationRootEl-sc-wbxqho-0 jUbPSt">
+                                            <div style="position:relative">
+                                                <!-- Left nav items -->
+                                                <ul data-orientation="horizontal" class="Nav__NavigationList-sc-wbxqho-2 Nav__LeftNav-sc-wbxqho-3 bLNJNN jtSLjZ" dir="ltr">
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#platform">Platform</a>
+                                                    </li>
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#solutions">Solutions</a>
+                                                    </li>
+                                                    <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                        <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#enterprise">Enterprise</a>
+                                                    </li>
+                                                </ul>
+
+                                                <!-- Logo -->
+                                                <a aria-current="page" class="Nav__HomeNavLinkWrapper-sc-wbxqho-13 eDJtmH" data-active="" data-state="closed" href="/">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 52 20" class="Nav__Hex-sc-wbxqho-1 iqnmHi">
+                                                        <path fill="currentColor" fill-rule="evenodd" d="M9 0v6.973H7V0H0v20h7V10h2v10h7V0zm9 20h16v-8h-7v5h-2v-7h9V0H18zm7-13V3h2v4zm20 0V0h7v5l-3 3.5 3 3.5v8h-7V9.973h-2V20h-7v-8l3-3.5L36 5V0h7v7z" clip-rule="evenodd"></path>
+                                                    </svg>
+                                                </a>
+
+                                                <!-- Right nav items -->
+                                                <div style="position:relative">
+                                                    <ul data-orientation="horizontal" class="Nav__NavigationList-sc-wbxqho-2 Nav__RightNav-sc-wbxqho-4 bLNJNN hxYzLx" dir="ltr">
+                                                        <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                            <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#resources">Resources</a>
+                                                        </li>
+                                                        <li class="NavMenuItem__StyledNavItem-sc-7u0key-0 aukZt">
+                                                            <a class="NavMenuItem__NavItemLink-sc-7u0key-1 dvhGiJ" href="#pricing">Pricing</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="Nav__LogInLink-sc-wbxqho-5 coMZHl" href="#login">Log In</a>
+                                                        </li>
+                                                        <li>
+                                                            <a class="Button__LinkWrapper-sc-y7ym94-1 hEVhHO Nav__SignUpButton-sc-wbxqho-6 byRXys" href="#signup">
+                                                                <div class="Button__Inner-sc-y7ym94-2 fECOTI">
+                                                                    <div class="CornerLines__Wrapper-sc-15dqtzb-0 prRVv">
+                                                                        <span class="CornerLines__TopLeft-sc-15dqtzb-1 bXHGzM"></span>
+                                                                        <span class="CornerLines__TopRight-sc-15dqtzb-2 dcHmWI"></span>
+                                                                        <span class="CornerLines__BottomLeft-sc-15dqtzb-3 daIqJa"></span>
+                                                                        <span class="CornerLines__BottomRight-sc-15dqtzb-4 geZdbC"></span>
+                                                                    </div>
+                                                                    <div data-which="corner-circles" class="CornerCircles__Wrapper-sc-89ohnd-0 bHcjRD">
+                                                                        <span class="CornerCircles__Left-sc-89ohnd-1 fkaKgT"></span>
+                                                                        <span class="CornerCircles__Right-sc-89ohnd-2 guQMof"></span>
+                                                                    </div>
+                                                                    <div class="Button__Children-sc-y7ym94-4 hJzacx">Get started</div>
+                                                                </div>
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Accent corner lines -->
+                                <div data-position="tl" class="Accent__LContainer-sc-fv2ogk-2 JHtVZ">
+                                    <div style="--progress:-1;opacity:0" class="Accent__VerticalBar-sc-fv2ogk-0 hzSfJ"></div>
+                                    <div style="--progress:-1;opacity:0" class="Accent__HorizontalBar-sc-fv2ogk-1 bMipNU"></div>
+                                </div>
+                                <div data-position="tr" class="Accent__LContainer-sc-fv2ogk-2 JHtVZ">
+                                    <div style="--progress:-1;opacity:0" class="Accent__VerticalBar-sc-fv2ogk-0 hzSfJ"></div>
+                                    <div style="--progress:-1;opacity:0" class="Accent__HorizontalBar-sc-fv2ogk-1 bMipNU"></div>
+                                </div>
+                            </div>
+                        </nav>
+                    </div>
                 </header>
             </div>
 
             <!-- Main content -->
-            <main id="main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1" style="margin-top: 100px;">
+            <main id="main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
 
-                <!-- Hero section -->
-                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hero">
-                        <h1>Welcome to MotherDuck</h1>
-                        <p>Experience the power of advanced grid layouts with LayoutGrid system</p>
+                <!-- Hero Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Hero__Bg-sc-1sadz74-0 hbCrco ciHlRj">
+                    <div class="GridLines__CheckeredMargin-sc-18us314-3 jPSPwV"></div>
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid-sc-fu5iik-0 LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 Hero__Wrapper-sc-1sadz74-1 iyFuQF bTlcdO cvEFcy">
+                            <div class="demo-hero" style="text-align: center;">
+                                <h1>MotherDuck Analytics</h1>
+                                <p>Experience blazing-fast data analytics with our cloud-native platform. Query billions of rows in milliseconds.</p>
+                            </div>
+                        </div>
                     </div>
+                    <div class="GridLines__CheckeredMargin-sc-18us314-3 jPSPwV" data-right="true"></div>
                 </div>
 
-                <!-- Features section -->
-                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
-                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                        <div class="feature-grid">
-                            <div class="feature-card">
-                                <h3>Responsive Grid</h3>
-                                <p>Automatically adapts to different screen sizes with a 12-column system that scales beautifully.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Subgrid Support</h3>
-                                <p>Leverage CSS subgrid for perfect alignment across nested components and complex layouts.</p>
-                            </div>
-                            <div class="feature-card">
-                                <h3>Content-Aware</h3>
-                                <p>Smart content width management ensures optimal readability on all devices.</p>
+                <!-- Features Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">Why MotherDuck?</h2>
+                            <div class="feature-grid">
+                                <div class="feature-card">
+                                    <h3>⚡ Lightning Fast</h3>
+                                    <p>Query billions of rows in milliseconds with our optimized columnar storage engine and intelligent caching.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🔒 Enterprise Security</h3>
+                                    <p>Bank-grade encryption, SOC 2 compliance, and granular access controls keep your data safe.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🌐 Global Scale</h3>
+                                    <p>Deploy across multiple regions with automatic replication and low-latency access worldwide.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>🤝 Seamless Integration</h3>
+                                    <p>Connect to your favorite BI tools, data sources, and APIs with our extensive integration library.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>📊 Real-time Analytics</h3>
+                                    <p>Stream processing and incremental materialization for always-fresh insights on your data.</p>
+                                </div>
+                                <div class="feature-card">
+                                    <h3>💰 Cost Effective</h3>
+                                    <p>Pay only for what you use with per-query pricing and automatic workload optimization.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Content section 1 -->
-                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
-                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                        <h2 style="text-align: center; margin-bottom: 2rem;">Powerful Features</h2>
-                        <div style="max-width: 800px; margin: 0 auto;">
-                            <p style="margin-bottom: 1rem;">
-                                The LayoutGrid system provides a sophisticated approach to web layouts, combining the flexibility
-                                of CSS Grid with the precision of subgrid support. This allows for seamless nesting and perfect
-                                alignment across all levels of your layout hierarchy.
-                            </p>
-                            <p>
-                                With automatic content width management and a responsive 12-column grid, your content always
-                                looks perfect regardless of the viewport size. The system handles complex layouts with ease,
-                                from simple landing pages to intricate application interfaces.
-                            </p>
+                <!-- About Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section" style="background: var(--bg400, #1a1a1a);">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">Built on Modern Architecture</h2>
+                            <div class="content-text">
+                                <p>
+                                    MotherDuck is built from the ground up with modern cloud architecture in mind. Our platform leverages
+                                    the power of DuckDB, an in-process SQL OLAP database management system, combined with cloud storage
+                                    and compute separation for ultimate flexibility and performance.
+                                </p>
+                                <p>
+                                    The LayoutGrid system you're experiencing right now provides a sophisticated approach to web layouts,
+                                    combining the flexibility of CSS Grid with the precision of subgrid support. This allows for seamless
+                                    nesting and perfect alignment across all levels of your layout hierarchy.
+                                </p>
+                                <p>
+                                    With automatic content width management and a responsive 12-column grid, content always looks perfect
+                                    regardless of viewport size. The system handles complex layouts with ease, from simple landing pages
+                                    to intricate application interfaces.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Content section 2 -->
-                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
-                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                        <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
-                        <div style="max-width: 800px; margin: 0 auto;">
-                            <p style="margin-bottom: 1rem;">
-                                The LayoutGrid system uses CSS variables to define a 12-column grid with automatic content width
-                                calculation. Each column's width is derived from the content width divided by the number of columns.
-                            </p>
-                            <p style="margin-bottom: 1rem;">
-                                The main grid container creates three columns: a left margin, the content area (subdivided into
-                                12 columns), and a right margin. This ensures your content is always centered and properly bounded.
-                            </p>
-                            <p>
-                                Subgrid support allows nested elements to align with the parent grid, creating a cohesive visual
-                                structure throughout your entire page. Elements can span multiple columns or use the full content
-                                width as needed.
-                            </p>
+                <!-- Technical Details Section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco demo-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <h2 class="section-title">How It Works</h2>
+                            <div class="content-text">
+                                <p>
+                                    The LayoutGrid system uses CSS variables to define a 12-column grid with automatic content width
+                                    calculation. Each column's width is derived from the content width divided by the number of columns,
+                                    ensuring perfect proportions at any screen size.
+                                </p>
+                                <p>
+                                    The main grid container creates three columns: a left margin, the content area (subdivided into
+                                    12 columns), and a right margin. This ensures your content is always centered and properly bounded,
+                                    providing a professional and polished appearance.
+                                </p>
+                                <p>
+                                    Subgrid support allows nested elements to align with the parent grid, creating a cohesive visual
+                                    structure throughout your entire page. Elements can span multiple columns or use the full content
+                                    width as needed, giving you complete control over your layout.
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- Footer -->
-                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1" style="padding: 4rem 0; background: #1a1a1a; color: white;">
-                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
-                        <div style="text-align: center;">
-                            <p>&copy; 2025 MotherDuck. Built with LayoutGrid system.</p>
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 Footer__Container-sc-1xr1w1c-0 hbCrco cqRDTQ">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hbCrco">
+                        <div class="LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 bTlcdO">
+                            <div style="padding: 4rem 0; text-align: center; border-top: 1px solid var(--grid500, #312a31);">
+                                <p style="opacity: 0.7; margin-bottom: 0.5rem;">
+                                    &copy; 2025 MotherDuck. Built with the LayoutGrid system.
+                                </p>
+                                <p style="opacity: 0.5; font-size: 0.875rem;">
+                                    Experience the power of modern CSS Grid with subgrid support
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -300,5 +345,30 @@
             </main>
         </div>
     </div>
+
+    <script>
+        // Theme initialization (matching style-ref pattern)
+        (function(storageKey, themeKey, defaultTheme, fallbackTheme, themes, forceTheme, respectSystemPreference, respectToggle) {
+            function p(theme) {
+                document.documentElement.setAttribute('data-theme', theme);
+            }
+
+            function c() {
+                return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+            }
+
+            if (forceTheme) {
+                p(forceTheme);
+            } else {
+                try {
+                    let stored = localStorage.getItem(storageKey) || defaultTheme;
+                    let theme = respectSystemPreference && stored === "system" ? c() : stored;
+                    p(theme);
+                } catch (e) {
+                    p(fallbackTheme);
+                }
+            }
+        })("data-theme", "theme", "dark", "dark", ["light", "dark", "pink"], null, true, true);
+    </script>
 </body>
 </html>
