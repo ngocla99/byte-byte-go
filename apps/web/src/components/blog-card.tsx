@@ -27,12 +27,12 @@ export function BlogCard({ post }: BlogCardProps) {
 
   return (
     <Card
-      className="group hover:-translate-y-1 cursor-pointer border-border/40 pt-0 transition-all duration-200 hover:border-border/80 hover:shadow-lg"
+      className="group hover:-translate-y-1 cursor-pointer rounded-none border-border/40 pt-0 transition-all duration-200 hover:border-border/80 hover:shadow-lg"
       onClick={handleClick}
     >
       <div
         aria-label={post.title}
-        className="h-48 w-full rounded-t-lg bg-center bg-cover bg-white"
+        className="h-48 w-full bg-center bg-cover bg-white"
         role="img"
         style={{
           backgroundImage: `url(${imageUrl})`,
@@ -47,7 +47,7 @@ export function BlogCard({ post }: BlogCardProps) {
           {post.category && (
             <div className="flex items-center gap-1">
               <Tag className="h-3 w-3" />
-              <span className="rounded-full bg-primary/10 px-2 py-1 font-medium text-primary text-xs">
+              <span className="bg-primary/10 px-2 py-1 font-medium text-primary text-xs">
                 {post.category}
               </span>
             </div>
