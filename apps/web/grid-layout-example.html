@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid Layout Example</title>
+    <link rel="stylesheet" href="src/index.css">
+    <style>
+        /* Example styling to visualize the grid */
+        body {
+            background: #14141c;
+            color: #f5c0c0;
+            margin: 0;
+            padding: 0;
+        }
+
+        .section-example {
+            min-height: 100vh;
+            position: relative;
+        }
+
+        .content-wrapper {
+            padding: 4rem 2rem;
+        }
+
+        .demo-content {
+            background: rgba(245, 192, 192, 0.05);
+            border: 1px solid var(--grid500);
+            padding: 2rem;
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+    <!-- EXAMPLE 1: Basic Section with Checkered Margins -->
+    <section class="section-example">
+        <div class="layout-subgrid">
+            <!-- Left Checkered Margin -->
+            <div class="checkered-margin"></div>
+
+            <!-- Content Grid -->
+            <div data-content-grid="true" class="layout-subgrid">
+                <div class="layout-grid layout-grid-condensed content-wrapper">
+                    <div class="demo-content">
+                        <h2>Example 1: Basic Grid with Checkered Margins</h2>
+                        <p>This section has left and right checkered margins, creating the Hex-style border effect.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Checkered Margin -->
+            <div data-right="true" class="checkered-margin"></div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE 2: Section with Cartesian Grid (like Hero) -->
+    <section class="section-example">
+        <div class="layout-subgrid">
+            <!-- Left Checkered Margin -->
+            <div class="checkered-margin"></div>
+
+            <!-- Content Grid -->
+            <div data-content-grid="true" class="layout-subgrid">
+                <div class="layout-grid layout-grid-condensed content-wrapper">
+                    <!-- Cartesian Grid Background -->
+                    <div class="unit-grid">
+                        <div class="unit-grid-mask">
+                            <div class="radial-gradient"></div>
+                        </div>
+                    </div>
+
+                    <!-- Content -->
+                    <div class="demo-content" style="position: relative; z-index: 1;">
+                        <h2>Example 2: Grid with Cartesian Unit Grid</h2>
+                        <p>This section has the animated grid background with radial gradient effect, just like the Hex hero section.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Checkered Margin -->
+            <div data-right="true" class="checkered-margin"></div>
+        </div>
+    </section>
+
+    <!-- EXAMPLE 3: React/JSX Component Pattern -->
+    <!--
+    Here's how you would structure this in React/JSX:
+
+    <section className="section-example">
+        <div className="layout-subgrid">
+            {/* Left Checkered Margin */}
+            <div className="checkered-margin" />
+
+            {/* Content Grid */}
+            <div data-content-grid="true" className="layout-subgrid">
+                <div className="layout-grid layout-grid-condensed content-wrapper">
+                    {/* Cartesian Grid Background (optional) */}
+                    <div className="unit-grid">
+                        <div className="unit-grid-mask">
+                            <div className="radial-gradient" />
+                        </div>
+                    </div>
+
+                    {/* Your Content Here */}
+                    <div className="demo-content" style={{ position: 'relative', zIndex: 1 }}>
+                        <h2>Your Section Title</h2>
+                        <p>Your section content...</p>
+                    </div>
+                </div>
+            </div>
+
+            {/* Right Checkered Margin */}
+            <div data-right className="checkered-margin" />
+        </div>
+    </section>
+    -->
+</body>
+</html>
