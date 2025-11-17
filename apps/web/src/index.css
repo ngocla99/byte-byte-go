@@ -4,8 +4,11 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
-  --font-sans: "Inter", "Geist", ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  /* Typography */
+  --font-heading: "PP Formula SemiExtended", "PP Formula", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Cinetype", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-mono: "Cinetype Mono", "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-sans: var(--font-body);
 }
 
 html,
@@ -18,79 +21,331 @@ body {
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.145 0 0);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.145 0 0);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.145 0 0);
-  --primary: oklch(0.205 0 0);
-  --primary-foreground: oklch(0.985 0 0);
-  --secondary: oklch(0.97 0 0);
-  --secondary-foreground: oklch(0.205 0 0);
-  --muted: oklch(0.97 0 0);
-  --muted-foreground: oklch(0.556 0 0);
-  --accent: oklch(0.97 0 0);
-  --accent-foreground: oklch(0.205 0 0);
-  --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.922 0 0);
-  --input: oklch(0.922 0 0);
-  --ring: oklch(0.708 0 0);
-  --chart-1: oklch(0.646 0.222 41.116);
-  --chart-2: oklch(0.6 0.118 184.704);
-  --chart-3: oklch(0.398 0.07 227.392);
-  --chart-4: oklch(0.828 0.189 84.429);
-  --chart-5: oklch(0.769 0.188 70.08);
-  --sidebar: oklch(0.985 0 0);
-  --sidebar-foreground: oklch(0.145 0 0);
-  --sidebar-primary: oklch(0.205 0 0);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.97 0 0);
-  --sidebar-accent-foreground: oklch(0.205 0 0);
-  --sidebar-border: oklch(0.922 0 0);
-  --sidebar-ring: oklch(0.708 0 0);
+  /* ===== COLOR SYSTEM ===== */
+
+  /* Foreground Colors (Text & UI Elements) */
+  --fg100: rgba(245, 192, 192, 0.077);
+  --fg200: rgba(245, 192, 192, 0.103);
+  --fg300: rgba(245, 192, 192, 0.129);
+  --fg400: rgba(245, 192, 192, 0.172);
+  --fg500: rgba(245, 192, 192, 0.258);
+  --fg600: rgba(245, 192, 192, 0.386);
+  --fg700: rgba(245, 192, 192, 0.592);
+  --fg800: rgba(245, 192, 192, 0.801);
+  --fg900: rgba(245, 192, 192, 0.868);
+  --fg1000: rgba(245, 192, 192, 0.901);
+  --fg1100: rgba(245, 192, 192, 0.923);
+  --fg1200: #f5c0c0;
+
+  /* Alpha variants for overlays */
+  --fgA100: rgba(245, 192, 192, 0.056);
+  --fgA500: rgba(245, 192, 192, 0.103);
+  --fgA700: rgba(245, 192, 192, 0.172);
+  --fgA900: rgba(245, 192, 192, 0.258);
+  --fgA1100: rgba(245, 192, 192, 0.386);
+
+  /* Special foreground colors */
+  --fgLoud: #ffffff;
+
+  /* Background Colors */
+  --bg100: #14141C;
+  --bg200: #0f0f15;
+  --bg300: #0d0d13;
+
+  /* Grid & Border Colors */
+  --grid100: rgba(1, 1, 27, 0.05);
+  --grid200: rgba(1, 1, 27, 0.075);
+  --grid300: rgba(1, 1, 27, 0.1);
+  --grid500: rgba(245, 192, 192, 0.15);
+  --grid600: rgba(245, 192, 192, 0.2);
+  --grid1200: rgba(245, 192, 192, 0.592);
+
+  /* Accent Colors */
+  --accent-rose: #e3b2b3;
+  --accent-muted: #99797d;
+  --accent-subtle: #786065;
+  --border-primary: #6a565b;
+  --border-darker: #3a3138;
+  --border-card: #2f2f41;
+
+  /* Feature/Workflow Colors */
+  --notebooks-color: #5CB198;
+  --apps-color: #CDA849;
+  --self-serve-color: #A477B2;
+  --trusted-context-color: #CDA849;
+
+  /* shadcn/ui compatible colors */
+  --background: var(--bg100);
+  --foreground: var(--fg1200);
+  --card: var(--bg200);
+  --card-foreground: var(--fg1200);
+  --popover: var(--bg200);
+  --popover-foreground: var(--fg1200);
+  --primary: var(--accent-rose);
+  --primary-foreground: var(--bg100);
+  --secondary: var(--bg200);
+  --secondary-foreground: var(--fgLoud);
+  --muted: var(--bg200);
+  --muted-foreground: var(--accent-muted);
+  --accent: var(--bg200);
+  --accent-foreground: var(--fgLoud);
+  --destructive: #ff6b6b;
+  --destructive-foreground: var(--fgLoud);
+  --border: var(--grid500);
+  --input: var(--border-card);
+  --ring: var(--fgA900);
+
+  /* ===== SPACING SYSTEM ===== */
+
+  /* Fluid spacing */
+  --spacing-xs: clamp(8px, 4.625px + 0.75vw, 14px);
+  --spacing-sm: clamp(12px, 0.75px + 2.5vw, 32px);
+  --spacing-md: clamp(24px, 10.5px + 3vw, 48px);
+  --spacing-lg: clamp(56px, 42.5px + 3vw, 80px);
+
+  /* Fixed spacing (4px multiples) */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-64: 64px;
+  --spacing-80: 80px;
+  --spacing-128: 128px;
+
+  /* ===== SHADOW SYSTEM ===== */
+
+  /* Shadow levels (1-5) */
+  --shadow-1: 0 2px 3px 0px rgba(0, 0, 0, 0.12),
+              0 4px 12px -2px rgba(0, 0, 0, 0.8);
+
+  --shadow-2: 1px 2px 4px rgba(0, 0, 0, 0.2),
+              4px 6px 8px rgba(0, 0, 0, 0.17),
+              10px 14px 10px rgba(0, 0, 0, 0.1),
+              18px 25px 12px rgba(0, 0, 0, 0.03),
+              28px 39px 13px rgba(0, 0, 0, 0);
+
+  --shadow-3: 0 0 24px 0px #111118 inset,
+              0 0.5px 0px 0.75px #2f2f41,
+              6px 37px 10px 0px rgba(0, 0, 0, 0.01),
+              4px 24px 10px 0px rgba(0, 0, 0, 0.04),
+              2px 13px 8px 0px rgba(0, 0, 0, 0.14),
+              1px 6px 6px 0px rgba(0, 0, 0, 0.24),
+              0px 1px 3px 0px rgba(0, 0, 0, 0.27);
+
+  --shadow-4: 0px 0.5px 0 0.75px #2f2f41,
+              4px 16px 32px -12px hsla(0, 0%, 0%, 0.72);
+
+  --shadow-5: 0px 0px 1px rgba(0, 0, 0, 0.64),
+              0px 1px 1px rgba(0, 0, 0, 0.56),
+              0px 2px 1px rgba(0, 0, 0, 0.48),
+              0px 4px 2px rgba(0, 0, 0, 0.32),
+              0px 6px 2px rgba(0, 0, 0, 0.16);
+
+  --text-shadow: 0px 1px 1px rgba(0, 0, 0, 0.16);
+
+  /* ===== BORDER RADIUS ===== */
+
+  --radius-subtle: 1px;
+  --radius-sm: 3px;
+  --radius-md: 4px;
+  --radius: 6px;
+  --radius-lg: 8px;
+  --radius-xl: 12px;
+  --radius-pill: 999px;
+
+  /* ===== ANIMATIONS & TRANSITIONS ===== */
+
+  /* Easing functions */
+  --ease-in-out: cubic-bezier(0.25, 0.1, 0.25, 1);
+  --ease-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --ease-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+
+  /* Spring animation */
+  --spring-easing: linear(
+    0, 0.0007 0.36%, 0.0058 1.08%, 0.0217, 0.0454 3.23%,
+    0.0816 4.03%, 0.1262 4.84%, 0.2008 5.84%, 0.2873 6.84%,
+    0.3751 7.81%, 0.4635 8.75%, 0.551 9.65%, 0.6366 10.52%,
+    0.7192 11.35%, 0.798 12.14%, 0.8721 12.89%, 0.9409 13.6%,
+    1.0041 14.27%, 1.0615 14.91%, 1.1128 15.52%, 1.1581 16.09%,
+    1.1975 16.64%, 1.2313 17.16%, 1.2598 17.66%, 1.2834 18.14%,
+    1.3025 18.6%, 1.3174 19.05%, 1.3286 19.48%, 1.3364 19.9%,
+    1.3413 20.31%, 1.3437 20.72%, 1.344 21.11%, 1.3427 21.51%,
+    1.3402 21.89%, 1.3368 22.28%, 1.3329 22.65%, 1.3288 23.03%,
+    1.325 23.39%, 1.3216 23.75%, 1.3188 24.11%, 1.3167 24.47%,
+    1.3154 24.82%, 1.3148 25.18%, 1.3149 25.53%, 1.3156 25.88%,
+    1.3168 26.24%, 1.3184 26.59%, 1.3203 26.94%, 1.3224 27.29%,
+    1.3247 27.64%, 1.327 27.99%, 1.3293 28.34%, 1.3315 28.69%,
+    1.3336 29.04%, 1.3356 29.38%, 1.3374 29.73%, 1.339 30.08%,
+    1.3404 30.42%, 1.3416 30.77%, 1.3425 31.11%, 1.3433 31.46%,
+    1.3438 31.8%, 1.3441 32.15%, 1.3442 32.49%, 1.3442 32.83%,
+    1.344 33.18%, 1.3436 33.52%, 1.3432 33.86%, 1.3427 34.2%,
+    1.3421 34.54%, 1.3415 34.88%, 1.3408 35.22%, 1.3402 35.56%,
+    1.3396 35.9%, 1.339 36.24%, 1.3384 36.57%, 1.3379 36.91%,
+    1.3375 37.24%, 1.3372 37.58%, 1.337 37.91%, 1.3369 38.25%,
+    1.3369 38.58%, 1.337 38.91%, 1.3372 39.24%, 1.3375 39.57%,
+    1.3379 39.9%, 1.3384 40.23%, 1.339 40.56%, 1.3396 40.89%,
+    1.3403 41.21%, 1.3411 41.54%, 1.3419 41.86%, 1.3427 42.19%,
+    1.3436 42.51%, 1.3445 42.83%, 1.3455 43.15%, 1.3465 43.47%,
+    1.3475 43.79%, 1.3485 44.11%, 1.3496 44.43%, 1.3506 44.74%,
+    1.3516 45.06%, 1.3527 45.37%, 1.3537 45.69%, 1.3547 46%,
+    1.3557 46.31%, 1.3567 46.62%, 1.3577 46.93%, 1.3586 47.24%,
+    1.3595 47.55%, 1.3604 47.86%, 1.3613 48.16%, 1.3621 48.47%,
+    1.3629 48.77%, 1.3637 49.07%, 1.3644 49.38%, 1.3651 49.68%,
+    1.3658 49.98%, 1.3664 50.28%, 1.367 50.58%, 1.3675 50.87%,
+    1.368 51.17%, 1.3684 51.46%, 1.3688 51.76%, 1.3692 52.05%,
+    1.3695 52.34%, 1.3698 52.63%, 1.37 52.92%, 1.3702 53.21%,
+    1.3704 53.5%, 1.3705 53.79%, 1.3706 54.08%, 1.3706 54.36%,
+    1.3706 54.65%, 1.3706 54.93%, 1.3706 55.22%, 1.3705 55.5%,
+    1.3704 55.78%, 1.3703 56.06%, 1.3702 56.34%, 1.37 56.62%,
+    1.3698 56.9%, 1.3696 57.18%, 1.3694 57.45%, 1.3691 57.73%,
+    1.3689 58%, 1.3686 58.28%, 1.3683 58.55%, 1.368 58.82%,
+    1.3677 59.09%, 1.3674 59.36%, 1.3671 59.63%, 1.3668 59.9%,
+    1.3665 60.16%, 1.3662 60.43%, 1.3659 60.69%, 1.3656 60.96%,
+    1.3653 61.22%, 1.365 61.48%, 1.3647 61.74%, 1.3644 62%,
+    1.3642 62.26%, 1.3639 62.52%, 1.3637 62.77%, 1.3635 63.03%,
+    1.3633 63.28%, 1.3631 63.54%, 1.3629 63.79%, 1.3628 64.04%,
+    1.3626 64.29%, 1.3625 64.54%, 1.3624 64.79%, 1.3623 65.04%,
+    1.3623 65.28%, 1.3622 65.53%, 1.3622 65.77%, 1.3622 66.02%,
+    1.3622 66.26%, 1.3622 66.5%, 1.3622 66.74%, 1.3623 66.98%,
+    1.3623 67.22%, 1.3624 67.46%, 1.3625 67.7%, 1.3626 67.93%,
+    1.3627 68.17%, 1.3629 68.4%, 1.363 68.64%, 1.3632 68.87%,
+    1.3634 69.1%, 1.3636 69.33%, 1.3638 69.56%, 1.364 69.79%,
+    1.3643 70.02%, 1.3645 70.25%, 1.3648 70.47%, 1.365 70.7%,
+    1.3653 70.92%, 1.3656 71.14%, 1.3659 71.37%, 1.3662 71.59%,
+    1.3665 71.81%, 1.3668 72.03%, 1.3671 72.24%, 1.3674 72.46%,
+    1.3678 72.68%, 1.3681 72.89%, 1.3684 73.11%, 1.3688 73.32%,
+    1.3691 73.54%, 1.3695 73.75%, 1.3699 73.96%, 1.3702 74.17%,
+    1.3706 74.38%, 1.371 74.59%, 1.3713 74.8%, 1.3717 75.01%,
+    1.3721 75.21%, 1.3725 75.42%, 1.3729 75.63%, 1.3733 75.83%,
+    1.3737 76.03%, 1.3741 76.24%, 1.3745 76.44%, 1.3749 76.64%,
+    1.3753 76.84%, 1.3757 77.04%, 1.3761 77.24%, 1.3765 77.44%,
+    1.3769 77.64%, 1.3773 77.83%, 1.3777 78.03%, 1.3781 78.23%,
+    1.3785 78.42%, 1.3789 78.62%, 1.3793 78.81%, 1.3797 79%,
+    1.3801 79.2%, 1.3805 79.39%, 1.3809 79.58%, 1.3813 79.77%,
+    1.3817 79.96%, 1.3821 80.15%, 1.3825 80.34%, 1.3829 80.53%,
+    1.3833 80.71%, 1.3836 80.9%, 1.384 80.95%, 1.3844 81.27%,
+    1.3848 81.46%, 1.3851 81.64%, 1.3855 81.82%, 1.3859 82.01%,
+    1.3862 82.19%, 1.3866 82.37%, 1.387 82.55%, 1.3873 82.73%,
+    1.3877 82.91%, 1.388 83.09%, 1.3884 83.27%, 1.3887 83.44%,
+    1.3891 83.62%, 1.3894 83.8%, 1.3898 83.97%, 1.3901 84.15%,
+    1.3904 84.32%, 1.3908 84.49%, 1.3911 84.67%, 1.3914 84.84%,
+    1.3918 85.01%, 1.3921 85.18%, 1.3924 85.35%, 1.3927 85.52%,
+    1.393 85.69%, 1.3933 85.86%, 1.3936 86.03%, 1.3939 86.2%,
+    1.3942 86.36%, 1.3945 86.53%, 1.3948 86.7%, 1.3951 86.86%,
+    1.3954 87.03%, 1.3957 87.19%, 1.396 87.35%, 1.3962 87.52%,
+    1.3965 87.68%, 1.3968 87.84%, 1.397 87.95%, 1.3973 88.16%,
+    1.3976 88.32%, 1.3978 88.48%, 1.3981 88.64%, 1.3983 88.8%,
+    1.3986 88.96%, 1.3988 89.12%, 1.3991 89.27%, 1.3993 89.43%,
+    1.3995 89.59%, 1.3998 89.74%, 1.4 89.9%, 1.4002 90.05%,
+    1.4004 90.21%, 1.4007 90.36%, 1.4009 90.51%, 1.4011 90.67%,
+    1.4013 90.82%, 1.4015 90.97%, 1.4017 91.12%, 1.4019 91.27%,
+    1.4021 91.42%, 1.4023 91.57%, 1.4025 91.72%, 1.4027 91.87%,
+    1.4029 92.02%, 1.4031 92.17%, 1.4033 92.32%, 1.4034 92.46%,
+    1.4036 92.61%, 1.4038 92.75%, 1.404 92.9%, 1.4041 93.04%,
+    1.4043 93.19%, 1.4045 93.33%, 1.4046 93.48%, 1.4048 93.62%,
+    1.405 93.76%, 1.4051 93.9%, 1.4053 94.05%, 1.4054 94.19%,
+    1.4056 94.33%, 1.4057 94.47%, 1.4059 94.61%, 1.406 94.75%,
+    1.4062 94.89%, 1.4063 95.02%, 1.4064 95.16%, 1.4066 95.3%,
+    1.4067 95.44%, 1.4068 95.57%, 1.407 95.71%, 1.4071 95.84%,
+    1.4072 95.98%, 1.4073 96.11%, 1.4074 96.25%, 1.4076 96.38%,
+    1.4077 96.51%, 1.4078 96.65%, 1.4079 96.78%, 1.408 96.91%,
+    1.4081 97.04%, 1.4082 97.17%, 1.4083 97.3%, 1.4084 97.43%,
+    1.4085 97.56%, 1.4086 97.69%, 1.4087 97.82%, 1.4088 97.94%,
+    1.4089 98.07%, 1.409 98.2%, 1.4091 98.33%, 1.4092 98.45%,
+    1.4092 98.58%, 1.4093 98.7%, 1.4094 98.83%, 1.4095 98.95%,
+    1.4096 99.08%, 1.4096 99.2%, 1.4097 99.33%, 1.4098 99.45%,
+    1.4098 99.57%, 1.4099 99.7%, 1.41 99.82%, 1.41 99.94%,
+    0.9997 100%
+  );
+  --spring-duration: 0.747s;
+
+  /* Hover transitions */
+  --hover-transition-duration: 529.33ms;
+  --hover-transition-timing-function: linear(
+    0 0%, 0.005892 1%, 0.022227 2%, 0.047186 3%, 0.079224 4%,
+    0.117238 5%, 0.160568 6%, 0.208092 7%, 0.258977 8%,
+    0.312548 9%, 0.368253 10%, 0.425646 11%, 0.484382 12%,
+    0.544126 13%, 0.604567 14%, 0.665418 15%, 0.726406 16%,
+    0.787285 17%, 0.847824 18%, 0.907818 19%, 0.967082 20%,
+    1.02545 21%, 1.08278 22%, 1.13893 23%, 1.19378 24%,
+    1.24721 25%, 1.2991 26%, 1.34936 27%, 1.39789 28%,
+    1.44462 29%, 1.48947 30%, 1.53237 31%, 1.57326 32%,
+    1.61209 33%, 1.64881 34%, 1.68338 35%, 1.71576 36%,
+    1.74594 37%, 1.77388 38%, 1.79958 39%, 1.82303 40%,
+    1.84421 41%, 1.86313 42%, 1.87979 43%, 1.89421 44%,
+    1.9064 45%, 1.91637 46%, 1.92415 47%, 1.92978 48%,
+    1.93327 49%, 1.93467 50%, 1.93402 51%, 1.93137 52%,
+    1.92678 53%, 1.92031 54%, 1.91203 55%, 1.902 56%,
+    1.89029 57%, 1.87699 58%, 1.86217 59%, 1.84593 60%,
+    1.82834 61%, 1.8095 62%, 1.7895 63%, 1.76843 64%,
+    1.74638 65%, 1.72345 66%, 1.69972 67%, 1.67529 68%,
+    1.65026 69%, 1.62471 70%, 1.59874 71%, 1.57245 72%,
+    1.54591 73%, 1.51923 74%, 1.49248 75%, 1.46576 76%,
+    1.43915 77%, 1.41274 78%, 1.38661 79%, 1.36084 80%,
+    1.33552 81%, 1.31071 82%, 1.28651 83%, 1.26297 84%,
+    1.24018 85%, 1.21821 86%, 1.19713 87%, 1.17701 88%,
+    1.15792 89%, 1.13992 90%, 1.12309 91%, 1.10749 92%,
+    1.09317 93%, 1.0802 94%, 1.06864 95%, 1.05853 96%,
+    1.04995 97%, 1.04293 98%, 1.03754 99%, 1.03381 100%,
+    1.03179 101%, 1.03151 102%, 1.033 103%, 1.03629 104%,
+    1.04142 105%, 1.04839 106%, 1.05723 107%, 1.06795 108%,
+    1.08056 109%, 1.09506 110%, 1.11145 111%, 1.12971 112%,
+    1.14984 113%, 1.17183 114%, 1.19566 115%, 1.2213 116%,
+    1.24873 117%, 1.27793 118%, 1.30886 119%, 1.34149 120%,
+    1.37578 121%, 1.41169 122%, 1.44918 123%, 1.48819 124%,
+    1.52868 125%, 1.5706 126%, 1.61388 127%, 1.65847 128%,
+    1.7043 129%, 1.7513 130%, 1.7994 131%, 1.84853 132%,
+    1.89862 133%, 1.94958 134%, 2.00134 135%, 2.05381 136%,
+    2.10692 137%, 2.16058 138%, 2.21469 139%, 2.26918 140%,
+    2.32394 141%, 2.37889 142%, 2.43393 143%, 2.48897 144%,
+    2.54391 145%, 2.59865 146%, 2.6531 147%, 2.70716 148%,
+    2.76072 149%, 2.81369 150%, 2.86597 151%, 2.91745 152%,
+    2.96804 153%, 3.01764 154%, 3.06613 155%, 3.11344 156%,
+    3.15946 157%, 3.20409 158%, 3.24724 159%, 3.2888 160%,
+    3.32869 161%, 3.36682 162%, 3.40309 163%, 3.43741 164%,
+    3.46969 165%, 3.49985 166%, 3.5278 167%, 3.55345 168%,
+    3.57673 169%, 3.59756 170%, 3.61585 171%, 3.63154 172%,
+    3.64455 173%, 3.6548 174%, 3.66224 175%, 3.66679 176%,
+    3.66839 177%, 3.66699 178%, 3.66252 179%, 3.65494 180%,
+    3.6442 181%, 3.63026 182%, 3.61308 183%, 3.59262 184%,
+    3.56887 185%, 3.54181 186%, 3.51143 187%, 3.47773 188%,
+    3.44072 189%, 3.4004 190%, 3.35679 191%, 3.30991 192%,
+    3.25977 193%, 3.20641 194%, 3.14986 195%, 3.09016 196%,
+    3.02735 197%, 2.96148 198%, 2.8926 199%, 2.82076 200%,
+    2.74602 201%, 2.66844 202%, 2.58809 203%, 2.50503 204%,
+    2.41933 205%, 2.33108 206%, 2.24035 207%, 2.14722 208%,
+    2.05177 209%, 1.95409 210%, 1.85427 211%, 1.7524 212%,
+    1.64856 213%, 1.54285 214%, 1.43536 215%, 1.32618 216%,
+    1.21541 217%, 1.10313 218%, 0.989452 219%, 0.874455 220%,
+    0.758235 221%, 0.640893 222%, 0.522526 223%, 0.403237 224%,
+    0.283128 225%, 0.162299 226%, 0.0408533 227%, -0.0811051 228%,
+    -0.203363 229%, 999989 80%
+  );
+
+  /* Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-slower: 750ms;
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
-  --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
-  --destructive: oklch(0.704 0.191 22.216);
-  --border: oklch(1 0 0 / 10%);
-  --input: oklch(1 0 0 / 15%);
-  --ring: oklch(0.556 0 0);
-  --chart-1: oklch(0.488 0.243 264.376);
-  --chart-2: oklch(0.696 0.17 162.48);
-  --chart-3: oklch(0.769 0.188 70.08);
-  --chart-4: oklch(0.627 0.265 303.9);
-  --chart-5: oklch(0.645 0.246 16.439);
-  --sidebar: oklch(0.205 0 0);
-  --sidebar-foreground: oklch(0.985 0 0);
-  --sidebar-primary: oklch(0.488 0.243 264.376);
-  --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.556 0 0);
+  /* Dark theme already uses the correct colors - no overrides needed */
 }
 
 @theme inline {
+  /* Border radius mapping */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
   --radius-xl: calc(var(--radius) + 4px);
+
+  /* Color mappings for Tailwind CSS */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-card: var(--card);
@@ -109,26 +364,191 @@ body {
   --color-border: var(--border);
   --color-input: var(--input);
   --color-ring: var(--ring);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
 }
 
 @layer base {
   * {
     @apply border-border outline-ring/50;
   }
+
   body {
     @apply bg-background text-foreground;
+    font-family: var(--font-body);
+    color: var(--fg1200);
+    background-color: var(--bg100);
+  }
+
+  /* Typography defaults */
+  h1, h2, h3, h4 {
+    color: var(--fgLoud);
+    font-family: var(--font-heading);
+  }
+
+  h5, h6 {
+    color: var(--fg1100);
+  }
+
+  /* Text selection */
+  *::selection {
+    background: var(--fgA700);
+  }
+
+  /* Link styling */
+  a {
+    color: var(--fg1200);
+    text-decoration: none;
+    border-bottom: 1px solid var(--fg1200);
+    background-color: transparent;
+    transition: background-color linear 0.1s;
+  }
+
+  a:hover {
+    background-color: var(--fgA500);
+  }
+
+  a:active {
+    background-color: var(--fgA700);
+  }
+
+  /* Focus styles */
+  :focus-visible {
+    outline: 2px solid var(--fgA900);
+    outline-offset: 2px;
+  }
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+}
+
+/* Typography utility classes */
+@layer utilities {
+  .heading-0 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-size: clamp(2.625rem, 1.5rem + 4vw, 4.625rem);
+  }
+
+  .heading-1 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    line-height: 1.3;
+    letter-spacing: -0.0308em;
+    font-size: clamp(2.625rem, 1.9922rem + 2.25vw, 3.75rem);
+  }
+
+  .heading-2 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-size: clamp(1.875rem, 1.5234rem + 1.25vw, 2.5rem);
+  }
+
+  .heading-3 {
+    font-family: var(--font-heading);
+    font-weight: 800;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-size: clamp(1.25rem, 0.9688rem + 1vw, 1.75rem);
+  }
+
+  .heading-4 {
+    font-family: var(--font-heading);
+    font-weight: 600;
+    line-height: 1.3;
+    letter-spacing: -0.025em;
+    font-size: calc(20rem / 16);
+  }
+
+  .heading-5 {
+    font-family: var(--font-body);
+    font-weight: 600;
+    line-height: 1.571;
+    letter-spacing: -0.025em;
+    font-size: calc(14rem / 16);
+  }
+
+  .heading-6 {
+    font-family: var(--font-mono);
+    font-weight: 700;
+    line-height: 1.571;
+    letter-spacing: 0.214em;
+    font-size: clamp(0.75rem, 0.9453rem + -0.25vw, 0.875rem);
+    text-transform: uppercase;
+  }
+
+  .text-xl {
+    font-size: clamp(1.25rem, 1.1094rem + 0.5vw, 1.5rem);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .text-l {
+    font-size: calc(20rem / 16);
+    line-height: 1.5;
+    font-weight: 300;
+  }
+
+  .text-m {
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .text-base {
+    font-size: calc(14rem / 16);
+    line-height: 1.571;
+    font-weight: 400;
+  }
+
+  .text-s {
+    font-size: calc(12rem / 16);
+    line-height: 1.5;
+    font-weight: 400;
+  }
+
+  .mono {
+    font-family: var(--font-mono);
+    font-weight: 400;
+  }
+
+  .annotation {
+    font-family: var(--font-mono);
+    font-weight: 400;
+    font-size: calc(12rem / 16);
+    letter-spacing: 0.0833em;
+    line-height: 1.571;
+    text-transform: uppercase;
+  }
+
+  /* Shadow utilities */
+  .shadow-1 { box-shadow: var(--shadow-1); }
+  .shadow-2 { box-shadow: var(--shadow-2); }
+  .shadow-3 { box-shadow: var(--shadow-3); }
+  .shadow-4 { box-shadow: var(--shadow-4); }
+  .shadow-5 { box-shadow: var(--shadow-5); }
+  .text-shadow { text-shadow: var(--text-shadow); }
+
+  /* Noise texture */
+  .noise-texture::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background-image: url('/images/bkg-noise.webp');
+    background-size: 200px 200px;
+    mix-blend-mode: normal;
+    opacity: 0.0625;
+    pointer-events: none;
   }
 }
