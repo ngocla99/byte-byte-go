@@ -1,0 +1,28 @@
+{
+  "name": "bytebytego-sync",
+  "version": "1.0.0",
+  "description": "Automate ByteByteGo blog posts sync from Gmail to repository",
+  "type": "module",
+  "main": "sync-blogs.js",
+  "scripts": {
+    "auth": "node auth/gmail-auth.js",
+    "sync": "node sync-blogs.js",
+    "sync:dry-run": "node sync-blogs.js --dry-run",
+    "test": "node --test"
+  },
+  "keywords": [
+    "gmail",
+    "automation",
+    "blog",
+    "sync"
+  ],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "googleapis": "^140.0.0",
+    "dotenv": "^16.4.7",
+    "cheerio": "^1.0.0",
+    "date-fns": "^4.1.0",
+    "open": "^10.1.0"
+  }
+}

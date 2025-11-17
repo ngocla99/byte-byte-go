@@ -1,0 +1,129 @@
+name: Sync ByteByteGo Blogs
+
+on:
+  # Run daily at 9 AM UTC (adjust to your timezone)
+  schedule:
+    - cron: '0 9 * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Run in dry-run mode (test without saving)'
+        required: false
+        type: boolean
+        default: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Install dependencies
+        run: |
+          cd scripts
+          pnpm install
+
+      - name: Create .env file
+        run: |
+          cat > .env << EOF
+          GMAIL_CLIENT_ID=${{ secrets.GMAIL_CLIENT_ID }}
+          GMAIL_CLIENT_SECRET=${{ secrets.GMAIL_CLIENT_SECRET }}
+          GMAIL_REFRESH_TOKEN=${{ secrets.GMAIL_REFRESH_TOKEN }}
+          GMAIL_SEARCH_QUERY=from:bytebytego OR from:substack.com
+          GMAIL_LABEL_PROCESSED=ByteByteGo/Processed
+          BLOGS_BASE_PATH=../apps/web/public/blogs
+          DRY_RUN=${{ inputs.dry_run || 'false' }}
+          EOF
+
+      - name: Run sync script
+        id: sync
+        run: |
+          cd scripts
+          if [ "${{ inputs.dry_run }}" == "true" ]; then
+            pnpm run sync:dry-run
+          else
+            pnpm run sync
+          fi
+
+      - name: Check for changes
+        id: changes
+        run: |
+          if [[ -n $(git status -s apps/web/public/blogs/) ]]; then
+            echo "has_changes=true" >> $GITHUB_OUTPUT
+          else
+            echo "has_changes=false" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Commit and push changes
+        if: steps.changes.outputs.has_changes == 'true' && inputs.dry_run != true
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+
+          # Get list of new files
+          NEW_FILES=$(git status -s apps/web/public/blogs/ | grep "^??" | wc -l)
+
+          git add apps/web/public/blogs/
+
+          git commit -m "chore: sync $NEW_FILES new ByteByteGo blog(s)
+
+          Automatically synced from Gmail via GitHub Actions
+
+          [skip ci]"
+
+          git push
+
+      - name: Summary
+        if: always()
+        run: |
+          echo "## 📊 Sync Summary" >> $GITHUB_STEP_SUMMARY
+          echo "" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ inputs.dry_run }}" == "true" ]; then
+            echo "**Mode:** 🧪 Dry Run (no files saved)" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Mode:** ✅ Live" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "**Status:** ${{ job.status }}" >> $GITHUB_STEP_SUMMARY
+
+          if [ "${{ steps.changes.outputs.has_changes }}" == "true" ]; then
+            echo "**Changes:** ✅ New blogs synced" >> $GITHUB_STEP_SUMMARY
+          else
+            echo "**Changes:** ⊘ No new blogs" >> $GITHUB_STEP_SUMMARY
+          fi
+
+          echo "" >> $GITHUB_STEP_SUMMARY
+          echo "Check the logs above for detailed information." >> $GITHUB_STEP_SUMMARY
+
+  # Optional: Create a notification job
+  notify:
+    needs: sync
+    runs-on: ubuntu-latest
+    if: always()
+
+    steps:
+      - name: Job status
+        run: |
+          if [ "${{ needs.sync.result }}" == "success" ]; then
+            echo "✅ Blog sync completed successfully"
+          else
+            echo "❌ Blog sync failed"
+            exit 1
+          fi

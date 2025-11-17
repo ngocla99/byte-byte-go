@@ -1,0 +1,11 @@
+# Ignore all credential files
+*.json
+!.gitignore
+
+# Ignore token files
+token.json
+credentials.json
+
+# Ignore environment files
+.env
+.env.local

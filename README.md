@@ -98,6 +98,28 @@ Open [http://localhost:3001](http://localhost:3001) to view the application.
 
 ### Adding Blog Posts
 
+#### Automated Sync (Recommended)
+
+The repository includes an **automated sync system** that fetches ByteByteGo blog posts directly from Gmail:
+
+- 🤖 **Fully Automated** - Runs daily via GitHub Actions
+- 📧 **Gmail Integration** - Fetches posts from your ByteByteGo subscription emails
+- 🆓 **100% Free** - Uses only free-tier services (Gmail API, GitHub Actions)
+- 📁 **Auto-organized** - Saves to correct year folders with proper naming
+
+**Setup:** See [AUTOMATION_SETUP.md](docs/AUTOMATION_SETUP.md) for detailed instructions.
+
+**Quick start:**
+```bash
+cd scripts
+pnpm install
+pnpm run auth          # One-time: Get Gmail credentials
+pnpm run sync:dry-run  # Test the sync
+pnpm run sync          # Sync new blogs
+```
+
+#### Manual Method
+
 1. Create an HTML file in `apps/web/public/blogs/YYYY/` (e.g., `apps/web/public/blogs/2023/`)
 2. Name the file using the format: `YYMMDD Title.html` (e.g., `231215 Understanding Microservices.html`)
 3. The blog will automatically appear with:
