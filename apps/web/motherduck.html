@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotherDuck - LayoutGrid Demo</title>
+    <style>
+        /* Reset and base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #fff;
+        }
+
+        /* LayoutGrid base styles */
+        .LayoutGrid-sc-fu5iik-0 {
+            --columns: 12;
+            --content-width: min(96%, 1840px);
+            --content: repeat(var(--columns), calc(var(--content-width) / var(--columns)));
+            display: grid;
+            grid-template-columns: 1fr var(--content) 1fr;
+            gap: 0;
+        }
+
+        :where(.LayoutGrid-sc-fu5iik-0 > *) {
+            grid-column: 2/-2;
+        }
+
+        /* LayoutSubgrid styles */
+        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1 {
+            display: grid;
+            grid-column: 1/-1;
+            grid-template-columns: subgrid;
+        }
+
+        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-pile] {
+            grid-row: 1/-1;
+        }
+
+        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-content-grid] {
+            grid-column: 2/-2;
+            grid-template-columns: repeat(var(--columns), 1fr);
+        }
+
+        .LayoutGrid__LayoutSubgrid-sc-fu5iik-1[data-content-grid] > * {
+            grid-column: 1/-1;
+        }
+
+        [data-content-grid]:where(.LayoutGrid__LayoutSubgrid-sc-fu5iik-1 > *) {
+            grid-column: 1/-1;
+        }
+
+        :where(.LayoutGrid__LayoutSubgrid-sc-fu5iik-1 > *) {
+            grid-column: 2/-2;
+        }
+
+        /* LayoutGridCondensed */
+        .LayoutGrid__LayoutGridCondensed-sc-fu5iik-2 {
+            --content-width: min(calc(100% - 24px), 1536px);
+            grid-column: 2/-2;
+        }
+
+        /* Utility classes */
+        .text-base {
+            font-size: 1rem;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+
+        /* Grid Lines for visual debugging */
+        .GridLines__ContentMarginLine {
+            background: rgba(255, 0, 0, 0.1);
+            grid-row: 1/-1;
+        }
+
+        .GridLines__ContentMarginLine[data-right] {
+            grid-column: -2/-1;
+        }
+
+        .GridLines__ContentMarginLine:not([data-right]) {
+            grid-column: 1/2;
+        }
+
+        .GridLines__GridRule {
+            background: rgba(0, 0, 255, 0.1);
+            grid-row: 1/-1;
+        }
+
+        /* Header styles */
+        header {
+            background: #f8f9fa;
+            padding: 2rem 0;
+            border-bottom: 1px solid #dee2e6;
+        }
+
+        /* Content sections */
+        .content-section {
+            padding: 4rem 0;
+        }
+
+        .content-section:nth-child(even) {
+            background: #f8f9fa;
+        }
+
+        /* Sample content styles */
+        .hero {
+            padding: 6rem 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .feature-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .feature-card {
+            padding: 2rem;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .feature-card p {
+            color: #666;
+        }
+
+        /* Navigation */
+        nav {
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+        }
+
+        nav a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="LayoutGrid-sc-fu5iik-0 text-base">
+        <a class="sr-only" href="#main">Skip to main content</a>
+
+        <!-- Background layer -->
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1"></div>
+
+        <!-- Main content layer -->
+        <div data-pile="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+
+            <!-- Fixed header container -->
+            <div style="position:fixed;z-index:3;inset:auto 0" class="LayoutGrid-sc-fu5iik-0">
+
+                <!-- Header -->
+                <header class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                    <nav aria-label="Main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                        <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                            <ul>
+                                <li><a href="#home">Home</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#about">About</a></li>
+                                <li><a href="#contact">Contact</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+            </div>
+
+            <!-- Main content -->
+            <main id="main" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1" style="margin-top: 100px;">
+
+                <!-- Hero section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 hero">
+                        <h1>Welcome to MotherDuck</h1>
+                        <p>Experience the power of advanced grid layouts with LayoutGrid system</p>
+                    </div>
+                </div>
+
+                <!-- Features section -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                        <div class="feature-grid">
+                            <div class="feature-card">
+                                <h3>Responsive Grid</h3>
+                                <p>Automatically adapts to different screen sizes with a 12-column system that scales beautifully.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Subgrid Support</h3>
+                                <p>Leverage CSS subgrid for perfect alignment across nested components and complex layouts.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h3>Content-Aware</h3>
+                                <p>Smart content width management ensures optimal readability on all devices.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content section 1 -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                        <h2 style="text-align: center; margin-bottom: 2rem;">Powerful Features</h2>
+                        <div style="max-width: 800px; margin: 0 auto;">
+                            <p style="margin-bottom: 1rem;">
+                                The LayoutGrid system provides a sophisticated approach to web layouts, combining the flexibility
+                                of CSS Grid with the precision of subgrid support. This allows for seamless nesting and perfect
+                                alignment across all levels of your layout hierarchy.
+                            </p>
+                            <p>
+                                With automatic content width management and a responsive 12-column grid, your content always
+                                looks perfect regardless of the viewport size. The system handles complex layouts with ease,
+                                from simple landing pages to intricate application interfaces.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Content section 2 -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1 content-section">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                        <h2 style="text-align: center; margin-bottom: 2rem;">How It Works</h2>
+                        <div style="max-width: 800px; margin: 0 auto;">
+                            <p style="margin-bottom: 1rem;">
+                                The LayoutGrid system uses CSS variables to define a 12-column grid with automatic content width
+                                calculation. Each column's width is derived from the content width divided by the number of columns.
+                            </p>
+                            <p style="margin-bottom: 1rem;">
+                                The main grid container creates three columns: a left margin, the content area (subdivided into
+                                12 columns), and a right margin. This ensures your content is always centered and properly bounded.
+                            </p>
+                            <p>
+                                Subgrid support allows nested elements to align with the parent grid, creating a cohesive visual
+                                structure throughout your entire page. Elements can span multiple columns or use the full content
+                                width as needed.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Footer -->
+                <div class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1" style="padding: 4rem 0; background: #1a1a1a; color: white;">
+                    <div data-content-grid="true" class="LayoutGrid__LayoutSubgrid-sc-fu5iik-1">
+                        <div style="text-align: center;">
+                            <p>&copy; 2025 MotherDuck. Built with LayoutGrid system.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+    </div>
+</body>
+</html>
