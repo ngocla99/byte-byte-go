@@ -1,3 +1,4 @@
+/** biome-ignore-all lint/complexity/noExcessiveLinesPerFunction: <explanation> */
 import { BookOpen, Filter, Search, X } from 'lucide-react';
 import { useMemo, useState } from 'react';
 import type { BlogPost } from '../lib/blogs';
@@ -8,7 +9,9 @@ import {
 } from '../lib/blogs';
 import { BlogCard } from './blog-card';
 import { Button } from './ui/button';
-import { Input } from './ui/input';
+import './search-input.css';
+import './category-filter.css';
+import { cn } from '@/lib/utils';
 
 type BlogListProps = {
   posts: BlogPost[];
@@ -50,24 +53,72 @@ function SearchAndFilters({
     <div className="space-y-6 border bg-card/50 p-6 backdrop-blur-sm">
       {/* Search Bar */}
       <div className="flex items-center gap-4">
-        <div className="relative mx-auto max-w-md flex-1">
-          <Search className="-translate-y-1/2 absolute top-1/2 left-4 h-5 w-5 text-muted-foreground" />
-          <Input
-            className="border-2 py-3 pr-4 pl-12 text-base transition-all duration-200 focus:ring-2 focus:ring-primary/20"
-            onChange={(e) => setSearchTerm(e.target.value)}
-            placeholder="Search articles by title, topic, or keyword..."
-            value={searchTerm}
-          />
-          {searchTerm && (
-            <Button
-              className="-translate-y-1/2 absolute top-1/2 right-2 h-7 w-7 p-0 hover:bg-muted"
-              onClick={() => setSearchTerm('')}
-              size="sm"
-              variant="ghost"
+        <div className="mx-auto max-w-md flex-1">
+          <div className="cta-accents-container">
+            <div
+              className="cta-corner-track"
+              data-position="t"
+              style={{ '--i': 0 } as React.CSSProperties}
             >
-              <X className="h-4 w-4" />
-            </Button>
-          )}
+              <div className="cta-corner-line-position" data-position="t">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="r"
+              style={{ '--i': 1 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="r">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="b"
+              style={{ '--i': 2 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="b">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div
+              className="cta-corner-track"
+              data-position="l"
+              style={{ '--i': 3 } as React.CSSProperties}
+            >
+              <div className="cta-corner-line-position" data-position="l">
+                <div className="cta-corner-line" data-order="1" />
+                <div className="cta-corner-line" data-order="2" />
+                <div className="cta-corner-line" data-order="3" />
+              </div>
+            </div>
+            <div className="search-input-wrapper">
+              <Search className="search-input-icon h-5 w-5" />
+              <input
+                className="search-input-styled"
+                onChange={(e) => setSearchTerm(e.target.value)}
+                placeholder="Search articles by title, topic, or keyword..."
+                type="text"
+                value={searchTerm}
+              />
+              {searchTerm && (
+                <button
+                  className="search-input-clear"
+                  onClick={() => setSearchTerm('')}
+                  type="button"
+                >
+                  <X className="h-4 w-4" />
+                </button>
+              )}
+            </div>
+          </div>
         </div>
       </div>
 
@@ -95,27 +146,109 @@ function SearchAndFilters({
         </div>
 
         <div className="flex flex-wrap gap-2">
-          {categories.map((category) => (
-            <Button
-              className={`px-3 py-2 font-medium text-xs transition-all duration-200 ${
-                selectedCategory === category
-                  ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
-                  : 'hover:scale-105 hover:bg-muted hover:shadow-md'
-              }
-                `}
-              key={category}
-              onClick={() => setSelectedCategory(category)}
-              size="sm"
-              variant={selectedCategory === category ? 'default' : 'ghost'}
-            >
-              {category}
-              {category !== 'All' && (
+          {categories.map((category) =>
+            category === 'All' ? (
+              <div className="cta-accents-container" key={category}>
+                <div
+                  className="cta-corner-circle"
+                  data-position="tl"
+                  style={{ '--i': 0 } as React.CSSProperties}
+                />
+                <div
+                  className="cta-corner-circle"
+                  data-position="tr"
+                  style={{ '--i': 1 } as React.CSSProperties}
+                />
+                <div
+                  className="cta-corner-circle"
+                  data-position="bl"
+                  style={{ '--i': 2 } as React.CSSProperties}
+                />
+                <div
+                  className="cta-corner-circle"
+                  data-position="br"
+                  style={{ '--i': 3 } as React.CSSProperties}
+                />
+                <div className="cta-accents-container">
+                  <div
+                    className="cta-corner-track"
+                    data-position="t"
+                    style={{ '--i': 0 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="t">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <div
+                    className="cta-corner-track"
+                    data-position="r"
+                    style={{ '--i': 1 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="r">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <div
+                    className="cta-corner-track"
+                    data-position="b"
+                    style={{ '--i': 2 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="b">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <div
+                    className="cta-corner-track"
+                    data-position="l"
+                    style={{ '--i': 3 } as React.CSSProperties}
+                  >
+                    <div className="cta-corner-line-position" data-position="l">
+                      <div className="cta-corner-line" data-order="1" />
+                      <div className="cta-corner-line" data-order="2" />
+                      <div className="cta-corner-line" data-order="3" />
+                    </div>
+                  </div>
+                  <button
+                    className={cn(
+                      `category-filter-button ${selectedCategory === category ? 'active' : ''}`,
+                      'px-3! py-2! text-xs!'
+                    )}
+                    onClick={() => setSelectedCategory(category)}
+                    type="button"
+                  >
+                    {' '}
+                    <span className="category-filter-button-text">
+                      {' '}
+                      {category}{' '}
+                    </span>{' '}
+                  </button>{' '}
+                </div>{' '}
+              </div>
+            ) : (
+              <Button
+                className={`px-3 py-2 font-medium text-xs transition-all duration-200 ${
+                  selectedCategory === category
+                    ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                    : 'hover:scale-105 hover:bg-muted hover:shadow-md'
+                }`}
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                size="sm"
+                variant={selectedCategory === category ? 'default' : 'ghost'}
+              >
+                {category}
                 <span className="ml-2 text-xs opacity-70">
                   {filterPostsByCategory(posts, category).length}
                 </span>
-              )}
-            </Button>
-          ))}
+              </Button>
+            )
+          )}
         </div>
       </div>
 

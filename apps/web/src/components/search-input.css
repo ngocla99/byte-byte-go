@@ -1,0 +1,91 @@
+/* Search Input - MotherDuck "Request a demo" style */
+
+.search-input-wrapper {
+  position: relative;
+  display: flex;
+  flex-grow: 1;
+  align-items: center;
+  gap: 16px;
+  white-space: nowrap;
+  border: 1px dashed var(--grid600, #99797d);
+  border-radius: 1px;
+  font-size: clamp(1rem, 0.7797rem + 0.4405vw, 1.25rem);
+  font-weight: 400;
+  font-family: inherit;
+  letter-spacing: 0.25px;
+  user-select: none;
+  background: var(--bg400, #0f0f15);
+  color: var(--fg1100, #e3b2b3);
+  box-shadow: 0 4px 8px -1px rgba(0, 0, 0, 0.64), 0 1px 4px 0 rgba(245, 192, 192, 0.056);
+  transition: filter 0.3s;
+  overflow: hidden;
+}
+
+/* Hover on parent container (cta-accents-container) */
+.cta-accents-container:hover .search-input-wrapper {
+  filter: brightness(1.13);
+}
+
+.search-input-wrapper:focus-within {
+  filter: brightness(1.13);
+}
+
+.search-input-wrapper::after {
+  content: '';
+  position: absolute;
+  border-radius: inherit;
+  inset: 0;
+  pointer-events: none;
+  background-image: url('/images/bkg-noise.webp');
+  background-size: 200px 200px;
+  mix-blend-mode: normal;
+  opacity: 0.0625;
+}
+
+.search-input-styled {
+  position: relative;
+  z-index: 1;
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  padding: clamp(8px, 4.625px + 0.75vw, 14px) clamp(18px, 15.75px + 0.5vw, 22px);
+  padding-left: 3rem;
+  color: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  letter-spacing: inherit;
+}
+
+.search-input-styled::placeholder {
+  color: var(--fg900, rgba(227, 178, 179, 0.6));
+}
+
+.search-input-icon {
+  position: absolute;
+  left: clamp(18px, 15.75px + 0.5vw, 22px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: var(--fg900, #ad8eb6);
+  pointer-events: none;
+}
+
+.search-input-clear {
+  position: absolute;
+  right: clamp(8px, 4.625px + 0.75vw, 14px);
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  background: transparent;
+  border: none;
+  color: var(--fg1100, #e3b2b3);
+  cursor: pointer;
+  padding: 0.25rem;
+  border-radius: 2px;
+  transition: background-color 0.2s;
+}
+
+.search-input-clear:hover {
+  background-color: var(--fgA500, rgba(245, 192, 192, 0.12));
+}
