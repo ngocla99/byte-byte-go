@@ -9,17 +9,22 @@
     "serve": "vite preview",
     "start": "vite",
     "check-types": "tsc --noEmit",
-    "generate-pwa-assets": "pwa-assets-generator"
+    "generate-pwa-assets": "pwa-assets-generator",
+    "fetch-blogs": "npx tsx scripts/fetch-bytebytego.ts"
   },
   "dependencies": {
+    "@google-cloud/local-auth": "^3.0.1",
     "@hookform/resolvers": "^5.1.1",
     "@tailwindcss/vite": "^4.0.15",
     "@tanstack/react-form": "^1.12.3",
     "@tanstack/react-query": "^5.80.5",
     "@tanstack/react-router": "^1.114.25",
+    "cheerio": "^1.1.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
+    "googleapis": "^168.0.0",
+    "inquirer": "^13.0.2",
     "lucide-react": "^0.473.0",
     "next-themes": "^0.4.6",
     "radix-ui": "^1.4.2",
@@ -35,6 +40,7 @@
     "@tanstack/react-query-devtools": "^5.80.5",
     "@tanstack/react-router-devtools": "^1.114.27",
     "@tanstack/router-plugin": "^1.114.27",
+    "@types/inquirer": "^9.0.9",
     "@types/node": "^22.13.13",
     "@types/react": "^19.0.12",
     "@types/react-dom": "^19.0.4",
@@ -42,6 +48,7 @@
     "@vitejs/plugin-react": "^4.3.4",
     "postcss": "^8.5.3",
     "tailwindcss": "^4.0.15",
+    "tsx": "^4.21.0",
     "typescript": "^5.8.3",
     "vite": "^6.2.2"
   }
