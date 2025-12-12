@@ -15,7 +15,23 @@ const CREDENTIALS_PATH = path.join(
   'credentials.json'
 );
 const BLOGS_DIR = path.join(process.cwd(), 'public', 'blogs');
-const SENDER_EMAIL = 'bytebytego@substack.com';
+const BYTESIZED_DIR = path.join(process.cwd(), 'public', 'bytesized');
+
+// Email sources configuration
+const EMAIL_SOURCES = {
+  bytebytego: {
+    name: 'ByteByteGo',
+    email: 'bytebytego@substack.com',
+    outputDir: BLOGS_DIR,
+  },
+  bytesized: {
+    name: 'ByteSizedDesign',
+    email: 'bytesizeddesign@substack.com',
+    outputDir: BYTESIZED_DIR,
+  },
+} as const;
+
+type SourceKey = keyof typeof EMAIL_SOURCES;
 
 interface EmailData {
   id: string;
@@ -23,6 +39,7 @@ interface EmailData {
   date?: string | null;
   subject?: string | null;
   body?: string;
+  isPaid: boolean;
 }
 
 interface EmailChoice extends EmailData {
@@ -71,10 +88,13 @@ async function authorize() {
 
 function cleanTitle(title: string): string {
   // Remove "ByteByteGo Newsletter:" or similar prefixes if they exist
-  // And remove forbidden characters for filenames
+  // Remove emojis and forbidden characters for filenames
   return title
     .replace(/ByteByteGo Newsletter:?\s*/i, '')
-    .replace(/[/\\:*?"<>|]/g, '')
+    .replace(/[\u{1F300}-\u{1F9FF}]/gu, '') // Remove emojis
+    .replace(/&/g, 'and') // Replace & with 'and'
+    .replace(/[/\\:*?"<>|#%{}$!'@+`=]/g, '') // Remove problematic chars
+    .replace(/\s+/g, ' ') // Normalize multiple spaces
     .trim();
 }
 
@@ -95,7 +115,7 @@ async function listMessages(auth: any, query: string) {
   const res = await gmail.users.messages.list({
     userId: 'me',
     q: query,
-    maxResults: 20, // Fetch top 20 recent emails
+    maxResults: 100, // Fetch top 100 recent emails
   });
   return res.data.messages || [];
 }
@@ -136,12 +156,38 @@ async function getMessage(auth: any, id: string): Promise<EmailData | null> {
     }
   }
 
+  // Detect "Paid" status using Cheerio
+  let isPaid = false;
+  if (body) {
+    const $ = cheerio.load(body);
+    // Look for the specific "Paid" indicator
+    // Based on the example, it's a div with text "Paid" and upper case style, but we can just check text content of divs
+    // or look for the exact structure if needed.
+    // For now, looking for a div that strictly equals "Paid" is a good heuristic.
+    $('div, span').each((_i, el) => {
+      const text = $(el).text().trim();
+      if (text === 'Paid') {
+        const style = $(el).attr('style');
+        // Check for color rgb(94, 73, 217) with support for variable spacing
+        if (style && /rgb\(\s*94\s*,\s*73\s*,\s*217\s*\)/.test(style)) {
+          isPaid = true;
+        }
+      }
+    });
+
+    // Fallback: Check for "subscriber-only" text which appears in the body of paid posts
+    if (!isPaid && body.includes('subscriber-only')) {
+      isPaid = true;
+    }
+  }
+
   return {
     id,
     snippet: res.data.snippet,
     date,
     subject,
     body,
+    isPaid,
   };
 }
 
@@ -162,16 +208,47 @@ function extractArticleContent(html: string): string {
     }
   });
 
-  // Return the cleaned body HTML
-  return $('body').html() || html;
+  // Find the main content div that typically has max-width: 550px
+  let contentHtml = null;
+  $('div').each((_i, el) => {
+    const style = $(el).attr('style');
+    if (style && style.includes('max-width: 550px')) {
+      // Update styles
+      $(el).attr(
+        'style',
+        "font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; font-size: 16px; line-height: 26px; max-width: 728px; width: 100%; margin: 0 auto;"
+      );
+      // Capture this specific div's HTML
+      contentHtml = $.html(el);
+    }
+  });
+
+  // Return ONLY the found content div, or fallback to body if not found
+  return contentHtml || $('body').html() || html;
 }
 
 async function main() {
+  // Prompt user for which source to fetch from
+  const { sourceKey } = await inquirer.prompt([
+    {
+      type: 'rawlist',
+      name: 'sourceKey',
+      message: 'Select email source:',
+      choices: Object.entries(EMAIL_SOURCES).map(([key, source]) => ({
+        name: source.name,
+        value: key,
+      })),
+    },
+  ]);
+
+  const selectedSource = EMAIL_SOURCES[sourceKey as SourceKey];
+  const { email: senderEmail, outputDir } = selectedSource;
+
   console.log('Authenticating...');
   const auth = await authorize();
 
-  console.log(`Searching for emails from ${SENDER_EMAIL}...`);
-  const messages = await listMessages(auth, `from:${SENDER_EMAIL}`);
+  console.log(`Searching for emails from ${senderEmail}...`);
+  const messages = await listMessages(auth, `from:${senderEmail}`);
 
   if (messages.length === 0) {
     console.log('No messages found.');
@@ -180,20 +257,35 @@ async function main() {
 
   console.log(`Found ${messages.length} messages.`);
 
+  const { filterPaid } = await inquirer.prompt([
+    {
+      type: 'confirm',
+      name: 'filterPaid',
+      message: 'Show ONLY Paid blogs?',
+      default: false,
+    },
+  ]);
+
   const choices = [];
 
   for (const msg of messages) {
     const details = await getMessage(auth, msg.id!);
     if (details && details.subject && details.date) {
+      if (filterPaid && !details.isPaid) {
+        continue;
+      }
+
       const dateShort = formatDateForFilename(details.date);
       const titleClean = cleanTitle(details.subject);
       const year = getYearFromDate(details.date);
       const filename = `${dateShort} ${titleClean}.html`;
-      const filePath = path.join(BLOGS_DIR, year, filename);
+      const filePath = path.join(outputDir, year, filename);
 
       const exists = fs.existsSync(filePath);
+      const paidTag = details.isPaid ? ' [PAID]' : '';
+
       choices.push({
-        name: `${exists ? '[EXISTS] ' : '[NEW]    '} ${details.date} - ${details.subject}`,
+        name: `${exists ? '[EXISTS]' : '[NEW]   '} ${paidTag} ${details.date} - ${details.subject}`,
         value: { ...details, filename, year, exists } as EmailChoice,
         disabled: exists ? 'Already imported' : false,
       });
@@ -202,6 +294,13 @@ async function main() {
 
   if (choices.length === 0) {
     console.log('No valid emails found to import.');
+    return;
+  }
+
+  // Check if there are any selectable (non-disabled) choices
+  const selectableChoices = choices.filter((c) => !c.disabled);
+  if (selectableChoices.length === 0) {
+    console.log('All found emails have already been imported.');
     return;
   }
 
@@ -223,7 +322,7 @@ async function main() {
   for (const email of selectedEmails as EmailChoice[]) {
     console.log(`Processing: ${email.subject}...`);
 
-    const yearDir = path.join(BLOGS_DIR, email.year);
+    const yearDir = path.join(outputDir, email.year);
     if (!fs.existsSync(yearDir)) {
       fs.mkdirSync(yearDir, { recursive: true });
     }

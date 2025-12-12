@@ -1,6 +1,8 @@
 import { compareDesc, format, isValid, parse } from 'date-fns';
 import { CATEGORY_KEYWORDS } from './constants';
 
+export type BlogSource = 'bytebytego' | 'bytesized';
+
 export type BlogPost = {
   id: string;
   title: string;
@@ -10,11 +12,17 @@ export type BlogPost = {
   path: string;
   category?: string;
   image?: string;
+  source: BlogSource;
 };
 
 // Automatically discover blog files using Vite's import.meta.glob
-// This will find all .html files in the public/blogs directory at build time
+// This will find all .html files in the public/blogs and public/bytesized directories at build time
 const blogFilesGlob = import.meta.glob('/public/blogs/**/*.html', {
+  eager: false,
+  as: 'url',
+});
+
+const bytesizedFilesGlob = import.meta.glob('/public/bytesized/**/*.html', {
   eager: false,
   as: 'url',
 });
@@ -27,22 +35,33 @@ const MONTH_END = 4;
 const DAY_START = 4;
 const DAY_END = 6;
 
-// Extract all blog posts from the public/blogs directory structure
+// Extract all blog posts from the public/blogs and public/bytesized directory structures
 export function getAllBlogPosts(): Promise<BlogPost[]> {
   return Promise.resolve(getBlogPosts());
 }
 
 function getBlogPosts(): BlogPost[] {
   const blogFilePaths = Object.keys(blogFilesGlob);
+  const bytesizedFilePaths = Object.keys(bytesizedFilesGlob);
+
   const blogPosts = blogFilePaths
-    .map(parseBlogFile)
+    .map((path) => parseBlogFile(path, 'bytebytego'))
     .filter((post): post is BlogPost => post !== null);
 
-  return blogPosts.sort((a, b) => compareDesc(a.date, b.date));
+  const bytesizedPosts = bytesizedFilePaths
+    .map((path) => parseBlogFile(path, 'bytesized'))
+    .filter((post): post is BlogPost => post !== null);
+
+  const allPosts = [...blogPosts, ...bytesizedPosts];
+  return allPosts.sort((a, b) => compareDesc(a.date, b.date));
 }
 
-function parseBlogFile(fullPath: string): BlogPost | null {
-  const relativePath = fullPath.replace('/public/blogs/', '');
+function parseBlogFile(fullPath: string, source: BlogSource): BlogPost | null {
+  const basePath =
+    source === 'bytebytego' ? '/public/blogs/' : '/public/bytesized/';
+  const urlPrefix = source === 'bytebytego' ? '/blogs/' : '/bytesized/';
+
+  const relativePath = fullPath.replace(basePath, '');
   const fileName = relativePath.split('/')[1];
   const match = fileName.match(BLOG_FILENAME_REGEX);
 
@@ -69,13 +88,14 @@ function parseBlogFile(fullPath: string): BlogPost | null {
     .trim();
 
   return {
-    id: `${fullYear}${month}${day}`,
+    id: `${source}-${fullYear}${month}${day}`,
     title,
     date,
     year: format(date, 'yyyy'),
     slug,
-    path: `/blogs/${relativePath}`,
+    path: `${urlPrefix}${relativePath}`,
     category: getCategoryFromTitle(title),
+    source,
   };
 }
 
