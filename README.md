@@ -5,12 +5,14 @@ A modern, feature-rich blog platform focused on software engineering and system 
 ## Features
 
 ### Blog Management
+
 - **Static Blog Generation** - Blogs stored as HTML files in `/public/blogs` organized by year
 - **Automatic Discovery** - Files auto-detected using Vite's `import.meta.glob()`
 - **Smart Metadata Extraction** - Date and title parsed from filename (`YYMMDD Title.html`)
 - **Intelligent Image Preview** - Automatically extracts meaningful images from blog content
 
 ### Search & Discovery
+
 - **Full-Text Search** - Search across blog titles and categories
 - **Category Filtering** - 9 predefined categories including:
   - System Design
@@ -26,6 +28,7 @@ A modern, feature-rich blog platform focused on software engineering and system 
 - **Active Filter Display** - Visual feedback with clear functionality
 
 ### User Experience
+
 - **Dark/Light Mode** - Theme toggle with preference persistence
 - **Responsive Design** - Mobile-first with adaptive layouts (1/2/3 column grid)
 - **Progressive Web App** - Installable with offline support
@@ -35,24 +38,28 @@ A modern, feature-rich blog platform focused on software engineering and system 
 ## Tech Stack
 
 ### Frontend & Core
+
 - **React 19.0.0** - Latest React with modern features
 - **TypeScript 5.8.3** - Strict type safety throughout
 - **Vite 6.2.2** - Lightning-fast build tool with HMR
 - **TanStack Router 1.114.25** - Type-safe file-based routing
 
 ### Styling & UI
+
 - **TailwindCSS 4.0.15** - Utility-first CSS framework
 - **shadcn/ui** - Pre-built, customizable components
 - **Lucide React 0.473.0** - Modern icon library
 - **next-themes 0.4.6** - Theme management
 
 ### State & Data
+
 - **TanStack React Query 5.80.5** - Server state management
 - **React Hook Form 5.1.1** - Lightweight form handling
 - **Zod 4.0.2** - TypeScript-first validation
 - **date-fns 4.1.0** - Date utilities
 
 ### Build & Quality
+
 - **Turborepo 2.5.4** - Monorepo orchestration
 - **Biome 2.2.0** - Fast linting and formatting
 - **Husky 9.1.7** - Git hooks
@@ -61,6 +68,7 @@ A modern, feature-rich blog platform focused on software engineering and system 
 ## Getting Started
 
 ### Prerequisites
+
 - **Node.js** 18+
 - **pnpm** 10.13.1+
 
@@ -97,6 +105,34 @@ pnpm check
 Open [http://localhost:3001](http://localhost:3001) to view the application.
 
 ### Adding Blog Posts
+
+#### Importing from Email (Recommended)
+
+Use the `fetch-blogs` script to automatically import newsletters from your Gmail:
+
+```bash
+# Run from the web app directory
+cd apps/web
+pnpm fetch-blogs
+```
+
+**Features:**
+
+- Fetches emails from **ByteByteGo** (`bytebytego@substack.com`) or **ByteSizedDesign** (`bytesizeddesign@substack.com`)
+- Saves ByteByteGo blogs to `public/blogs/YYYY/`
+- Saves ByteSizedDesign blogs to `public/bytesized/YYYY/`
+- Detects and labels **[PAID]** articles
+- Skips already imported articles (marked as **[EXISTS]**)
+- Option to filter and show only paid articles
+
+**First-time Setup:**
+
+1. Create a Google Cloud project and enable the Gmail API
+2. Download OAuth credentials and save as `apps/web/scripts/credentials.json`
+3. Run the script - it will open a browser for authentication
+4. Token is saved locally for future runs
+
+#### Manual Method
 
 1. Create an HTML file in `apps/web/public/blogs/YYYY/` (e.g., `apps/web/public/blogs/2023/`)
 2. Name the file using the format: `YYMMDD Title.html` (e.g., `231215 Understanding Microservices.html`)
@@ -147,6 +183,7 @@ byte-byte-go/
 ## Available Scripts
 
 ### Monorepo Commands
+
 ```bash
 pnpm dev              # Start all apps in dev mode
 pnpm build            # Build all apps (Turbo optimized)
@@ -156,6 +193,7 @@ pnpm check            # Biome linting and formatting
 ```
 
 ### Web App Commands (in `apps/web/`)
+
 ```bash
 pnpm dev                    # Vite dev server (port 3001)
 pnpm build                  # Production build
@@ -167,12 +205,14 @@ pnpm generate-pwa-assets    # Generate PWA icons
 ## Deployment
 
 The application is optimized for Vercel deployment with:
+
 - Aggressive caching for immutable assets (1 year)
 - HTML with must-revalidate for freshness
 - Separate headers for images, fonts, and static files
 - Manual code splitting (vendor, router, app chunks)
 
 ### Deploy to Vercel
+
 ```bash
 # Install Vercel CLI
 pnpm add -g vercel
@@ -184,6 +224,7 @@ vercel
 ## Architecture
 
 ### Data Flow
+
 1. User lands on home page (`/`)
 2. `getAllBlogPosts()` discovers blogs via `import.meta.glob()`
 3. Blog metadata parsed from filenames
@@ -193,12 +234,14 @@ vercel
 7. Click opens full blog in new tab
 
 ### Component Structure
+
 - **Layout**: Header, ThemeProvider, Root layout
 - **Features**: BlogList, BlogCard, Search/Filter UI
 - **UI**: Reusable shadcn/ui components (Button, Input, Card, etc.)
 - **Utilities**: Blog parsing, image extraction, date formatting
 
 ### Styling Approach
+
 - Tailwind utility classes with custom theme variables
 - OKLch color space for accessible theming
 - CSS custom properties for dark/light mode
