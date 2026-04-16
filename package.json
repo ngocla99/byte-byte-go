@@ -17,8 +17,8 @@
   "dependencies": {},
   "devDependencies": {
     "turbo": "^2.9.6",
-    "@biomejs/biome": "2.2.0",
-    "ultracite": "^5.6.4",
+    "@biomejs/biome": "2.4.12",
+    "ultracite": "^7.6.0",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0"
   },
