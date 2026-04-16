@@ -35,6 +35,8 @@ function SearchAndFilters({
   setSearchTerm,
   selectedCategory,
   setSelectedCategory,
+  selectedSource,
+  setSelectedSource,
   categories,
   posts,
   hasActiveFilters,
@@ -44,6 +46,8 @@ function SearchAndFilters({
   setSearchTerm: (term: string) => void;
   selectedCategory: string;
   setSelectedCategory: (category: string) => void;
+  selectedSource: 'All' | 'bytebytego' | 'bytesized';
+  setSelectedSource: (source: 'All' | 'bytebytego' | 'bytesized') => void;
   categories: string[];
   posts: BlogPost[];
   hasActiveFilters: boolean;
@@ -252,6 +256,40 @@ function SearchAndFilters({
         </div>
       </div>
 
+      {/* Source Filters */}
+      <div className="space-y-4">
+        <div className="flex items-center gap-2">
+          <Filter className="h-5 w-5 text-muted-foreground" />
+          <span className="font-medium text-sm">Filter by Source</span>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          {[
+            { value: 'All', label: 'All Sources' },
+            { value: 'bytebytego', label: 'ByteByteGo (System Design)' },
+            { value: 'bytesized', label: 'ByteSized (Case Studies)' }
+          ].map((source) => (
+            <Button
+              className={`px-3 py-2 font-medium text-xs transition-all duration-200 ${
+                selectedSource === source.value
+                  ? 'scale-105 bg-primary text-primary-foreground shadow-lg shadow-primary/25'
+                  : 'hover:scale-105 hover:bg-muted hover:shadow-md'
+              }`}
+              key={source.value}
+              onClick={() => setSelectedSource(source.value as 'All' | 'bytebytego' | 'bytesized')}
+              size="sm"
+              variant={selectedSource === source.value ? 'default' : 'ghost'}
+            >
+              {source.label}
+              {source.value !== 'All' && (
+                <span className="ml-2 text-xs opacity-70">
+                  {posts.filter(p => p.source === source.value).length}
+                </span>
+              )}
+            </Button>
+          ))}
+        </div>
+      </div>
+
       {/* Active Filters Display */}
       {hasActiveFilters && (
         <div className="border-border/50 border-t pt-4">
@@ -282,6 +320,18 @@ function SearchAndFilters({
                   </button>
                 </div>
               )}
+              {selectedSource !== 'All' && (
+                <div className="flex items-center gap-1 bg-muted/10 px-2 py-1 text-muted">
+                  <span>Source: {selectedSource === 'bytebytego' ? 'ByteByteGo' : 'ByteSized'}</span>
+                  <button
+                    className="rounded p-0.5 hover:bg-muted/20"
+                    onClick={() => setSelectedSource('All')}
+                    type="button"
+                  >
+                    <X className="h-3 w-3" />
+                  </button>
+                </div>
+              )}
             </div>
           </div>
         </div>
@@ -294,20 +344,23 @@ function BlogResults({
   filteredPosts,
   searchTerm,
   selectedCategory,
+  selectedSource,
 }: {
   filteredPosts: BlogPost[];
   searchTerm: string;
   selectedCategory: string;
+  selectedSource: 'All' | 'bytebytego' | 'bytesized';
 }) {
   return (
     <>
       {/* Results count */}
-      {(searchTerm || selectedCategory !== 'All') && (
+      {(searchTerm || selectedCategory !== 'All' || selectedSource !== 'All') && (
         <div className="text-muted-foreground text-sm">
           {filteredPosts.length} article{filteredPosts.length !== 1 ? 's' : ''}{' '}
           found
           {searchTerm && ` for "${searchTerm}"`}
           {selectedCategory !== 'All' && ` in ${selectedCategory}`}
+          {selectedSource !== 'All' && ` from ${selectedSource === 'bytebytego' ? 'ByteByteGo' : 'ByteSized'}`}
         </div>
       )}
 
@@ -335,6 +388,7 @@ function BlogResults({
 export function BlogList({ posts }: BlogListProps) {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [selectedSource, setSelectedSource] = useState<'All' | 'bytebytego' | 'bytesized'>('All');
 
   const categories = useMemo(() => {
     return ['All', ...getUniqueCategories(posts)];
@@ -343,15 +397,19 @@ export function BlogList({ posts }: BlogListProps) {
   const filteredPosts = useMemo(() => {
     let filtered = filterPostsByCategory(posts, selectedCategory);
     filtered = filterPostsBySearch(filtered, searchTerm);
+    if (selectedSource !== 'All') {
+      filtered = filtered.filter((post) => post.source === selectedSource);
+    }
     return filtered;
-  }, [posts, selectedCategory, searchTerm]);
+  }, [posts, selectedCategory, searchTerm, selectedSource]);
 
   const clearFilters = () => {
     setSearchTerm('');
     setSelectedCategory('All');
+    setSelectedSource('All');
   };
 
-  const hasActiveFilters = Boolean(searchTerm) || selectedCategory !== 'All';
+  const hasActiveFilters = Boolean(searchTerm) || selectedCategory !== 'All' || selectedSource !== 'All';
 
   return (
     <div className="space-y-6">
@@ -366,12 +424,15 @@ export function BlogList({ posts }: BlogListProps) {
         selectedCategory={selectedCategory}
         setSearchTerm={setSearchTerm}
         setSelectedCategory={setSelectedCategory}
+        selectedSource={selectedSource}
+        setSelectedSource={setSelectedSource}
       />
 
       <BlogResults
         filteredPosts={filteredPosts}
         searchTerm={searchTerm}
         selectedCategory={selectedCategory}
+        selectedSource={selectedSource}
       />
     </div>
   );
