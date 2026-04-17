@@ -27,7 +27,7 @@ const bytesizedFilesGlob = import.meta.glob('/public/bytesized/**/*.html', {
   as: 'url',
 });
 
-const BLOG_FILENAME_REGEX = /^(\d{6})\s+(.+)\.html$/;
+const BLOG_FILENAME_REGEX = /^(\d{6})\s*(.+)\.html$/;
 const YEAR_START = 0;
 const YEAR_END = 2;
 const MONTH_START = 2;
@@ -61,8 +61,14 @@ function parseBlogFile(fullPath: string, source: BlogSource): BlogPost | null {
     source === 'bytebytego' ? '/public/blogs/' : '/public/bytesized/';
   const urlPrefix = source === 'bytebytego' ? '/blogs/' : '/bytesized/';
 
-  const relativePath = fullPath.replace(basePath, '');
-  const fileName = relativePath.split('/')[1];
+  // Ensure the path actually belongs to this source
+  if (!fullPath.includes(basePath)) return null;
+
+  const relativePath = fullPath.substring(fullPath.indexOf(basePath) + basePath.length);
+  // The filename is the last part of the path
+  const pathParts = relativePath.split('/');
+  const fileName = pathParts[pathParts.length - 1];
+  
   const match = fileName.match(BLOG_FILENAME_REGEX);
 
   if (!match) return null;
@@ -88,7 +94,7 @@ function parseBlogFile(fullPath: string, source: BlogSource): BlogPost | null {
     .trim();
 
   return {
-    id: `${source}-${fullYear}${month}${day}`,
+    id: `${source}-${fullYear}${month}${day}-${slug}`,
     title,
     date,
     year: format(date, 'yyyy'),
