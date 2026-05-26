@@ -48,6 +48,62 @@ interface EmailChoice extends EmailData {
   exists: boolean;
 }
 
+function isReauthenticationError(error: unknown): boolean {
+  if (typeof error !== 'object' || error === null) {
+    return false;
+  }
+
+  const typedError = error as {
+    code?: unknown;
+    message?: unknown;
+    response?: {
+      status?: unknown;
+      data?: {
+        error?: unknown;
+        error_description?: unknown;
+      };
+    };
+    errors?: Array<{
+      message?: unknown;
+      reason?: unknown;
+    }>;
+  };
+
+  const status = typedError.response?.status ?? typedError.code;
+  const responseError = typedError.response?.data?.error;
+  const responseErrorDescription = typedError.response?.data?.error_description;
+  const nestedErrors =
+    typedError.errors ??
+    (typeof responseError === 'object' && responseError !== null && 'errors' in responseError
+      ? (responseError as { errors?: Array<{ message?: unknown; reason?: unknown }> }).errors
+      : []);
+
+  const errorTexts = [
+    typedError.message,
+    responseErrorDescription,
+    typeof responseError === 'object' && responseError !== null
+      ? (responseError as { message?: unknown }).message
+      : responseError,
+    ...(nestedErrors ?? []).flatMap((item) => [item.message, item.reason]),
+  ]
+    .filter((value): value is string => typeof value === 'string')
+    .map((value) => value.toLowerCase());
+
+  if (status === 400 && responseError === 'invalid_grant') {
+    return true;
+  }
+
+  if (status !== 401 && status !== 403) {
+    return false;
+  }
+
+  return errorTexts.some((value) =>
+    /login required|invalid_grant|invalid credentials|unauthorized|auth error|required/.test(
+      value
+    )
+  );
+}
+
 async function loadSavedCredentialsIfExist() {
   try {
     const content = await fs.promises.readFile(TOKEN_PATH, 'utf8');
@@ -58,32 +114,72 @@ async function loadSavedCredentialsIfExist() {
   }
 }
 
+async function deleteSavedCredentials() {
+  try {
+    await fs.promises.unlink(TOKEN_PATH);
+  } catch (error) {
+    if ((error as NodeJS.ErrnoException).code !== 'ENOENT') {
+      throw error;
+    }
+  }
+}
+
 async function saveCredentials(client: any) {
   const content = await fs.promises.readFile(CREDENTIALS_PATH, 'utf8');
   const keys = JSON.parse(content);
   const key = keys.installed || keys.web;
+  const refreshToken = client.credentials.refresh_token;
+
+  if (!refreshToken) {
+    throw new Error(
+      'Google OAuth did not return a refresh token. Remove scripts/token.json and authenticate again.'
+    );
+  }
+
   const payload = JSON.stringify({
     type: 'authorized_user',
     client_id: key.client_id,
     client_secret: key.client_secret,
-    refresh_token: client.credentials.refresh_token,
+    refresh_token: refreshToken,
   });
   await fs.promises.writeFile(TOKEN_PATH, payload);
 }
 
-async function authorize() {
-  let client = await loadSavedCredentialsIfExist();
-  if (client) {
-    return client;
+async function authorize({ forceLogin = false } = {}) {
+  if (!forceLogin) {
+    const client = await loadSavedCredentialsIfExist();
+    if (client) {
+      return client;
+    }
   }
-  client = await authenticate({
+
+  const client = await authenticate({
     scopes: SCOPES,
     keyfilePath: CREDENTIALS_PATH,
   });
+
   if (client.credentials) {
     await saveCredentials(client);
   }
+
   return client;
+}
+
+async function withReauthentication<T>(
+  auth: any,
+  action: (auth: any) => Promise<T>
+) {
+  try {
+    return await action(auth);
+  } catch (error) {
+    if (!isReauthenticationError(error)) {
+      throw error;
+    }
+
+    console.warn('Saved Google token is invalid. Re-authenticating...');
+    await deleteSavedCredentials();
+    return action(await authorize({ forceLogin: true }));
+  }
 }
 
 function cleanTitle(title: string): string {
@@ -248,7 +344,9 @@ async function main() {
   const auth = await authorize();
 
   console.log(`Searching for emails from ${senderEmail}...`);
-  const messages = await listMessages(auth, `from:${senderEmail}`);
+  const messages = await withReauthentication(auth, (currentAuth) =>
+    listMessages(currentAuth, `from:${senderEmail}`)
+  );
 
   if (messages.length === 0) {
     console.log('No messages found.');
@@ -269,7 +367,9 @@ async function main() {
   const choices = [];
 
   for (const msg of messages) {
-    const details = await getMessage(auth, msg.id!);
+    const details = await withReauthentication(auth, (currentAuth) =>
+      getMessage(currentAuth, msg.id!)
+    );
     if (details && details.subject && details.date) {
       if (filterPaid && !details.isPaid) {
         continue;

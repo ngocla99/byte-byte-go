@@ -111,8 +111,6 @@ Open [http://localhost:3001](http://localhost:3001) to view the application.
 Use the `fetch-blogs` script to automatically import newsletters from your Gmail:
 
 ```bash
-# Run from the web app directory
-cd apps/web
 pnpm fetch-blogs
 ```
 
@@ -131,6 +129,7 @@ pnpm fetch-blogs
 2. Download OAuth credentials and save as `apps/web/scripts/credentials.json`
 3. Run the script - it will open a browser for authentication
 4. Token is saved locally for future runs
+5. If Google revokes the refresh token, delete `apps/web/scripts/token.json` and run `pnpm fetch-blogs` again to re-authenticate from the root
 
 #### Manual Method
 
@@ -190,6 +189,7 @@ pnpm build            # Build all apps (Turbo optimized)
 pnpm dev:web          # Start only web app on port 3001
 pnpm check-types      # TypeScript type checking
 pnpm check            # Biome linting and formatting
+pnpm fetch-blogs      # Import newsletters from Gmail
 ```
 
 ### Web App Commands (in `apps/web/`)
