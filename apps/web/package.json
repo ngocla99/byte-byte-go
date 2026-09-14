@@ -10,7 +10,8 @@
     "start": "vite",
     "check-types": "tsc --noEmit",
     "generate-pwa-assets": "pwa-assets-generator",
-    "fetch-blogs": "npx tsx scripts/fetch-bytebytego.ts"
+    "fetch-blogs": "npx tsx scripts/fetch-bytebytego.ts",
+    "fetch-all": "npx tsx scripts/fetch-all.ts"
   },
   "dependencies": {
     "@google-cloud/local-auth": "^3.0.1",

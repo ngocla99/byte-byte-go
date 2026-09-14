@@ -11,6 +11,7 @@
     "build": "turbo build",
     "check-types": "turbo check-types",
     "fetch-blogs": "pnpm --dir apps/web fetch-blogs",
+    "fetch-all": "pnpm --dir apps/web fetch-all",
     "dev:native": "turbo -F native dev",
     "dev:web": "turbo -F web dev",
     "dev:server": "turbo -F server dev"
