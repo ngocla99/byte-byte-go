@@ -109,7 +109,14 @@ function getCategoryFromTitle(title: string): string {
   const lowerTitle = title.toLowerCase();
 
   for (const [category, keywords] of Object.entries(CATEGORY_KEYWORDS)) {
-    if (keywords.some((keyword) => lowerTitle.includes(keyword))) {
+    if (
+      keywords.some((keyword) => {
+        if (keyword.includes('\\b')) {
+          return new RegExp(keyword, 'i').test(lowerTitle);
+        }
+        return lowerTitle.includes(keyword.toLowerCase());
+      })
+    ) {
       return category;
     }
   }
